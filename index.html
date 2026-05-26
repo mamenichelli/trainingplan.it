@@ -3,160 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Ianua Dei | Accesso Privato</title>
-    <!-- Tailwind CSS per il design responsivo e moderno -->
+    <title>DEVS | Ianua Bellatorum</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-            background-color: #030712; /* bg-gray-950 */
-            color: #f3f4f6;
-            margin: 0;
-            overflow: hidden; /* Evita lo scroll nella home di login */
-        }
-        
-        .font-cinzel {
-            font-family: 'Cinzel', serif;
-        }
-
-        /* Animazione per l'immagine di sfondo (lento zoom) */
-        @keyframes slowZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.1); }
-        }
-        
-        .bg-animate {
-            animation: slowZoom 20s ease-in-out infinite alternate;
-        }
-
-        /* Effetto sfocatura e scuro sullo sfondo */
-        .overlay {
-            background: linear-gradient(to bottom, rgba(3, 7, 18, 0.4) 0%, rgba(3, 7, 18, 0.9) 80%, rgba(3, 7, 18, 1) 100%);
-        }
-
-        /* Animazione per il fade-in dei contenuti */
-        .fade-in {
-            animation: fadeIn 1s ease-out forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #030712; color: #f3f4f6; margin: 0; overflow: hidden; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        .overlay { background: linear-gradient(to bottom, rgba(3, 7, 18, 0.4) 0%, rgba(3, 7, 18, 0.9) 80%, rgba(3, 7, 18, 1) 100%); }
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; opacity: 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .bg-animate { animation: slowZoom 20s ease-in-out infinite alternate; }
     </style>
 </head>
-<body class="relative min-h-screen flex flex-col items-center justify-center bg-gray-950">
+<body class="relative min-h-screen flex flex-col items-center justify-center">
 
-    <!-- SFONDO DINAMICO -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-black">
-        <!-- L'immagine verrà caricata tramite Javascript qui -->
-        <img id="bg-image" src="" alt="Background" class="w-full h-full object-cover object-[50%_30%] bg-animate grayscale contrast-125 mix-blend-luminosity opacity-40 transition-opacity duration-[1500ms] ease-in-out">
+        <img id="bg-image" src="" alt="Background" class="w-full h-full object-cover grayscale opacity-40 transition-opacity duration-[1500ms] bg-animate">
         <div class="absolute inset-0 overlay"></div>
     </div>
 
-    <!-- CONTENUTO PRINCIPALE -->
     <main class="relative z-10 w-full max-w-md px-6 flex flex-col items-center text-center fade-in">
-        
-        <!-- Logo / Intestazione in stile Romano Antico (Monumento/Epigrafe) -->
-        <div class="mb-8 flex flex-col items-center select-none">
-            <!-- Prefazione decorativa -->
-            <div class="text-[9px] text-amber-500/50 uppercase tracking-[0.4em] mb-1.5 font-cinzel">
-                · I M P E R I V M ·
-            </div>
-            
-            <!-- Logo "DEVS" inciso nell'oro con tracking bilanciato (margine destro negativo per compensare lo spazio finale) -->
-            <h1 class="text-4xl sm:text-5xl font-black font-cinzel bg-gradient-to-b from-yellow-100 via-amber-400 to-amber-600 bg-clip-text text-transparent tracking-[0.35em] uppercase mr-[-0.35em] drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)]">
-                DEVS
-            </h1>
-            
-            <!-- Sottotitolo elegante -->
-            <p class="text-[10px] text-stone-400 uppercase tracking-[0.3em] mt-3 font-medium">
-                Ianua Bellatorum
-            </p>
-            
-            <!-- Fregio geometrico romano -->
-            <div class="mt-4 flex items-center justify-center space-x-3 w-32">
-                <span class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-amber-500/30"></span>
-                <span class="text-[8px] text-amber-500/40">✦</span>
-                <span class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-amber-500/30"></span>
-            </div>
+        <div class="mb-8 flex flex-col items-center">
+            <div class="text-[9px] text-amber-500/50 uppercase tracking-[0.4em] mb-1.5 font-cinzel">· I M P E R I V M ·</div>
+            <h1 class="text-5xl font-black font-cinzel bg-gradient-to-b from-yellow-100 via-amber-400 to-amber-600 bg-clip-text text-transparent tracking-[0.35em] uppercase mr-[-0.35em]">DEVS</h1>
+            <p class="text-[10px] text-stone-400 uppercase tracking-[0.3em] mt-3 font-medium">Ianua Bellatorum</p>
         </div>
 
-        <!-- Frase Epica (Dinamica) -->
-        <div class="mb-10 min-h-[100px] flex items-center justify-center">
-            <h2 id="latin-phrase" class="text-xl sm:text-2xl font-bold uppercase text-orange-200 font-cinzel leading-[2] tracking-[0.2em] transition-opacity duration-[1500ms] ease-in-out opacity-100" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
-                <!-- La frase verrà caricata via JS -->
-            </h2>
+        <div class="mb-10 min-h-[120px] flex items-center justify-center">
+            <h2 id="latin-phrase" class="text-xl sm:text-2xl font-bold uppercase text-orange-200 font-cinzel tracking-[0.2em] transition-opacity duration-[1500ms] leading-relaxed"></h2>
         </div>
 
-        <div class="w-16 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent mb-10"></div>
-
-        <!-- Box di Ricerca Parola Chiave -->
-        <div class="w-full bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-gray-800 shadow-[0_0_30px_rgba(249,115,22,0.05)]">
-            <label for="keyword" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 text-left">
-                Inserisci la tua parola chiave
-            </label>
-            
-            <div class="relative">
-                <input 
-                    type="text" 
-                    id="keyword" 
-                    placeholder="SIGNVM" 
-                    class="w-full bg-gray-950/50 border border-gray-700 text-white px-4 py-4 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all uppercase placeholder-gray-600 font-medium"
-                    autocomplete="off"
-                >
-                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
-                    </svg>
-                </div>
-            </div>
-
-            <!-- Messaggio di Errore (Nascosto di default) -->
-            <p id="error-msg" class="text-red-500 text-sm mt-3 hidden font-medium text-left">
-                La parola chiave non è valida. Riprova.
-            </p>
-
-            <button 
-                onclick="accediScheda()" 
-                class="mt-5 w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] uppercase tracking-wider text-sm"
-            >
-                Accedi alla Scheda
-            </button>
+        <div class="w-full bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-gray-800 shadow-2xl">
+            <label class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 text-left">Inserisci Signvm (Parola Chiave)</label>
+            <input type="text" id="keyword" placeholder="ES. SIGNVM" class="w-full bg-gray-950/50 border border-gray-700 text-white px-4 py-4 rounded-xl focus:outline-none focus:border-orange-500 transition-all uppercase font-medium">
+            <p id="error-msg" class="text-red-500 text-xs mt-3 hidden text-left font-bold uppercase tracking-tighter">Signvm non trovato nel Tabularium.</p>
+            <button onclick="accediScheda()" class="mt-5 w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 rounded-xl shadow-lg uppercase tracking-wider text-sm transition-all transform active:scale-95">Accedi alla Scheda</button>
+            <p id="db-status" class="text-[8px] text-gray-600 mt-4 uppercase tracking-[0.2em]"></p>
         </div>
-
     </main>
 
     <script>
-        /* ========================================================
-           SEZIONE DA MODIFICARE - INSERISCI QUI I TUOI DATI
-        ======================================================== */
+        // Inserisci qui il link RAW del tuo file database.json su GitHub
+        const JSON_URL = "https://raw.githubusercontent.com/TUO-UTENTE/TUO-REPO/main/database.json";
 
-        // 1. DATABASE DELLE SCHEDE
-        // Associa la parola chiave (tutto in MAIUSCOLO) al link della scheda HTML
-        const databaseSchede = {
-            "ASIAMARIO": "amm_maggio26.html",   // Sostituisci con il link reale, es. "https://tuosito.com/asia-mario.html"
-            "MARCOFORZA": "scheda_marco.html",
-            "GIULIA": "scheda_giulia.html",
-            "DEMO": "#" // Usa "#" se vuoi solo testare senza cambiare pagina
-        };
+        let databaseSchede = null;
 
-        // 2. FOTO DI SFONDO
-        // Puoi metterne una sola, o più di una (la pagina ne sceglierà una a caso ad ogni visita)
         const immaginiSfondo = [
-            "mm_1.png", // Palestra dark
-            "mm_2.png", // Pesi
-            "mm_3.png"  // Atleta
-            //"mm_4.jpg"  // Atleta
+            "mm_1.png", 
+            "mm_2.png", 
+            "mm_3.png"
         ];
 
-        // 3. FRASI IN LATINO
-        // Verrà scelta una frase a caso ad ogni caricamento per dare un effetto epico
         const frasiLatino = [
             "Gloriam putate quod<br>Deus ipse vos<br>ad bellum exercet",
             "Benedictus Deus<br>qui docet manus meas<br>ad proelium",
@@ -186,32 +84,35 @@
             "Per aspera<br>ad astra"
         ];
 
-        /* ========================================================
-           LOGICA DI FUNZIONAMENTO (NON TOCCARE SE NON NECESSARIO)
-        ======================================================== */
+        async function caricaDati() {
+            try {
+                const resp = await fetch(JSON_URL + "?t=" + new Date().getTime());
+                if (resp.ok) {
+                    databaseSchede = await resp.json();
+                }
+            } catch (e) {
+                console.error("Errore caricamento database.");
+            }
+        }
 
         let currentImgIndex = 0;
         let currentPhraseIndex = 0;
 
-        // Al caricamento della pagina
         document.addEventListener("DOMContentLoaded", () => {
+            caricaDati(); // Avvia il recupero dei dati dal file JSON
+            
             const bgImageEl = document.getElementById('bg-image');
             const phraseEl = document.getElementById('latin-phrase');
 
-            // Scegli immagine e frase random iniziali
             currentImgIndex = Math.floor(Math.random() * immaginiSfondo.length);
             currentPhraseIndex = Math.floor(Math.random() * frasiLatino.length);
 
             bgImageEl.src = immaginiSfondo[currentImgIndex];
             phraseEl.innerHTML = frasiLatino[currentPhraseIndex];
 
-            // Rotazione Frasi (ogni 6 secondi)
             setInterval(() => {
-                // Fade out
                 phraseEl.classList.remove('opacity-100');
                 phraseEl.classList.add('opacity-0');
-                
-                // Attendi 1.5 secondi (la durata del fade) per cambiare il testo e fare Fade in
                 setTimeout(() => {
                     currentPhraseIndex = (currentPhraseIndex + 1) % frasiLatino.length;
                     phraseEl.innerHTML = frasiLatino[currentPhraseIndex];
@@ -220,13 +121,9 @@
                 }, 1500); 
             }, 6000);
 
-            // Rotazione Immagini (ogni 10 secondi)
             setInterval(() => {
-                // Fade out
                 bgImageEl.classList.remove('opacity-40');
                 bgImageEl.classList.add('opacity-0');
-                
-                // Attendi 1.5 secondi (la durata del fade) per cambiare immagine e fare Fade in
                 setTimeout(() => {
                     currentImgIndex = (currentImgIndex + 1) % immaginiSfondo.length;
                     bgImageEl.src = immaginiSfondo[currentImgIndex];
@@ -235,7 +132,6 @@
                 }, 1500); 
             }, 10000);
 
-            // Permetti di premere "Invio" sulla tastiera per accedere
             document.getElementById("keyword").addEventListener("keypress", function(event) {
                 if (event.key === "Enter") {
                     event.preventDefault();
@@ -244,32 +140,23 @@
             });
         });
 
-        // Funzione per validare e reindirizzare
         function accediScheda() {
-            // Prendi il valore, togli gli spazi e metti tutto maiuscolo
+            if (!databaseSchede) return; // Attende che il fetch sia completato
+
             const input = document.getElementById('keyword').value.trim().toUpperCase();
             const errorMsg = document.getElementById('error-msg');
 
-            // Cerca nel database
             if (databaseSchede[input]) {
-                // Parola trovata!
                 errorMsg.classList.add('hidden');
-                
-                // Reindirizzamento alla pagina della scheda
                 const urlDestinazione = databaseSchede[input];
                 
                 if(urlDestinazione === "#") {
-                    alert("Accesso Consentito! (Simulazione: parola chiave " + input + ")");
+                    console.log("Signum valido: " + input);
                 } else {
-                    // Questa è l'istruzione reale che manda l'utente alla scheda
                     window.location.href = urlDestinazione; 
                 }
-
             } else {
-                // Parola non trovata! Mostra errore
                 errorMsg.classList.remove('hidden');
-                
-                // Effetto shake (vibrazione) sul campo input per feedback visivo di errore
                 const inputField = document.getElementById('keyword');
                 inputField.classList.add('-translate-x-2');
                 setTimeout(() => inputField.classList.remove('-translate-x-2', 'translate-x-2'), 300);
