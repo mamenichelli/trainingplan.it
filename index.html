@@ -4,276 +4,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>Scheda Allenamento | 5 Giorni</title>
+    <title>Portale Allenamento | Accesso Privato</title>
     <!-- Tailwind CSS per il design responsivo e moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             -webkit-tap-highlight-color: transparent;
+            background-color: #030712; /* bg-gray-950 */
+            color: #f3f4f6;
+            margin: 0;
+            overflow: hidden; /* Evita lo scroll nella home di login */
         }
-        /* Stili per l'accordion nativo */
-        details > summary {
-            list-style: none;
+        
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
         }
-        details > summary::-webkit-details-marker {
-            display: none;
+
+        /* Animazione per l'immagine di sfondo (lento zoom) */
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
-        details[open] summary ~ * {
-            animation: sweep .3s ease-in-out;
+        
+        .bg-animate {
+            animation: slowZoom 20s ease-in-out infinite alternate;
         }
-        @keyframes sweep {
-            0%    {opacity: 0; transform: translateY(-10px)}
-            100%  {opacity: 1; transform: translateY(0)}
+
+        /* Effetto sfocatura e scuro sullo sfondo */
+        .overlay {
+            background: linear-gradient(to bottom, rgba(3, 7, 18, 0.4) 0%, rgba(3, 7, 18, 0.9) 80%, rgba(3, 7, 18, 1) 100%);
         }
-        .chevron {
-            transition: transform 0.3s ease;
+
+        /* Animazione per il fade-in dei contenuti */
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
         }
-        details[open] summary .chevron {
-            transform: rotate(180deg);
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 pb-12">
+<body class="relative min-h-screen flex flex-col items-center justify-center">
 
-    <!-- Intestazione Epica in stile Romano -->
-    <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
-        <!-- Sfondo Immagine -->
-        <img src="mm2.png" alt="Deus" class="absolute inset-0 w-full h-full object-cover object-[50%_80%] opacity-40 grayscale contrast-125 mix-blend-luminosity">
-        
-        <!-- Gradiente di sfumatura per far leggere bene il testo -->
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
-        
-        <!-- Testo Epico -->
-        <div class="relative z-10 px-4 text-center mt-6">
-            <h2 class="text-[15px] sm:text-lg font-bold uppercase text-orange-200 font-['Cinzel'] leading-[2.2] tracking-[0.25em]" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
-                Gloriam putate quod<br>Deus ipse vos<br>ad bellum exercet
-            </h2>
-            <div class="mt-5 flex justify-center">
-                <div class="w-32 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
-            </div>
-        </div>
+    <!-- SFONDO DINAMICO -->
+    <div class="absolute inset-0 z-0 overflow-hidden bg-black">
+        <!-- L'immagine verrà caricata tramite Javascript qui -->
+        <img id="bg-image" src="" alt="Background" class="w-full h-full object-cover object-[50%_30%] bg-animate grayscale contrast-125 mix-blend-luminosity opacity-40 transition-opacity duration-[1500ms] ease-in-out">
+        <div class="absolute inset-0 overlay"></div>
     </div>
 
-    <!-- App Header -->
-    <header class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 z-50">
-        <div class="max-w-md mx-auto flex justify-between items-center">
-            <div>
-                <h1 class="text-xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                   Scheda Asia e Mario
-                </h1>
-                <p class="text-xs text-gray-400 font-medium mt-0.5">5 Giorni</p>
-            </div>
-            <div class="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Container (Mobile Constrained) -->
-    <main class="max-w-md mx-auto p-4">
+    <!-- CONTENUTO PRINCIPALE -->
+    <main class="relative z-10 w-full max-w-md px-6 flex flex-col items-center text-center fade-in">
         
-        <!-- Info Card (Recuperi) -->
-        <div class="bg-gray-900 border border-orange-500/30 rounded-xl p-4 mb-6 flex items-start space-x-4 shadow-lg shadow-orange-500/5">
-            <div class="bg-orange-500/20 p-2 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
-            <div>
-                <h3 class="text-sm font-bold text-gray-200">Tempi di Recupero</h3>
-                <p class="text-xs text-gray-400 mt-1">
-                    • Multiarticolari: <span class="font-bold text-orange-400">120 sec</span><br>
-                    • o comunque da gestire secondo fatica si può arrivare fino a 3 minuti.
-                </p>
-            </div>
+        <!-- Logo / Intestazione -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent tracking-widest uppercase">
+                DEUS
+            </h1>
+            <p class="text-[10px] text-gray-400 uppercase tracking-[0.3em] mt-1">Training Portal</p>
         </div>
 
-        <!-- Workout Days Container -->
-        <div id="workout-container" class="space-y-4">
-            <!-- Il contenuto verrà generato dal Javascript qui sotto -->
+        <!-- Frase Epica (Dinamica) -->
+        <div class="mb-10 min-h-[100px] flex items-center justify-center">
+            <h2 id="latin-phrase" class="text-xl sm:text-2xl font-bold uppercase text-orange-200 font-cinzel leading-[2] tracking-[0.2em] transition-opacity duration-[1500ms] ease-in-out opacity-100" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
+                <!-- La frase verrà caricata via JS -->
+            </h2>
+        </div>
+
+        <div class="w-16 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent mb-10"></div>
+
+        <!-- Box di Ricerca Parola Chiave -->
+        <div class="w-full bg-gray-900/60 backdrop-blur-md p-6 rounded-2xl border border-gray-800 shadow-[0_0_30px_rgba(249,115,22,0.05)]">
+            <label for="keyword" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 text-left">
+                Inserisci la tua parola chiave
+            </label>
+            
+            <div class="relative">
+                <input 
+                    type="text" 
+                    id="keyword" 
+                    placeholder="SIGNVM" 
+                    class="w-full bg-gray-950/50 border border-gray-700 text-white px-4 py-4 rounded-xl focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-all uppercase placeholder-gray-600 font-medium"
+                    autocomplete="off"
+                >
+                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Messaggio di Errore (Nascosto di default) -->
+            <p id="error-msg" class="text-red-500 text-sm mt-3 hidden font-medium text-left">
+                La parola chiave non è valida. Riprova.
+            </p>
+
+            <button 
+                onclick="accediScheda()" 
+                class="mt-5 w-full bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 text-white font-bold py-4 rounded-xl transition-all shadow-[0_0_15px_rgba(249,115,22,0.3)] hover:shadow-[0_0_25px_rgba(249,115,22,0.5)] uppercase tracking-wider text-sm"
+            >
+                Accedi alla Scheda
+            </button>
         </div>
 
     </main>
 
-    <!-- Modale per ingrandire le immagini -->
-    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer transition-opacity" onclick="closeModal()">
-        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl">
-        <button class="absolute top-6 right-6 text-white bg-gray-800/80 rounded-full p-2 hover:bg-gray-700 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
-    </div>
-
     <script>
-        // Dati della scheda di allenamento
-        const workoutData = [
-            {
-                day: "Giorno 1",
-                focus: "Petto + Addome",
-                color: "from-blue-500 to-cyan-500",
-                exercises: [
-                    { name: "Spinte su panca piana con manubri", sets: "4", reps: "8-10", machine: "Manubri", img: "https://www.evolutionfit.it/wp-content/uploads/pettorali-spinte-manubri-panca-piana-ag.png" },
-                    { name: "Panca super inclined", sets: "4", reps: "10-12", machine: "Bilanciere/Manubri", img: "https://www.panattasport.com/wp-content/uploads/2023/03/1fw033-450x450.webp" },
-                    { name: "Chest press macchina", sets: "4", reps: "8-10", machine: "Macchinario Panatta", img: "https://s3assets.skimble.com/assets/603850/image_full.jpg" },
-                    { name: "Pectoral machine", sets: "4", reps: "12-15", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif" },
-                    { name: "Cavi alti (o multi flight)", sets: "4", reps: "10-12", machine: "Cavi", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Crossover.gif" },
-                    { name: "Crunch macchina", sets: "4", reps: "15-20", machine: "Macchinario Panatta", img: "https://static.strengthlevel.com/images/exercises/machine-seated-crunch/machine-seated-crunch-800.jpg" },
-                    { name: "Plank", sets: "4", reps: "30-60 sec", machine: "Corpo libero", img: "https://www.spine-center.it/images/contenuti/news/il-plank-come-esercizio-terapeutico-in-campo-riabilitativo.jpg" }
-                ]
-            },
-            {
-                day: "Giorno 2",
-                focus: "Schiena + Collo",
-                color: "from-green-500 to-emerald-500",
-                exercises: [
-                    { name: "Lat machine presa larga", sets: "4", reps: "8-10", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif" },
-                    { name: "Pulley triangolo", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" },
-                    { name: "Pulley cavo basso (presa inversa)", sets: "4", reps: "10-12", machine: "Cavi / Barra", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi7EEQpJ5CK81Wm2TRLmP1_SxkhsXtpm6Vgw&s" },
-                    { name: "Pulldown braccia tese", sets: "4", reps: "12-15", machine: "Cavi", img: "https://api.smartworkout.app/asset/image/4977ee02-11c1-4028-8a97-310c8dec6cc3" },
-                    { name: "Hyperextension (Lombari)", sets: "4", reps: "12-15", machine: "Panca / Panatta", img: "https://aipersonaltrainer.com/wp-content/uploads/panca-hyperextension.jpg" },
-                    { name: "Collo - Flessioni avanti", sets: "3", reps: "12-15", machine: "Corpo libero / Panca", img: "https://static.strengthlevel.com/images/exercises/neck-curl/neck-curl-800.jpg" },
-                    { name: "Collo - Estensioni dietro", sets: "3", reps: "12-15", machine: "Corpo libero / Panca", img: "https://static.strengthlevel.com/images/exercises/neck-extension/neck-extension-800.jpg" }
-                ]
-            },
-            {
-                day: "Giorno 3",
-                focus: "Gambe",
-                color: "from-red-500 to-rose-500",
-                exercises: [
-                    { name: "Hack Squat", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/quadricipiti-hack-squat-ag.png" },
-                    { name: "Leg press", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/leg-press-orizontale-ag.png" },
-                    { name: "Leg extension", sets: "4", reps: "12-15", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/quadricipiti-leg-extension-ag.png" },
-                    { name: "Leg curl sdraiato", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/femorali-leg-curl-sdraiato-bg.png" },
-                    { name: "Calf seduti", sets: "4", reps: "15-20", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/polpacci-calf-machine-seduto-ag.png" }
-                ]
-            },
-            {
-                day: "Giorno 4",
-                focus: "Spalle + Addome",
-                color: "from-purple-500 to-fuchsia-500",
-                exercises: [
-                    { name: "Alzate laterali", sets: "4", reps: "12-15", machine: "Manubri", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" },
-                    { name: "Shoulder press macchina", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://static.strengthlevel.com/images/exercises/machine-shoulder-press/machine-shoulder-press-800.jpg" },
-                    { name: "Alzate posteriori a 45° su panca", sets: "4", reps: "12-15", machine: "Manubri / Panca", img: "https://www.evolutionfit.it/wp-content/uploads/spalle-volare-inverso-manubri-panca-alta-bg.png" },
-                    { name: "Six way", sets: "4", reps: "8-10", machine: "Manubri leggeri", img: "https://s3assets.skimble.com/assets/3111926/image_full.jpg" },
-                    { name: "Addome - Leg raise", sets: "4", reps: "15", machine: "Corpo libero / Sbarra", img: "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/29631101-Captains-Chair-Straight-Leg-Raise_Waist_small.jpg" },
-                    { name: "Addome - Crunch inverso", sets: "4", reps: "15-20", machine: "Tappetino", img: "https://www.pesoforma.com/wp-content/uploads/esecuzione-crunch-inverso-pesoforma.png" }
-                ]
-            },
-            {
-                day: "Giorno 5",
-                focus: "Braccia",
-                color: "from-yellow-500 to-orange-500",
-                exercises: [
-                    { name: "Curl al cavo barra EZ", sets: "4", reps: "8-10", machine: "Cavi", img: "https://static.strengthlevel.com/images/exercises/cable-bicep-curl/cable-bicep-curl-800.jpg" },
-                    { name: "Curl manubri alternati", sets: "4", reps: "10-12", machine: "Manubri", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif" },
-                    { name: "Curl panca inclinata", sets: "4", reps: "12", machine: "Manubri / Panca", img: "https://www.my-personaltrainer.it/2025/04/01/curl-manubri-panca-inclinata_900x760.jpeg" },
-                    { name: "Pushdown cavo", sets: "4", reps: "10-12", machine: "Cavi / Corda", img: "https://articoli.nonsolofitness.it/resources/big/775dd5778455d8a268e590c1005152ea.jpg.webp" },
-                    { name: "French press cavo basso nuca", sets: "4", reps: "10-12", machine: "Cavi", img: "https://eusebio.pro/wp-content/uploads/2018/01/StandingTwoArmOverheadRopeTricepsExtensions-223x300.jpg" },
-                    { name: "Kickback al cavo basso", sets: "4", reps: "12-15", machine: "Cavi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPrRr66UAHS10rIwYNIeCbxA4cNzMTUyrWfQ&s" }
-                ]
-            }
+        /* ========================================================
+           SEZIONE DA MODIFICARE - INSERISCI QUI I TUOI DATI
+        ======================================================== */
+
+        // 1. DATABASE DELLE SCHEDE
+        // Associa la parola chiave (tutto in MAIUSCOLO) al link della scheda HTML
+        const databaseSchede = {
+            "ASIAMARIO": "amm_maggio26.html",   // Sostituisci con il link reale, es. "https://tuosito.com/asia-mario.html"
+            "MARCOFORZA": "scheda_marco.html",
+            "GIULIA": "scheda_giulia.html",
+            "DEMO": "#" // Usa "#" se vuoi solo testare senza cambiare pagina
+        };
+
+        // 2. FOTO DI SFONDO
+        // Puoi metterne una sola, o più di una (la pagina ne sceglierà una a caso ad ogni visita)
+        const immaginiSfondo = [
+            "mm_1.png", // Palestra dark
+            "mm_2.png" // Pesi
+           // "mm_3.png"  // Atleta
+            // "mm_4.jpg"  // Atleta
         ];
 
-        const container = document.getElementById('workout-container');
+        // 3. FRASI IN LATINO
+        // Verrà scelta una frase a caso ad ogni caricamento per dare un effetto epico
+        const frasiLatino = [
+            "Gloriam putate quod<br>Deus ipse vos<br>ad bellum exercet",
+            "Benedictus Deus<br>qui docet manus meas<br>ad proelium",
 
-        // Generazione Dinamica dell'HTML
-        workoutData.forEach((day, index) => {
-            // Apri il primo giorno di default
-            const isOpen = index === 0 ? 'open' : '';
-            
-            let exercisesHTML = '';
-            day.exercises.forEach((ex, exIndex) => {
-                // Aggiungiamo un fallback per le immagini nel caso i link un giorno si rompano
-                exercisesHTML += `
-                    <div class="flex items-center p-3 bg-gray-800 rounded-xl mb-3 border border-gray-700/50 hover:bg-gray-750 transition-colors">
-                        
-                        <div class="relative w-16 h-16 flex-shrink-0 mr-4 rounded-lg overflow-hidden bg-white border border-gray-700">
-                            <img src="${ex.img}" alt="${ex.name}" 
-                                 class="w-full h-full object-contain p-1 cursor-pointer"
-                                 onclick="openModal('${ex.img}')"
-                                 referrerpolicy="no-referrer"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNzQxNTEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiIGR5PSIuM2VtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+LPC90ZXh0Pjwvc3ZnPg=='" />
-                            <div class="absolute top-0 left-0 bg-gray-900/60 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-br-lg pointer-events-none">
-                                ${exIndex + 1}
-                            </div>
-                        </div>
+"A la pugna<br>Iddio t'addestra",
 
-                        <div class="flex-1 pr-2">
-                            <h4 class="font-bold text-sm text-gray-100 leading-tight">${ex.name}</h4>
-                            <p class="text-[11px] font-medium text-gray-400 mt-1 uppercase tracking-wider flex items-center">
-                                <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mr-1.5"></span>
-                                ${ex.machine}
-                            </p>
-                        </div>
+"Deus te<br>ad pugnam vocat",
 
-                        <div class="flex-shrink-0 flex items-stretch bg-gray-900 rounded-lg border border-gray-700 overflow-hidden shadow-sm">
-                            <div class="px-2.5 py-1.5 bg-gray-800/80 border-r border-gray-700 flex flex-col items-center justify-center">
-                                <span class="text-[9px] text-gray-400 uppercase font-bold tracking-wider">Set</span>
-                                <span class="font-black text-base text-white leading-none mt-0.5">${ex.sets}</span>
-                            </div>
-                            <div class="px-2.5 py-1.5 flex flex-col items-center justify-center min-w-[4rem] bg-orange-500/10">
-                                <span class="text-[9px] text-orange-400 uppercase font-bold tracking-wider">Rep</span>
-                                <span class="font-bold text-sm text-orange-500 leading-none mt-0.5">${ex.reps}</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
+"Dio lo vole,<br>la spada lo compie", 
+
+"Bellator sum,<br>Deo duce",
+
+"Che l'ira d'Iddio<br>guidi lo tuo ferro", 
+
+"Ira deorum,<br>gladius meus",
+
+"Forte lo braccio,<br>saldo lo core", 
+
+"In cruce<br>et ferro<br>spes nostra",
+
+"Nihil time,<br>Deus tecum est",
+
+"Chi teme la morte<br>non vince la pugna", 
+
+"Si vis pacem,<br>para bellum",
+
+"Sotto l'usbergo<br>batte cor di lione", 
+
+"Virtus in<br>belli igne<br>probatur",
+
+"Lame di ferro,<br>animi di foco", 
+
+"Aut viam inveniam,<br>aut faciam",
+
+"Ne la bufera<br>s'erge lo guerriero", 
+
+"Mors in acie<br>gloria est",
+
+"Corde de ferro,<br>animo sine metu",
+
+"Pugna<br>usque ad finem",
+
+"Armati omai,<br>ch'è l'ora suprema", 
+
+"In pace leones,<br>in proelio dracones",
+
+"Armati omai,<br>ch'è l'ora suprema", 
+            "Vincit qui<br>se vincit",
+            "Fortuna audaces<br>iuvat",
+            "Per aspera<br>ad astra"
+        ];
+
+        /* ========================================================
+           LOGICA DI FUNZIONAMENTO (NON TOCCARE SE NON NECESSARIO)
+        ======================================================== */
+
+        let currentImgIndex = 0;
+        let currentPhraseIndex = 0;
+
+        // Al caricamento della pagina
+        document.addEventListener("DOMContentLoaded", () => {
+            const bgImageEl = document.getElementById('bg-image');
+            const phraseEl = document.getElementById('latin-phrase');
+
+            // Scegli immagine e frase random iniziali
+            currentImgIndex = Math.floor(Math.random() * immaginiSfondo.length);
+            currentPhraseIndex = Math.floor(Math.random() * frasiLatino.length);
+
+            bgImageEl.src = immaginiSfondo[currentImgIndex];
+            phraseEl.innerHTML = frasiLatino[currentPhraseIndex];
+
+            // Rotazione Frasi (ogni 6 secondi)
+            setInterval(() => {
+                // Fade out
+                phraseEl.classList.remove('opacity-100');
+                phraseEl.classList.add('opacity-0');
+                
+                // Attendi 1.5 secondi (la durata del fade) per cambiare il testo e fare Fade in
+                setTimeout(() => {
+                    currentPhraseIndex = (currentPhraseIndex + 1) % frasiLatino.length;
+                    phraseEl.innerHTML = frasiLatino[currentPhraseIndex];
+                    phraseEl.classList.remove('opacity-0');
+                    phraseEl.classList.add('opacity-100');
+                }, 1500); 
+            }, 6000);
+
+            // Rotazione Immagini (ogni 10 secondi)
+            setInterval(() => {
+                // Fade out
+                bgImageEl.classList.remove('opacity-40');
+                bgImageEl.classList.add('opacity-0');
+                
+                // Attendi 1.5 secondi (la durata del fade) per cambiare immagine e fare Fade in
+                setTimeout(() => {
+                    currentImgIndex = (currentImgIndex + 1) % immaginiSfondo.length;
+                    bgImageEl.src = immaginiSfondo[currentImgIndex];
+                    bgImageEl.classList.remove('opacity-0');
+                    bgImageEl.classList.add('opacity-40');
+                }, 1500); 
+            }, 10000);
+
+            // Permetti di premere "Invio" sulla tastiera per accedere
+            document.getElementById("keyword").addEventListener("keypress", function(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    accediScheda();
+                }
             });
-
-            const dayHTML = `
-                <details class="bg-gray-900 rounded-2xl border border-gray-800 shadow-sm overflow-hidden" ${isOpen}>
-                    <summary class="cursor-pointer p-4 flex justify-between items-center select-none bg-gray-800/50 hover:bg-gray-800 transition-colors">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-2 h-10 rounded-full bg-gradient-to-b ${day.color}"></div>
-                            <div>
-                                <h2 class="text-lg font-bold text-white">${day.day}</h2>
-                                <p class="text-xs text-gray-400 font-medium">${day.focus}</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-900 p-1.5 rounded-full border border-gray-700 chevron">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-                    </summary>
-                    <div class="p-4 pt-2 bg-gray-900">
-                        ${exercisesHTML}
-                    </div>
-                </details>
-            `;
-            container.innerHTML += dayHTML;
         });
 
-        // Logica per fare in modo che si apra solo un giorno alla volta (opzionale, stile fisarmonica esclusiva)
-        const details = document.querySelectorAll("details");
-        details.forEach((targetDetail) => {
-            targetDetail.addEventListener("click", () => {
-                details.forEach((detail) => {
-                    if (detail !== targetDetail) {
-                        detail.removeAttribute("open");
-                    }
-                });
-            });
-        });
+        // Funzione per validare e reindirizzare
+        function accediScheda() {
+            // Prendi il valore, togli gli spazi e metti tutto maiuscolo
+            const input = document.getElementById('keyword').value.trim().toUpperCase();
+            const errorMsg = document.getElementById('error-msg');
 
-        // Funzioni per la modale delle immagini
-        function openModal(imgSrc) {
-            const modal = document.getElementById('image-modal');
-            const modalImg = document.getElementById('modal-image');
-            modalImg.src = imgSrc;
-            modal.classList.remove('hidden');
-        }
+            // Cerca nel database
+            if (databaseSchede[input]) {
+                // Parola trovata!
+                errorMsg.classList.add('hidden');
+                
+                // Reindirizzamento alla pagina della scheda
+                // Se è "DEMO" o un test, mostriamo un alert, altrimenti reindirizziamo
+                const urlDestinazione = databaseSchede[input];
+                
+                if(urlDestinazione === "#") {
+                    alert("Accesso Consentito! (Simulazione: parola chiave " + input + ")");
+                } else {
+                    // Questa è l'istruzione reale che manda l'utente alla scheda
+                    window.location.href = urlDestinazione; 
+                }
 
-        function closeModal() {
-            const modal = document.getElementById('image-modal');
-            modal.classList.add('hidden');
+            } else {
+                // Parola non trovata! Mostra errore
+                errorMsg.classList.remove('hidden');
+                
+                // Effetto shake (vibrazione) sul campo input per feedback visivo di errore
+                const inputField = document.getElementById('keyword');
+                inputField.classList.add('-translate-x-2');
+                setTimeout(() => inputField.classList.remove('-translate-x-2', 'translate-x-2'), 300);
+            }
         }
     </script>
 </body>
