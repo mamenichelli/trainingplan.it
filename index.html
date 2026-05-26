@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>Portale Allenamento | Accesso Privato</title>
+    <title>Ianua Dei | Accesso Privato</title>
     <!-- Tailwind CSS per il design responsivo e moderno -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -50,7 +50,7 @@
         }
     </style>
 </head>
-<body class="relative min-h-screen flex flex-col items-center justify-center">
+<body class="relative min-h-screen flex flex-col items-center justify-center bg-gray-950">
 
     <!-- SFONDO DINAMICO -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-black">
@@ -62,12 +62,29 @@
     <!-- CONTENUTO PRINCIPALE -->
     <main class="relative z-10 w-full max-w-md px-6 flex flex-col items-center text-center fade-in">
         
-        <!-- Logo / Intestazione -->
-        <div class="mb-8">
-            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent tracking-widest uppercase">
-                DEUS
+        <!-- Logo / Intestazione in stile Romano Antico (Monumento/Epigrafe) -->
+        <div class="mb-8 flex flex-col items-center select-none">
+            <!-- Prefazione decorativa -->
+            <div class="text-[9px] text-amber-500/50 uppercase tracking-[0.4em] mb-1.5 font-cinzel">
+                · I M P E R I V M ·
+            </div>
+            
+            <!-- Logo "DEVS" inciso nell'oro con tracking bilanciato (margine destro negativo per compensare lo spazio finale) -->
+            <h1 class="text-4xl sm:text-5xl font-black font-cinzel bg-gradient-to-b from-yellow-100 via-amber-400 to-amber-600 bg-clip-text text-transparent tracking-[0.35em] uppercase mr-[-0.35em] drop-shadow-[0_4px_12px_rgba(245,158,11,0.2)]">
+                DEVS
             </h1>
-            <p class="text-[10px] text-gray-400 uppercase tracking-[0.3em] mt-1">Training Portal</p>
+            
+            <!-- Sottotitolo elegante -->
+            <p class="text-[10px] text-stone-400 uppercase tracking-[0.3em] mt-3 font-medium">
+                Ianua Bellatorum
+            </p>
+            
+            <!-- Fregio geometrico romano -->
+            <div class="mt-4 flex items-center justify-center space-x-3 w-32">
+                <span class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-amber-500/30"></span>
+                <span class="text-[8px] text-amber-500/40">✦</span>
+                <span class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-amber-500/30"></span>
+            </div>
         </div>
 
         <!-- Frase Epica (Dinamica) -->
@@ -143,50 +160,27 @@
         const frasiLatino = [
             "Gloriam putate quod<br>Deus ipse vos<br>ad bellum exercet",
             "Benedictus Deus<br>qui docet manus meas<br>ad proelium",
-
-"A la pugna<br>Iddio t'addestra",
-
-"Deus te<br>ad pugnam vocat",
-
-"Dio lo vole,<br>la spada lo compie", 
-
-"Bellator sum,<br>Deo duce",
-
-"Che l'ira d'Iddio<br>guidi lo tuo ferro", 
-
-"Ira deorum,<br>gladius meus",
-
-"Forte lo braccio,<br>saldo lo core", 
-
-"In cruce<br>et ferro<br>spes nostra",
-
-"Nihil time,<br>Deus tecum est",
-
-"Chi teme la morte<br>non vince la pugna", 
-
-"Si vis pacem,<br>para bellum",
-
-"Sotto l'usbergo<br>batte cor di lione", 
-
-"Virtus in<br>belli igne<br>probatur",
-
-"Lame di ferro,<br>animi di foco", 
-
-"Aut viam inveniam,<br>aut faciam",
-
-"Ne la bufera<br>s'erge lo guerriero", 
-
-"Mors in acie<br>gloria est",
-
-"Corde de ferro,<br>animo sine metu",
-
-"Pugna<br>usque ad finem",
-
-"Armati omai,<br>ch'è l'ora suprema", 
-
-"In pace leones,<br>in proelio dracones",
-
-"Armati omai,<br>ch'è l'ora suprema", 
+            "A la pugna<br>Iddio t'addestra",
+            "Deus te<br>ad pugnam vocat",
+            "Dio lo vole,<br>la spada lo compie", 
+            "Bellator sum,<br>Deo duce",
+            "Che l'ira d'Iddio<br>guidi lo tuo ferro", 
+            "Ira deorum,<br>gladius meus",
+            "Forte lo braccio,<br>saldo lo core", 
+            "In cruce<br>et ferro<br>spes nostra",
+            "Nihil time,<br>Deus tecum est",
+            "Chi teme la morte<br>non vince la pugna", 
+            "Si vis pacem,<br>para bellum",
+            "Sotto l'usbergo<br>batte cor di lione", 
+            "Virtus in<br>belli igne<br>probatur",
+            "Lame di ferro,<br>animi di foco", 
+            "Aut viam inveniam,<br>aut faciam",
+            "Ne la bufera<br>s'erge lo guerriero", 
+            "Mors in acie<br>gloria est",
+            "Corde de ferro,<br>animo sine metu",
+            "Pugna<br>usque ad finem",
+            "Armati omai,<br>ch'è l'ora suprema", 
+            "In pace leones,<br>in proelio dracones",
             "Vincit qui<br>se vincit",
             "Fortuna audaces<br>iuvat",
             "Per aspera<br>ad astra"
@@ -262,7 +256,6 @@
                 errorMsg.classList.add('hidden');
                 
                 // Reindirizzamento alla pagina della scheda
-                // Se è "DEMO" o un test, mostriamo un alert, altrimenti reindirizziamo
                 const urlDestinazione = databaseSchede[input];
                 
                 if(urlDestinazione === "#") {
