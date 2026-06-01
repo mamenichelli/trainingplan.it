@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Scheda Alimentare | Keto 4 Settimane</title>
+    <!-- Tailwind CSS per il design responsivo e moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Stili per l'accordion nativo */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        details[open] summary .chevron {
+            transform: rotate(180deg);
+        }
+        
+        /* Custom scrollbar per ricette */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 pb-12">
+
+    <!-- Intestazione Epica in stile Romano (Come da richiesta) -->
+    <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
+        <!-- Sfondo Immagine -->
+        <img src="mm_2.png" alt="Deus" class="absolute inset-0 w-full h-full object-cover object-[50%_80%] opacity-40 grayscale contrast-125 mix-blend-luminosity" onerror="this.src='https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1469&auto=format&fit=crop'">
+        
+        <!-- Gradiente di sfumatura per far leggere bene il testo -->
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+        
+        <!-- Testo Epico -->
+        <div class="relative z-10 px-4 text-center mt-6">
+            <h2 class="text-[15px] sm:text-lg font-bold uppercase text-orange-200 font-['Cinzel'] leading-[2.2] tracking-[0.25em]" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
+                Gloriam putate quod<br>Deus ipse vos<br>ad bellum exercet
+            </h2>
+            <div class="mt-5 flex justify-center">
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Header -->
+    <header class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 z-50">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                    Protocollo Keto Clinico
+                </h1>
+                <p class="text-xs text-gray-400 font-medium mt-0.5">4 Settimane • Microbiota & Lipolisi</p>
+            </div>
+            <div class="bg-gray-800 p-2 rounded-lg border border-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto p-4">
+        
+        <!-- Info Card (Regole Base & Focus Clinico) -->
+        <div class="bg-gray-900 border border-teal-500/30 rounded-xl p-4 mb-6 flex flex-col space-y-4 shadow-lg shadow-teal-500/5 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-24 h-24 bg-teal-500/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+            
+            <div class="flex items-start space-x-4 relative z-10">
+                <div class="bg-teal-500/20 p-2 rounded-lg mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-200 uppercase tracking-wider">I Pilastri del Protocollo</h3>
+                    <p class="text-[11px] text-gray-400 mt-2 leading-relaxed font-medium">
+                        <span class="text-teal-400 font-bold">1. Stop Infiammazione:</span> ZERO cibi processati (no finti keto). Focus su abbassare l'insulina per colpire le adiposità su cosce e glutei.<br><br>
+                        <span class="text-teal-400 font-bold">2. Porzioni a Piacere & Varianti:</span> Non si pesa nulla con il bilancino! Le proteine sono a sazietà. Fonti ammesse: pollo, tacchino, manzo, vitello, maiale (magro), pesce fresco, frutti di mare. <b>NO tonno in scatola. NO uova.</b><br><br>
+                        <span class="text-teal-400 font-bold">3. Colazioni Forti & Energia:</span> Per reggere fino a pranzo usa proteine in polvere e Collagene per smoothie o pudding iper-rapidi e sazianti. Usa Olio MCT o EVO per energia immediata bypassando la digestione, essenziale visto che sei ferma per l'ernia.<br><br>
+                        <span class="text-teal-400 font-bold">4. Microbiota & Snack:</span> Usa Kefir o Yogurt Greco INTERO. Per gli attacchi di fame via libera ai <span class="text-white">Lupini</span> (proteina vegetale eccellente) o olive.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settimane Container -->
+        <div id="diet-container" class="space-y-4">
+            <!-- Il contenuto verrà generato dal Javascript qui sotto -->
+        </div>
+
+        <!-- Sezione Ricette -->
+        <div class="mt-10 mb-4">
+            <div class="flex items-center space-x-3 mb-4 px-1">
+                <div class="h-px bg-gray-800 flex-1"></div>
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-['Cinzel'] text-center">
+                    Ricettario Keto Puro<br>
+                    <span class="text-[9px] text-teal-500 tracking-[0.3em]">30 Ricette (70% Salato, 30% Dolce)</span>
+                </h3>
+                <div class="h-px bg-gray-800 flex-1"></div>
+            </div>
+            
+            <div class="flex flex-col space-y-4" id="recipes-container">
+                <!-- Generato da JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // DATI DELLA DIETA CHETOGENICA (4 SETTIMANE)
+        const dietData = [
+            {
+                week: "Settimana 1",
+                focus: "Keto-Adaptation & Sgonfiamento",
+                desc: "Settimana di reset. Il corpo impara a usare i grassi come carburante. Le porzioni proteiche sono a piacere: fermati solo quando sei sazia.",
+                color: "from-teal-500 to-emerald-500",
+                meals: [
+                    { type: "Colazione", name: "Smoothie Iper-Rapido Prot-Keto", details: "Abbondante: 30g Proteine isolate, 15g Collagene, 250ml latte di mandorla, 1 cucchiaio Olio MCT, 1 cucchiaio burro di mandorle. Frulla tutto. Altamente saziante.", icon: "🥤" },
+                    { type: "Pranzo", name: "Insalatona & Proteina Fresca", details: "Salmone fresco, Sgombro o Pollo (NO in scatola) a piacere fino a sazietà. Rucola e finocchi crudi. Olio EVO abbondante, limone.", icon: "🐟" },
+                    { type: "Cena", name: "Pollo Ruspante o Ricotta Intera", details: "Pollo ruspante a sazietà, OPPURE Ricotta di pecora/vaccina intera. Asparagi cotti nel Burro Ghee o EVO per nutrire il microbiota sano.", icon: "🍗" },
+                    { type: "Snack (Solo se fame)", name: "Lupini o Kefir", details: "Manciata abbondante di Lupini dissalati o 150g Kefir intero bianco. Ottimi blocca-fame.", icon: "🫘" }
+                ]
+            },
+            {
+                week: "Settimana 2",
+                focus: "Micorcircolo & Deep Ketosis",
+                desc: "L'energia sale grazie all'MCT. Mangi a sazietà per nutrire i tessuti e spegnere l'infiammazione delle adiposità localizzate.",
+                color: "from-blue-500 to-indigo-500",
+                meals: [
+                    { type: "Colazione", name: "Coppa Greca o Ricotta Dolce", details: "200g Yogurt Greco INTERO o Ricotta, misurino di Collagene mescolato dentro, 30g noci, semi di chia e 1 cucchiaio Olio MCT.", icon: "🥣" },
+                    { type: "Pranzo", name: "Sgombro Fresco / Branzino", details: "Pesce fresco azzurro o bianco cotto al forno a sazietà. Spinacino fresco, olive nere, mezzo avocado. Olio EVO a crudo.", icon: "🥑" },
+                    { type: "Cena", name: "Tagliata di Manzo Grass-fed", details: "Carne rossa allevata a erba a sazietà. Broccoli al vapore ripassati in padella con Olio EVO e aglio (potente prebiotico).", icon: "🥩" },
+                    { type: "Snack (Solo se fame)", name: "Lupini e Mandorle", details: "Snack misto: Lupini e 15 mandorle tostate. Le fibre mantengono l'intestino reattivo e piatto.", icon: "🫒" }
+                ]
+            },
+            {
+                week: "Settimana 3",
+                focus: "Spinta Metabolica Sedentaria",
+                desc: "Senza sport (causa ernia), usiamo collagene e proteine nobili per salvaguardare la massa magra e grassi sani per bruciare depositi.",
+                color: "from-purple-500 to-fuchsia-500",
+                meals: [
+                    { type: "Colazione", name: "Bulletproof + Pudding Veloce", details: "Tazzone di Caffè frullato con Olio MCT. In aggiunta, un pudding di chia (latte di cocco, semi, Proteine polvere) saziantissimo.", icon: "☕" },
+                    { type: "Pranzo", name: "Tacchino o Ricotta al Forno", details: "Fesa di tacchino piastrata a piacere OPPURE trancio di Ricotta al forno. Crauti fermentati (non pastorizzati) e lattuga. Olio EVO.", icon: "🥗" },
+                    { type: "Cena", name: "Pesce Spada o Gamberi", details: "Trancio di pesce spada o spiedini di gamberi fino a totale sazietà. Zucchine trifolate cotte nel Ghee.", icon: "🎣" },
+                    { type: "Snack (Solo se fame)", name: "Kefir Intero o Lupini", details: "Tazza di Kefir intero o i classici lupini sgusciati a volontà. Aiutano a drenare.", icon: "🍶" }
+                ]
+            },
+            {
+                week: "Settimana 4",
+                focus: "Stabilizzazione & Autonomia",
+                desc: "Il deficit è ora naturale e senza sforzo grazie ai forti pasti proteici e lipidi sazianti. Il biotipo ginoide risponde sgonfiando.",
+                color: "from-rose-500 to-orange-500",
+                meals: [
+                    { type: "Colazione", name: "Crema Ricca di Avocado e Cacao", details: "Avocado frullato con latte mandorla, cacao amaro, Proteine isolate, Collagene e Olio MCT. Mousse iper-nutriente che sazia fino alle 14:00.", icon: "🍫" },
+                    { type: "Pranzo", name: "Carpaccio o Tartare di Carne", details: "Carne di manzo cruda a sazietà, scaglie di Parmigiano (stagionato 30 mesi = 0 lattosio), rucola, limone, EVO abbondante.", icon: "🧀" },
+                    { type: "Cena", name: "Cotoletta Keto (Senza uova/pane)", details: "Pollo spennellato d'olio e impanato in farina di mandorle e parmigiano, cotto al forno. A sazietà. Contorno di cavolfiore arrosto.", icon: "🍗" },
+                    { type: "Snack (Solo se fame)", name: "Lupini o Noci del Brasile", details: "Sempre lupini a disposizione, oppure 3-4 Noci del Brasile per dare selenio alla tiroide.", icon: "🥜" }
+                ]
+            }
+        ];
+
+        const recipesData = [
+            // --- 21 RICETTE SALATE (70%) ---
+            {
+                title: "1. [SALATO] Smoothie Prot-Keto Iper-Rapido",
+                time: "2 min",
+                ingredients: ["30g Proteine Isolate", "15g Collagene Idrolizzato", "250ml Latte di Mandorla (zero zuccheri)", "1 Cucch. Olio MCT", "1 Cucch. Cacao amaro"],
+                prep: "Inserisci tutti gli ingredienti in un frullatore o shaker molto potente e mixa per 30 secondi fino a ottenere un composto liscio e vellutato.",
+                tip: "Il collagene ripara i tessuti (ottimo supporto in caso di ernia); l'Olio MCT si converte in energia immediata nel fegato senza essere immagazzinato."
+            },
+            {
+                title: "2. [SALATO] Cotoletta Keto-Finta al Forno",
+                time: "25 min",
+                ingredients: ["Fettine di petto di pollo", "Farina di mandorle o nocciole", "Parmigiano grattugiato", "Olio EVO", "Paprika dolce e sale"],
+                prep: "Tampona bene il pollo con carta assorbente. Mescola farina di mandorle, formaggio e paprika. Spennella la carne con pochissimo olio e impana premendo con forza. Cuoci a 200°C per 20 min.",
+                tip: "Niente uovo e niente pan grattato infiammatorio! Mantieni la croccantezza rispettando l'insulina e il microbiota."
+            },
+            {
+                title: "3. [SALATO] Salmone in Crosta di Pistacchi",
+                time: "20 min",
+                ingredients: ["Filetto di Salmone fresco (selvaggio se possibile)", "Pistacchi non salati (tritati a granella)", "1 Cucch. di Senape (senza zuccheri aggiunti)", "Olio EVO"],
+                prep: "Spalma un velo di senape sul salmone, distribuisci la granella di pistacchi facendola aderire bene. Cuoci in friggitrice ad aria o forno a 190°C per 15 min.",
+                tip: "Una bomba di Omega-3 e grassi monoinsaturi, potentissimi alleati per spegnere l'infiammazione del tessuto adiposo su cosce e glutei."
+            },
+            {
+                title: "4. [SALATO] Zucchine Ripiene Grass-Fed",
+                time: "35 min",
+                ingredients: ["Zucchine tonde o lunghe", "Carne macinata di manzo (taglio grasso)", "Passata di pomodoro rustica", "Olio EVO"],
+                prep: "Svuota le zucchine. Trita la polpa estratta e saltala in padella col macinato di carne. Riempi le barchette di zucchina, aggiungi un po' di passata e inforna a 180°C per 30 min.",
+                tip: "Le fibre insolubili della zucchina agiscono da 'spugna' per il microbiota, garantendo estrema sazietà senza picchi glicemici."
+            },
+            {
+                title: "5. [SALATO] Branzino al Sale e Limone",
+                time: "30 min",
+                ingredients: ["1 Branzino eviscerato intero", "Sale grosso abbondante", "Fette di limone", "Prezzemolo fresco e Olio EVO a crudo"],
+                prep: "Riempi la pancia del pesce con limone e prezzemolo. Coprilo interamente di sale grosso leggermente inumidito con acqua. Forno a 200°C per 25 min. Rompi la crosta e servi con EVO a crudo.",
+                tip: "Zero grassi rovinati in cottura e carni morbidissime. L'aggiunta dell'Olio EVO a freddo massimizza i polifenoli antiossidanti."
+            },
+            {
+                title: "6. [SALATO] Straccetti Manzo, Rucola e Grana",
+                time: "10 min",
+                ingredients: ["Straccetti di manzo (o vitello)", "Rucola fresca abbondante", "Scaglie di Parmigiano (30 mesi)", "Olio EVO e Limone"],
+                prep: "Scotta gli straccetti 1 minuto per lato su una piastra rovente. Adagiali caldi su un letto di rucola, aggiungi grana, limone e abbondante olio a cascata.",
+                tip: "Proteine nobili fulminee. La rucola è un eccellente epato-protettore, utilissima per aiutare il fegato a metabolizzare molti grassi."
+            },
+            {
+                title: "7. [SALATO] Sgombro Fresco al Cartoccio",
+                time: "25 min",
+                ingredients: ["Filetti di Sgombro fresco", "Olive nere denocciolate", "3-4 Pomodorini", "Capperi dissalati", "Olio EVO"],
+                prep: "Metti i filetti su un foglio di carta forno, aggiungi le olive, i capperi, i pomodorini tagliati e l'olio. Chiudi il cartoccio a caramella e inforna a 180°C per 20 min.",
+                tip: "Sostituto vitale al tonno in scatola! Zero metalli pesanti, zero istamina e un concentrato puro di grassi sani e proteine."
+            },
+            {
+                title: "8. [SALATO] Pollo al Latte di Cocco e Curry",
+                time: "20 min",
+                ingredients: ["Bocconcini di pollo ruspante", "Latte di cocco in lattina (versione Full-Fat)", "Polvere di curry giallo", "Burro Ghee o Olio EVO"],
+                prep: "Rosola il pollo nel burro ghee. Aggiungi il curry, poi versa il latte di cocco e lascia restringere a fuoco lento finché non si forma una crema densa.",
+                tip: "I grassi del cocco sono composti da Acido Laurico e MCT: donano una sferzata di termogenesi, risvegliando il metabolismo anche se sei sedentaria."
+            },
+            {
+                title: "9. [SALATO] Avocado Boat al Salmone",
+                time: "5 min",
+                ingredients: ["1 Avocado maturo", "Salmone affumicato (preferibilmente selvaggio)", "Succo di limone", "Pepe nero macinato fresco"],
+                prep: "Taglia l'avocado a metà e togli il nocciolo. Riempi l'incavo con abbondanti fette di salmone, spruzza con limone e macina del pepe.",
+                tip: "Un pasto SOS anti-fame fenomenale. Il rapporto altissimo di potassio (avocado) contrasta il sodio (salmone), drenando la ritenzione idrica."
+            },
+            {
+                title: "10. [SALATO] Tagliata di Vitello al Rosmarino",
+                time: "15 min",
+                ingredients: ["Tagliata di vitello bella spessa", "Rametti di rosmarino fresco", "1 spicchio d'aglio", "Burro Ghee"],
+                prep: "Sciogli abbondante Ghee con aglio e rosmarino in padella. Cuoci la carne 3 min per lato irrorandola continuamente col fondo di cottura. Fai riposare 2 min prima di tagliarla.",
+                tip: "Il burro chiarificato (Ghee) è privo di caseina e lattosio. Non genera risposta infiammatoria e nutre con vitamine lipolubili."
+            },
+            {
+                title: "11. [SALATO] Insalata Tiepida di Polpo",
+                time: "10 min (se polpo precotto)",
+                ingredients: ["Polpo bollito", "Prezzemolo tritato", "Olio EVO", "Limone spremuto", "Sedano crudo a tocchetti"],
+                prep: "Taglia il polpo a pezzetti. Unisci il sedano per dare la nota croccante, e condisci con una forte emulsione di limone, olio EVO, prezzemolo e un pizzico di sale.",
+                tip: "Il polpo vanta un profilo amminoacidico unico, fornendo collagene strutturale di mare per mantenere elastici i tessuti durante il dimagrimento."
+            },
+            {
+                title: "12. [SALATO] Burger di Tacchino Puro",
+                time: "15 min",
+                ingredients: ["Macinato fresco di tacchino", "Sale grosso spezzato e pepe", "Erbe aromatiche tritate (timo, salvia)", "Olio EVO"],
+                prep: "Impasta la carne solo con le erbe e il sale. Niente uova! Massaggia la carne per 2 minuti finché diventa appiccicosa (estrai la miosina naturale). Forma i burger e cuoci su piastra.",
+                tip: "Carne vera vs. Affettati: zero destrosio, zero nitriti, zero conservanti. Essenziale per abbassare l'insulina di base."
+            },
+            {
+                title: "13. [SALATO] Polpette Carne e Ricotta (No Uova)",
+                time: "25 min",
+                ingredients: ["Macinato misto di manzo o vitello", "Ricotta intera (scolata molto bene)", "Parmigiano grattugiato", "Olio EVO per la cottura in padella"],
+                prep: "Mescola la carne cruda con la ricotta e il parmigiano. La ricotta compatta farà da legante perfetto al posto dell'uovo. Forma le polpettine e cuoci in padella a fuoco medio coperto.",
+                tip: "Trucco d'oro per evitare l'uovo: la ricotta dona umidità e stabilità, mantenendo alti i livelli di grassi sani del pasto."
+            },
+            {
+                title: "14. [SALATO] Spiedini Zucchine e Gamberi",
+                time: "15 min",
+                ingredients: ["Code di gambero sgusciate fresche", "Zucchine tagliate a rondelle spesse", "Olio EVO", "Paprika affumicata"],
+                prep: "Infilza alternando gamberi e zucchine sugli stecchini di legno. Spennella tutto abbondantemente con olio e paprika. Cuoci in padella o griglia 3 minuti per lato.",
+                tip: "Pasto ultraleggero ma estremamente ricco di Iodio (dal gambero), fondamentale per supportare la tiroide in fase di restrizione calorica."
+            },
+            {
+                title: "15. [SALATO] Crema Fredda Avocado e Cacao Prot",
+                time: "5 min",
+                ingredients: ["Mezzo avocado morbidissimo", "1 Cucch. Cacao amaro crudo", "10g Collagene Idrolizzato", "Latte di mandorla q.b.", "Olio MCT"],
+                prep: "Frulla tutti gli ingredienti inserendo il latte di mandorla a filo finché non ottieni la consistenza di un budino al cioccolato liscio. Mangia subito o riposa in frigo.",
+                tip: "Placa istantaneamente la fame, stabilizza la glicemia ed eroga grassi puri per il cervello. Nonostante il cacao, è un pasto strutturato a bassissimo indice glicemico."
+            },
+            {
+                title: "16. [SALATO] Trancio di Pesce Spada ai Capperi",
+                time: "15 min",
+                ingredients: ["Trancio fresco di pesce spada", "Capperi dissalati ben lavati", "Olio EVO generoso", "Origano essiccato"],
+                prep: "Scotta lo spada su una padella rovente, 2 min per lato per mantenerlo succoso. A fuoco spento, aggiungi i capperi, l'origano e annega con l'olio EVO.",
+                tip: "I capperi non sono solo sapore: contengono altissime dosi di quercetina, un antistaminico e potente sfiammante per chi tende a trattenere liquidi."
+            },
+            {
+                title: "17. [SALATO] Vellutata di Cavolfiore e Ghee",
+                time: "25 min",
+                ingredients: ["Cime di cavolfiore crudo", "Brodo di ossa (o brodo vegetale pulito)", "Burro Ghee", "Pepe nero macinato fresco"],
+                prep: "Lessa il cavolfiore nel brodo a filo finché è tenero. Frulla tutto con il frullatore a immersione, aggiungendo 2 cucchiai di Ghee per emulsionare e montare la crema.",
+                tip: "Il cavolfiore è il re incontrastato della Keto. Offre un volume di cibo enorme (sazietà gastrica) senza sbalzare in alcun modo la glicemia."
+            },
+            {
+                title: "18. [SALATO] Cosce di Pollo Arrosto Croccanti",
+                time: "45 min",
+                ingredients: ["Cosce o fusi di pollo completi di pelle", "Olio EVO", "Mix spezie pestate (rosmarino, aglio, paprika)", "Sale grosso"],
+                prep: "Massaggia le cosce a crudo con olio e spezie, spalmando il trito bene sulla pelle. Inforna a 200°C per 45 min, finché la pelle non diventa una chips.",
+                tip: "In Chetogenica non devi temere la pelle del pollo! È lì che risiedono i grassi necessari per fare da switch metabolico al tuo corpo."
+            },
+            {
+                title: "19. [SALATO] Insalata Drenante ai Lupini",
+                time: "5 min",
+                ingredients: ["Lupini in salamoia sgusciati", "Olive nere taggiasche o kalamata", "Cuore di sedano bianco croccante", "Olio EVO a volontà"],
+                prep: "Step fondamentale: sciacqua i lupini per minuti sotto l'acqua corrente per azzerare il sale della salamoia. Mescola tutto e condisci con abbondante olio.",
+                tip: "Snack/Pasto da Re! I lupini sono anomali tra i legumi: quasi a zero carboidrati, ricchissimi di vere fibre e proteine che inchiodano l'appetito."
+            },
+            {
+                title: "20. [SALATO] Ricotta al Forno con Erbette e Noci",
+                time: "20 min",
+                ingredients: ["Trancio di Ricotta intera compatta", "Noci sbriciolate", "Timo fresco o origano", "Olio EVO", "Pepe nero"],
+                prep: "Adagia la ricotta su carta forno. Incidi la superficie, irrora con EVO, cospargi di erbe e noci. Inforna a 200°C per 15-20 minuti finché la superficie non è dorata.",
+                tip: "La caseina della ricotta cotta garantisce un rilascio amminoacidico lento. Perfetta come pasto principale, sazia a dismisura e appaga il palato caldo."
+            },
+            {
+                title: "21. [SALATO] Involtini di Bresaola e Ricotta",
+                time: "5 min",
+                ingredients: ["Fette spesse di Bresaola Punta d'Anca", "Ricotta fresca intera", "Rucola", "Olio EVO"],
+                prep: "Lavora la ricotta a crema con un filo d'olio. Spalma sulle fette di bresaola, aggiungi una foglia di rucola e arrotola.",
+                tip: "Proteine ultra-veloci e zero cottura. La ricotta bilancia l'eccesso di proteine magre della bresaola aggiungendo i grassi necessari alla lipolisi."
+            },
+
+            // --- 9 RICETTE DOLCI (30%) ---
+            {
+                title: "22. [DOLCE] Mousse Istantanea Ricotta e Cacao",
+                time: "3 min",
+                ingredients: ["150g Ricotta intera", "1 Cucch. di Cacao amaro crudo", "1 Misurino Proteine in polvere vaniglia/cioccolato", "1 Cucch. Olio MCT"],
+                prep: "Lavora la ricotta con una forchetta in una ciotola per ammorbidirla. Aggiungi il cacao, l'MCT e le proteine. Mescola vigorosamente fino a ottenere una mousse densa.",
+                tip: "Sostituisce un pasto o placca la voglia di dolce post-cena. Le proteine in polvere dolcificano naturalmente senza usare edulcoranti chimici processati."
+            },
+            {
+                title: "23. [DOLCE] Tartufini Ricotta e Cocco (Senza Cottura)",
+                time: "10 min",
+                ingredients: ["200g Ricotta intera ben scolata", "3 Cucchiai Farina di Cocco", "1 Misurino Proteine neutre o vaniglia", "Cocco rapè per guarnire"],
+                prep: "Impasta ricotta, farina di cocco e proteine fino ad avere un impasto lavorabile a mano. Crea delle palline (tartufini) e passale nel cocco rapè. Riponi in frigo.",
+                tip: "Pratici e tascabili. La farina di cocco assorbe l'umidità della ricotta apportando MCT naturali e fibre, ideali per la regolarità del microbiota."
+            },
+            {
+                title: "24. [DOLCE] Cheesecake Keto al Bicchiere",
+                time: "5 min (più riposo)",
+                ingredients: ["50g Mandorle tritate finemente", "1 Cucch. Burro Ghee fuso", "100g Ricotta o Kefir intero denso", "Scorza di limone bio grattugiata"],
+                prep: "Fondo: mescola mandorle e Ghee e pressa sul fondo di un bicchiere. Crema: lavora la ricotta con la scorza di limone e versala sopra. Lascia in frigo 1 ora.",
+                tip: "Il burro Ghee solidificandosi ricrea la croccantezza del biscotto senza alzare minimamente l'insulina. Niente uova, digestione perfetta."
+            },
+            {
+                title: "25. [DOLCE] Fat-Bomb al Burro di Mandorle",
+                time: "5 min (più freezer)",
+                ingredients: ["3 Cucch. Burro di Mandorle puro (100%)", "2 Cucch. Olio di Cocco vergine o Ghee", "1 Cucch. Cacao amaro", "Pizzico di sale rosa"],
+                prep: "Sciogli leggermente l'olio di cocco. Mescolalo in una ciotola con burro di mandorle, cacao e sale. Versa in stampini per ghiaccio e congela per 1 ora.",
+                tip: "Autentiche 'bombe di grasso' pulito. Mangiandone una quando si ha fame nervosa si spegne l'appetito all'istante stabilizzando gli ormoni."
+            },
+            {
+                title: "26. [DOLCE] Frappè Proteico Ghiacciato al Caffè",
+                time: "2 min",
+                ingredients: ["1 Tazzina di caffè espresso freddo", "Cubetti di ghiaccio", "1 Misurino Proteine Isolate", "1 Cucch. Olio MCT", "100ml Latte di mandorla"],
+                prep: "Metti il ghiaccio nel frullatore, aggiungi l'espresso, il latte di mandorla, le proteine e l'MCT. Frulla ad altissima velocità finché diventa spumoso (stile frappuccino).",
+                tip: "Pre-workout (anche mentale) eccellente. L'emulsione tra ghiaccio e MCT crea una crema golosissima ma totalmente a zero impatto glicemico."
+            },
+            {
+                title: "27. [DOLCE] Budino Ricotta e Semi di Chia",
+                time: "5 min (più riposo)",
+                ingredients: ["150ml Latte di Cocco (full fat)", "3 Cucch. Semi di Chia", "2 Cucch. Ricotta intera per il topping", "Cannella in polvere"],
+                prep: "Mescola latte di cocco e chia. Lascia riposare in frigo tutta la notte per formare il gel. Al momento di mangiare, guarnisci con la ricotta montata a neve e cannella.",
+                tip: "La cannella è un potentissimo insulino-sensibilizzante: aiuta le cellule (soprattutto in zone critiche come le cosce) ad aprirsi e usare l'energia, sbloccando il dimagrimento."
+            },
+            {
+                title: "28. [DOLCE] Panna Cotta Keto al Latte di Cocco",
+                time: "10 min (più frigo)",
+                ingredients: ["200ml Latte di cocco intero (da lattina)", "1 foglio di colla di pesce (o Agar Agar)", "Vaniglia in bacca o estratto puro"],
+                prep: "Scalda il latte di cocco con la vaniglia senza far bollire. Sciogli dentro la colla di pesce (precedentemente ammollata). Versa negli stampini e metti in frigo per 3 ore.",
+                tip: "Dolce al cucchiaio puro. Il latte di cocco in lattina è denso e ricchissimo di grassi a media catena termogenici. La gelatina apporta collagene e glicina."
+            },
+            {
+                title: "29. [DOLCE] Crema Fredda Avocado e Pistacchio",
+                time: "5 min",
+                ingredients: ["Mezzo avocado maturo ghiacciato", "1 Cucch. Pasta di Pistacchio pura (100% senza zuccheri)", "Latte di mandorla q.b.", "Pizzico di sale"],
+                prep: "Taglia l'avocado a cubetti e tienilo in freezer 2 ore. Frullalo con la pasta di pistacchio, un filo di latte di mandorla per far girare le lame e un pizzico di sale.",
+                tip: "Ha la consistenza del gelato artigianale ma è fatto di soli grassi buoni. Il sale esalta il sapore dolce del pistacchio senza usare edulcoranti."
+            },
+            {
+                title: "30. [DOLCE] Cioccolatini Croccanti al Collagene",
+                time: "10 min",
+                ingredients: ["50g Cioccolato Fondente (minimo 85% o 90%)", "1 Cucch. Olio di Cocco", "15g Collagene in polvere", "Noci pecan tritate grossolanamente"],
+                prep: "Sciogli a bagnomaria il fondente con l'olio di cocco. A fuoco spento, incorpora il collagene girando velocemente. Versa in stampini, aggiungi le noci e metti in frigo a indurire.",
+                tip: "Il cioccolato >85% è ricchissimo di polifenoli e povero di zuccheri. Integrando il collagene crei uno snack funzionale perfetto per le articolazioni e l'ernia."
+            }
+        ];
+
+        // RENDER DELLA DIETA
+        const container = document.getElementById('diet-container');
+
+        dietData.forEach((weekData, index) => {
+            const isOpen = index === 0 ? 'open' : '';
+            
+            let mealsHTML = '';
+            weekData.meals.forEach((meal) => {
+                mealsHTML += `
+                    <div class="flex items-start p-3.5 bg-gray-800/80 rounded-xl mb-3 border border-gray-700/50 hover:bg-gray-750 transition-colors shadow-sm">
+                        
+                        <div class="relative w-10 h-10 flex-shrink-0 mr-3.5 rounded-full flex items-center justify-center bg-gray-900 border border-gray-700 text-lg shadow-inner">
+                            ${meal.icon}
+                        </div>
+
+                        <div class="flex-1 pr-2">
+                            <span class="text-[9px] font-bold text-teal-500 uppercase tracking-widest">${meal.type}</span>
+                            <h4 class="font-bold text-[13px] text-gray-100 leading-tight mt-0.5">${meal.name}</h4>
+                            <p class="text-[11px] text-gray-400 mt-1.5 leading-relaxed font-medium">
+                                ${meal.details}
+                            </p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            const weekHTML = `
+                <details class="bg-gray-900/90 rounded-2xl border border-gray-800 shadow-sm overflow-hidden" ${isOpen}>
+                    <summary class="cursor-pointer p-4 flex justify-between items-center select-none bg-gray-800/40 hover:bg-gray-800/80 transition-colors">
+                        <div class="flex items-center space-x-3.5">
+                            <div class="w-1.5 h-12 rounded-full bg-gradient-to-b ${weekData.color} shadow-lg shadow-${weekData.color.split('-')[1]}/50"></div>
+                            <div>
+                                <h2 class="text-base font-bold text-white uppercase tracking-wider">${weekData.week}</h2>
+                                <p class="text-[10px] text-teal-400/80 font-bold uppercase tracking-wider mt-0.5">${weekData.focus}</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900 p-1.5 rounded-full border border-gray-700 chevron">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </summary>
+                    <div class="p-4 pt-1 bg-gray-900/90">
+                        <p class="text-xs text-gray-400 italic mb-4 px-1 border-l-2 border-gray-700 ml-1 pl-3">${weekData.desc}</p>
+                        ${mealsHTML}
+                    </div>
+                </details>
+            `;
+            container.innerHTML += weekHTML;
+        });
+
+        // RENDER DELLE RICETTE COMPLETO
+        const recipesContainer = document.getElementById('recipes-container');
+        recipesData.forEach((recipe) => {
+            let ingList = recipe.ingredients.map(i => `<li class="flex items-start text-[11px] text-gray-300 mb-1 leading-tight"><span class="text-teal-500 mr-2 mt-0.5">•</span><span>${i}</span></li>`).join('');
+            
+            recipesContainer.innerHTML += `
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 flex flex-col hover:border-teal-900/50 transition-colors shadow-sm relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-3 border-b border-gray-800 pb-3">
+                        <h4 class="font-bold text-[14px] text-teal-400 leading-snug pr-2">${recipe.title}</h4>
+                        <span class="text-[9px] bg-teal-500/10 border border-teal-500/30 text-teal-300 px-2 py-1 rounded uppercase font-bold tracking-wider whitespace-nowrap">${recipe.time}</span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-[9px] uppercase font-bold text-gray-500 tracking-[0.1em] mb-2">Ingredienti</h5>
+                        <ul class="font-medium">
+                            ${ingList}
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-[9px] uppercase font-bold text-gray-500 tracking-[0.1em] mb-1.5">Preparazione</h5>
+                        <p class="text-[11.5px] text-gray-400 leading-relaxed font-medium">
+                            ${recipe.prep}
+                        </p>
+                    </div>
+                    
+                    <div class="mt-auto pt-3">
+                        <div class="flex items-start gap-2.5 bg-teal-900/10 p-3 rounded-lg border border-teal-800/30">
+                            <span class="text-teal-500 text-sm leading-none">💡</span>
+                            <div>
+                                <h6 class="text-[9px] font-bold uppercase text-teal-400 tracking-wider mb-1">Skill Tip Clinico</h6>
+                                <p class="text-[10px] text-teal-100/60 leading-relaxed font-medium">${recipe.tip}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Fisarmonica esclusiva (si apre una settimana alla volta)
+        const details = document.querySelectorAll("details");
+        details.forEach((targetDetail) => {
+            targetDetail.addEventListener("click", () => {
+                details.forEach((detail) => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute("open");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
