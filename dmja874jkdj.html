@@ -108,6 +108,42 @@
             </div>
         </div>
 
+        <!-- Varianti e Sostituzioni Card -->
+        <div class="bg-gray-900 border border-emerald-500/30 rounded-xl p-4 mb-6 shadow-lg shadow-emerald-500/5">
+            <h3 class="text-sm font-bold text-gray-200 uppercase tracking-wider mb-4 flex items-center">
+                <span class="bg-emerald-500/20 text-emerald-400 p-1.5 rounded-md mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                </span>
+                Sostituzioni Ammesse
+            </h3>
+            
+            <div class="space-y-3">
+                <!-- Proteine -->
+                <div class="bg-gray-800/60 p-3.5 rounded-lg border border-gray-700/50">
+                    <span class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] block mb-1.5">Fonte Proteica (A Sazietà)</span>
+                    <p class="text-[11px] text-gray-400 font-medium leading-relaxed">
+                        Se un pasto prevede una proteina che non ami o che non hai in casa, <b class="text-gray-200">al posto di quella, puoi sempre usare:</b><br>
+                        <span class="text-teal-300 mr-1">•</span> <b class="text-gray-300">Carni:</b> Pollo, Tacchino, Faraona, Vitello, Manzo, Maiale magro.<br>
+                        <span class="text-teal-300 mr-1">•</span> <b class="text-gray-300">Pesce (Top per Lipolisi):</b> Salmone, Sgombro, Branzino, Orata, Spada, Polpo, Calamari, Gamberi.<br>
+                        <span class="text-teal-300 mr-1">•</span> <b class="text-gray-300">Alternative:</b> Ricotta intera (pecora/vaccina), Lupini sgusciati, Kefir o Yogurt Greco intero.<br>
+                        <span class="text-red-400 text-[10px] block mt-1.5 uppercase font-bold tracking-wider">Divieti Assoluti: Tonno in scatola, Affettati e Carni processate.</span>
+                    </p>
+                </div>
+
+                <!-- Verdure -->
+                <div class="bg-gray-800/60 p-3.5 rounded-lg border border-gray-700/50">
+                    <span class="text-emerald-400 font-bold uppercase tracking-widest text-[10px] block mb-1.5">Verdure e Fibre Prebiotiche</span>
+                    <p class="text-[11px] text-gray-400 font-medium leading-relaxed">
+                        <b class="text-gray-200">Al posto della verdura indicata nel pasto, puoi usare liberamente:</b><br>
+                        <span class="text-teal-300 mr-1">•</span> <b class="text-gray-300">Sempre concesse:</b> Zucchine, Finocchi, Cavolfiore, Broccoli, Asparagi, Sedano, Rucola, Spinaci, Lattuga, Radicchio, Cime di rapa.<br>
+                        <span class="text-red-400 text-[10px] block mt-1.5 uppercase font-bold tracking-wider">Divieti Assoluti: Patate, Carote cotte, Zucca, Mais. (I pomodori con molta moderazione).</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <!-- Settimane Container -->
         <div id="diet-container" class="space-y-4">
             <!-- Il contenuto verrà generato dal Javascript qui sotto -->
@@ -137,7 +173,7 @@
             {
                 week: "Settimana 1",
                 focus: "Keto-Adaptation & Sgonfiamento",
-                desc: "Settimana di reset. Il corpo impara a usare i grassi come carburante. Le porzioni proteiche sono a piacere: fermati solo quando sei sazia.",
+                desc: "Settimana di reset. Il corpo impara a usare i grassi come carburante. Le porzioni proteiche sono a piacere.",
                 color: "from-teal-500 to-emerald-500",
                 meals: [
                     { type: "Colazione", name: "Smoothie Iper-Rapido Prot-Keto", details: "Abbondante: 30g Proteine isolate, 15g Collagene, 250ml latte di mandorla, 1 cucchiaio Olio MCT, 1 cucchiaio burro di mandorle. Frulla tutto. Altamente saziante.", icon: "🥤" },
@@ -154,7 +190,7 @@
                 meals: [
                     { type: "Colazione", name: "Coppa Greca o Ricotta Dolce", details: "200g Yogurt Greco INTERO o Ricotta, misurino di Collagene mescolato dentro, 30g noci, semi di chia e 1 cucchiaio Olio MCT.", icon: "🥣" },
                     { type: "Pranzo", name: "Sgombro Fresco / Branzino", details: "Pesce fresco azzurro o bianco cotto al forno a sazietà. Spinacino fresco, olive nere, mezzo avocado. Olio EVO a crudo.", icon: "🥑" },
-                    { type: "Cena", name: "Tagliata di Manzo Grass-fed", details: "Carne rossa allevata a erba a sazietà. Broccoli al vapore ripassati in padella con Olio EVO e aglio (potente prebiotico).", icon: "🥩" },
+                    { type: "Cena", name: "Tagliata di Manzo Grass-fed", details: "Carne rossa nutrita con erba e sburro dei pastori. Broccoli al vapore ripassati in padella con Olio EVO e aglio (potente prebiotico).", icon: "🥩" },
                     { type: "Snack (Solo se fame)", name: "Lupini e Mandorle", details: "Snack misto: Lupini e 15 mandorle tostate. Le fibre mantengono l'intestino reattivo e piatto.", icon: "🫒" }
                 ]
             },
