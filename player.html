@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadfight - Player YouTube Dedicato</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            overflow: hidden; 
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Contenitore principale */
+        #player-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        /* Contenitore che taglia fisicamente via i bordi dell'iframe (dove YT mette loghi e titoli) */
+        #iframe-wrapper {
+            position: absolute;
+            top: -10%; /* Taglia il titolo sopra */
+            left: -10%;
+            width: 120%; /* Ingrandisce per nascondere i bordi */
+            height: 120%;
+            pointer-events: none; /* BLOCCA I CLICK SULL'IFRAME */
+        }
+
+        #youtube-player {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Overlay trasparente per i nostri click e per impedire interazioni col player YT sottostante */
+        #click-shield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 70px); /* Lascia lo spazio in fondo per i controlli custom */
+            cursor: pointer;
+            z-index: 5;
+            background: transparent;
+        }
+
+        #custom-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            box-sizing: border-box;
+            opacity: 0; /* Nascosti di default */
+            transition: opacity 0.3s ease-in-out;
+            z-index: 10;
+        }
+
+        /* Appaiono al passaggio del mouse */
+        #player-container:hover #custom-controls {
+            opacity: 1;
+        }
+
+        /* Stile pulsanti */
+        button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.1s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        #play-pause-btn {
+            margin-right: 20px;
+            width: 30px;
+        }
+
+        #progress-container {
+            flex-grow: 1;
+            position: relative;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            border-radius: 4px;
+            margin-right: 20px;
+            overflow: hidden;
+            transition: height 0.1s;
+        }
+
+        #progress-container:hover {
+            height: 12px;
+        }
+
+        #progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background-color: #e62020;
+            width: 0%;
+            pointer-events: none;
+            border-radius: 4px;
+            transition: width 0.1s linear;
+        }
+
+        #time-display {
+            color: white;
+            font-size: 14px;
+            min-width: 100px;
+            text-align: right;
+            user-select: none;
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body>
+
+<div id="player-container">
+    <!-- Wrapper che 'zooma' per nascondere watermark e titoli nativi -->
+    <div id="iframe-wrapper">
+        <div id="youtube-player"></div>
+    </div>
+    
+    <!-- Scudo invisibile per intercettare play/pausa e bloccare link a YT -->
+    <div id="click-shield"></div>
+    
+    <!-- Controlli creati da noi -->
+    <div id="custom-controls">
+        <button id="play-pause-btn">▶</button>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="time-display">0:00 / 0:00</div>
+    </div>
+</div>
+
+<script>
+    // Caricamento API Iframe di YouTube
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    var progressTimer;
+    
+    // Riferimenti DOM
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const progressContainer = document.getElementById('progress-container');
+    const timeDisplay = document.getElementById('time-display');
+    const clickShield = document.getElementById('click-shield');
+    const playerContainer = document.getElementById('player-container');
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-player', {
+            videoId: 'rOudDb5GpQk',
+            playerVars: {
+                'controls': 0,           // Rimuove la barra di YouTube
+                'disablekb': 1,          // Disabilita i tasti della tastiera
+                'fs': 0,                 // Rimuove tasto fullscreen nativo
+                'rel': 0,                // Niente video correlati
+                'modestbranding': 1,     // Minimizza loghi
+                'playsinline': 1,        
+                'iv_load_policy': 3      // Nasconde le annotazioni video
+                // Rimosso 'origin' per evitare conflitti locali
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // Appena pronto mettiamo i tempi a zero
+        updateDisplay();
+    }
+
+    function onPlayerStateChange(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+            playPauseBtn.innerHTML = '⏸';
+            // Aggiorna la barra molto spesso per renderla fluida
+            progressTimer = setInterval(updateDisplay, 50); 
+        } else {
+            playPauseBtn.innerHTML = '▶';
+            clearInterval(progressTimer);
+        }
+    }
+
+    function onPlayerError(event) {
+        console.error("Errore YouTube API. Codice:", event.data);
+        if(event.data === 150 || event.data === 101 || event.data === 103) {
+            alert("Errore " + event.data + ": Il video è bloccato da YouTube. Prova a caricarlo su un server (localhost) e verifica le restrizioni di età/copyright su YouTube Studio.");
+        }
+    }
+
+    function updateDisplay() {
+        if (player && player.getDuration) {
+            const duration = player.getDuration();
+            const currentTime = player.getCurrentTime() || 0;
+            
+            // Aggiorna barra
+            const percent = (currentTime / duration) * 100;
+            progressBar.style.width = percent + '%';
+            
+            // Aggiorna testo
+            timeDisplay.innerText = `${formatTime(currentTime)} / ${formatTime(duration)}`;
+        }
+    }
+
+    function formatTime(seconds) {
+        if (isNaN(seconds) || seconds === 0) return "0:00";
+        seconds = Math.round(seconds);
+        const h = Math.floor(seconds / 3600);
+        const m = Math.floor((seconds % 3600) / 60);
+        const s = seconds % 60;
+        
+        let result = "";
+        if (h > 0) {
+            result += h + ":";
+            result += (m < 10 ? "0" + m : m) + ":";
+        } else {
+            result += m + ":";
+        }
+        result += s < 10 ? "0" + s : s;
+        return result;
+    }
+
+    function togglePlay() {
+        if (!player || !player.getPlayerState) return;
+        
+        const state = player.getPlayerState();
+        if (state === YT.PlayerState.PLAYING) {
+            player.pauseVideo();
+        } else {
+            player.playVideo();
+        }
+    }
+
+    // Click per Play/Pausa sulla barra custom e sul div scudo
+    playPauseBtn.addEventListener('click', togglePlay);
+    clickShield.addEventListener('click', togglePlay);
+
+    // Click per spostarsi nel video (Scrub)
+    progressContainer.addEventListener('click', function(e) {
+        if (!player || !player.getDuration) return;
+        
+        const rect = progressContainer.getBoundingClientRect();
+        const pos = (e.clientX - rect.left) / progressContainer.offsetWidth;
+        const newTime = pos * player.getDuration();
+        
+        // true = sposta testina e carica buffer
+        player.seekTo(newTime, true); 
+        updateDisplay();
+    });
+
+    // Doppio clic sullo scudo per Fullscreen nativo del contenitore
+    clickShield.addEventListener('dblclick', () => {
+        if (!document.fullscreenElement) {
+            playerContainer.requestFullscreen().catch(err => {
+                console.warn(`Errore Fullscreen: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    });
+
+</script>
+
+</body>
+</html>
