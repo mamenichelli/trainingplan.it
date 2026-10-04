@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Scheda SORCA | 5 Giorni</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        details[open] summary .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform .3s ease; }
+        @keyframes sweep {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 pb-12">
+
+    <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
+        <img src="mm2.png" alt="Deus" class="absolute inset-0 w-full h-full object-cover object-[50%_80%] opacity-40 grayscale contrast-125 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+        <div class="relative z-10 px-4 text-center mt-6">
+            <p class="text-[9px] text-orange-300/70 uppercase tracking-[0.35em] mb-4 font-cinzel">· CONSTANTIA VINCIT ·</p>
+            <h2 class="text-[15px] sm:text-lg font-bold uppercase text-orange-200 font-cinzel leading-[2.2] tracking-[0.25em]" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
+                Fortis non est<br>qui numquam cadit,<br>sed qui semper surgit
+            </h2>
+            <div class="mt-5 flex justify-center">
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+            </div>
+        </div>
+    </div>
+
+    <header class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 z-50">
+        <div class="max-w-lg mx-auto flex justify-between items-center gap-4">
+            <div>
+                <h1 class="text-xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Scheda SORCA</h1>
+                <p class="text-xs text-gray-400 font-medium mt-0.5">5 giorni · 55–60 min · Circuito + pesi</p>
+            </div>
+            <div class="bg-gray-800 p-2 rounded-lg border border-gray-700" aria-label="Durata circa un'ora">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-lg mx-auto p-4">
+        <section class="bg-gray-900 border border-orange-500/30 rounded-2xl p-4 mb-4 shadow-lg shadow-orange-500/5">
+            <div class="flex items-start gap-3">
+                <div class="bg-orange-500/20 p-2 rounded-lg shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-gray-100">Regole della scheda</h3>
+                    <p class="text-xs text-gray-400 mt-1.5 leading-relaxed">
+                        Intensità <strong class="text-orange-300">RPE 6–7/10</strong>: chiudi ogni serie con 2–3 ripetizioni ancora possibili. Usa movimenti controllati; recupera 30″ tra gli esercizi del circuito e 75–90″ tra giri o serie. Nei blocchi spinning, “salita” significa aumentare la resistenza: le fasi in piedi sono brevi e si possono svolgere seduti mantenendo la stessa intensità.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div id="workout-container" class="space-y-4"></div>
+    </main>
+
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
+        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-w-full max-h-[80vh] object-contain rounded-xl bg-white shadow-2xl">
+        <button class="absolute top-6 right-6 text-white bg-gray-800/80 rounded-full p-2 hover:bg-gray-700" aria-label="Chiudi immagine">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        const images = {
+            bike: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Bike.gif",
+            legExtension: "https://fitnessprogramer.com/wp-content/uploads/2021/02/LEG-EXTENSION.gif",
+            seatedLegCurl: "https://fitnessprogramer.com/wp-content/uploads/2021/08/Seated-Leg-Curl.gif",
+            seatedCalf: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Lever-Seated-Calf-Raise.gif",
+            deadBug: "https://fitnessprogramer.com/wp-content/uploads/2021/05/Dead-Bug.gif",
+            legPress: "https://fitnessprogramer.com/wp-content/uploads/2015/11/Leg-Press.gif",
+            gluteBridge: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Glute-Bridge-.gif",
+            latMachine: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif",
+            seatedRow: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif",
+            pulldown: "https://api.smartworkout.app/asset/image/4977ee02-11c1-4028-8a97-310c8dec6cc3",
+            rearDelt: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Rear-Delt-Machine-Flys.gif",
+            crunchMachine: "https://static.strengthlevel.com/images/exercises/machine-seated-crunch/machine-seated-crunch-800.jpg",
+            chestPress: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Chest-Press-Machine.gif",
+            pecDeck: "https://fitnessprogramer.com/wp-content/uploads/2021/05/10301301-Lever-Pec-Deck-Fly_Chest_720.gif",
+            lateralRaise: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Lateral-Raise-Machine.gif",
+            shoulderPress: "https://fitnessprogramer.com/wp-content/uploads/2021/04/Lever-Shoulder-Press.gif",
+            bulgarian: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Bodyweight-Bulgarian-Split-Squat.gif",
+            jumpSquat: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Jump-Squat.gif",
+            lateralStepUp: "https://fitnessprogramer.com/wp-content/uploads/2022/04/Lateral-Step-up.gif",
+            skater: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Skater.gif"
+        };
+
+        const fallbackImage = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNzQxNTEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiIGR5PSIuM2VtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+LPC90ZXh0Pjwvc3ZnPg==";
+
+        const workoutData = [
+            {
+                day: "Giorno 1",
+                focus: "Gambe + circuito metabolico",
+                duration: "55–60 min",
+                color: "from-red-500 to-rose-500",
+                note: "Priorità a controllo e continuità. Nessun esercizio deve produrre pizzicore profondo all'anca.",
+                blocks: [
+                    {
+                        title: "Riscaldamento",
+                        format: "8 minuti",
+                        exercises: [
+                            { name: "Cyclette facile", dose: "8 min", equipment: "Cyclette", img: images.bike, desc: "Pedalata fluida, resistenza bassa, busto alto.", care: "Sella abbastanza alta da non chiudere troppo l'anca." }
+                        ]
+                    },
+                    {
+                        title: "Circuito A",
+                        format: "3 giri · 30″ tra esercizi · 75″ tra giri",
+                        exercises: [
+                            { name: "Leg extension", dose: "15 rep", equipment: "Macchina", img: images.legExtension, desc: "Estendi senza slancio e torna in 2–3 secondi.", care: "Mani solo appoggiate; non stringere le maniglie." },
+                            { name: "Leg curl seduto", dose: "12–15 rep", equipment: "Macchina", img: images.seatedLegCurl, desc: "Chiudi i talloni sotto il sedile e controlla il ritorno.", care: "Regola il rullo; schiena sempre aderente." },
+                            { name: "Calf seduto", dose: "15–20 rep", equipment: "Macchina", img: images.seatedCalf, desc: "Salita completa, pausa di 1 secondo e discesa lenta.", care: "Movimento alla caviglia, senza rimbalzi." },
+                            { name: "Dead bug", dose: "8/8 rep", equipment: "Tappetino", img: images.deadBug, desc: "Alterna gamba e braccio opposti mantenendo la zona lombare stabile.", care: "Riduci l'escursione della gamba se serve più controllo." },
+                            { name: "Squat jump", dose: "8 rep", equipment: "Corpo libero", img: images.jumpSquat, desc: "Scendi in squat, salta in verticale e atterra morbida piegando le ginocchia.", care: "Alternativa senza impatto: squat rapido con salita sulle punte." }
+                        ]
+                    },
+                    {
+                        title: "Pesi controllati",
+                        format: "75–90″ di recupero",
+                        exercises: [
+                            { name: "Leg press", dose: "3 × 10–12", equipment: "Macchina", img: images.legPress, desc: "Piedi alla larghezza del bacino, spinta uniforme.", care: "Scendi solo finché bacino e anca restano comodi; niente profondità forzata." },
+                            { name: "Affondi bulgari", dose: "3 × 10/10", equipment: "Panca · corpo libero", img: images.bulgarian, desc: "Piede posteriore sulla panca, scendi verticale e spingi dal tallone anteriore.", care: "Inizia a corpo libero; panca bassa e ROM controllato." },
+                            { name: "Glute bridge", dose: "2 × 12", equipment: "Tappetino", img: images.gluteBridge, desc: "Spingi dai talloni e solleva il bacino senza inarcare la schiena.", care: "Pausa di 2 secondi in alto, poi discesa lenta." }
+                        ]
+                    },
+                    {
+                        title: "Finale cardio",
+                        format: "12 minuti",
+                        exercises: [
+                            { name: "Spinning: velocità + salita", dose: "4 giri", equipment: "Cyclette", img: images.bike, desc: "1' seduta veloce 90–100 rpm + 45″ in piedi in salita 60–70 rpm + 1'15″ seduta facile.", care: "RPE 7 nelle fasi attive; aumenta la resistenza nella salita e alleggerisci nel recupero." }
+                        ]
+                    }
+                ]
+            },
+            {
+                day: "Giorno 2",
+                focus: "Dorso + postura + spinning",
+                duration: "55–60 min",
+                color: "from-green-500 to-emerald-500",
+                note: "Dorso sì, ma con presa rilassata. Se possibile usa maniglie neutre, straps o polsini sotto supervisione.",
+                blocks: [
+                    {
+                        title: "Riscaldamento",
+                        format: "8 minuti",
+                        exercises: [
+                            { name: "Cyclette progressiva", dose: "8 min", equipment: "Cyclette", img: images.bike, desc: "2' facili + 4' aumentando gradualmente cadenza e resistenza + 2' moderati.", care: "Tutta seduta: prepara le gambe senza affaticarle prima del dorso." }
+                        ]
+                    },
+                    {
+                        title: "Dorso",
+                        format: "3 serie · 75–90″ di recupero",
+                        exercises: [
+                            { name: "Lat machine presa neutra", dose: "3 × 10–12", equipment: "Macchina / straps", img: images.latMachine, desc: "Porta i gomiti verso i fianchi senza dondolare.", care: "Presa morbida; interrompi se dita o polsi aumentano il dolore." },
+                            { name: "Pulley con petto supportato", dose: "3 × 12", equipment: "Macchina / straps", img: images.seatedRow, desc: "Tira i gomiti indietro mantenendo il torace stabile.", care: "Scegli maniglie neutre e non schiacciare l'impugnatura." },
+                            { name: "Pulldown braccia tese", dose: "3 × 12–15", equipment: "Cavo + polsini", img: images.pulldown, desc: "Spalle basse, braccia quasi tese, traiettoria verso le cosce.", care: "Preferisci polsini sugli avambracci per togliere lavoro alla presa." },
+                            { name: "Reverse pec deck", dose: "3 × 15", equipment: "Macchina", img: images.rearDelt, desc: "Apri i gomiti e avvicina le scapole con controllo.", care: "Se la macchina lo consente, spingi con gli avambracci sui cuscinetti." }
+                        ]
+                    },
+                    {
+                        title: "Core + spinning",
+                        format: "3 serie, poi piramide da 12 min",
+                        exercises: [
+                            { name: "Crunch machine", dose: "3 × 15", equipment: "Macchina", img: images.crunchMachine, desc: "Chiudi le costole verso il bacino senza tirare con le braccia.", care: "Mani aperte e rilassate sui supporti." },
+                            { name: "Spinning piramide", dose: "2 giri", equipment: "Cyclette", img: images.bike, desc: "3' seduta 80–90 rpm RPE 5 + 2' seduta 90–100 rpm RPE 7 + 1' in piedi, salita 60–70 rpm RPE 7.", care: "Scarica la resistenza a ogni nuovo giro e ricostruisci la salita." }
+                        ]
+                    }
+                ]
+            },
+            {
+                day: "Giorno 3",
+                focus: "Circuito total body",
+                duration: "55 min",
+                color: "from-blue-500 to-cyan-500",
+                note: "Carichi medio-leggeri e ritmo continuo: la qualità delle ripetizioni conta più della velocità.",
+                blocks: [
+                    {
+                        title: "Riscaldamento",
+                        format: "8 minuti",
+                        exercises: [
+                            { name: "Cyclette progressiva", dose: "8 min", equipment: "Cyclette", img: images.bike, desc: "Parti facile e arriva gradualmente a RPE 5.", care: "Busto comodo, mani appoggiate senza caricare." }
+                        ]
+                    },
+                    {
+                        title: "Circuito total body",
+                        format: "3 giri · 30″ tra esercizi · 90″ tra giri",
+                        exercises: [
+                            { name: "Chest press macchina", dose: "12 rep", equipment: "Macchina", img: images.chestPress, desc: "Spingi in avanti senza bloccare i gomiti.", care: "Maniglie neutre, presa minima; sostituisci con pec deck se le mani danno fastidio." },
+                            { name: "Affondi bulgari", dose: "10/10 rep", equipment: "Panca · corpo libero", img: images.bulgarian, desc: "Busto alto, ginocchio in linea con il piede, spinta dal tallone.", care: "Usa una panca bassa e un appoggio leggero per l'equilibrio." },
+                            { name: "Pectoral machine", dose: "12–15 rep", equipment: "Macchina", img: images.pecDeck, desc: "Avvicina i gomiti come in un abbraccio e torna lentamente.", care: "Usa i cuscinetti sugli avambracci, non la presa delle mani." },
+                            { name: "Squat jump", dose: "8–10 rep", equipment: "Corpo libero", img: images.jumpSquat, desc: "Salto verticale breve, atterraggio silenzioso e nuova discesa controllata.", care: "Se perdi controllo, passa allo squat rapido senza salto." },
+                            { name: "Alzate laterali macchina", dose: "12–15 rep", equipment: "Macchina", img: images.lateralRaise, desc: "Solleva dai gomiti fino alla linea delle spalle.", care: "Appoggia i gomiti sui pad: le mani restano morbide." },
+                            { name: "Skater laterali", dose: "30 sec", equipment: "Corpo libero", img: images.skater, desc: "Spostati lateralmente da una gamba all'altra con ritmo e controllo.", care: "Versione più facile: passo laterale ampio senza salto." },
+                            { name: "Dead bug", dose: "8/8 rep", equipment: "Tappetino", img: images.deadBug, desc: "Movimento lento, espira mentre allontani gli arti.", care: "Lascia le braccia ferme se muoverle affatica le mani." }
+                        ]
+                    },
+                    {
+                        title: "Finale cardio",
+                        format: "10 minuti",
+                        exercises: [
+                            { name: "Spinning misto", dose: "5 giri", equipment: "Cyclette", img: images.bike, desc: "30″ in piedi in salita + 60″ seduta veloce + 30″ seduta facile.", care: "Cambia resistenza a ogni fase e conserva una pedalata sempre fluida." }
+                        ]
+                    }
+                ]
+            },
+            {
+                day: "Giorno 4",
+                focus: "Gambe B + condizionamento",
+                duration: "55–60 min",
+                color: "from-purple-500 to-fuchsia-500",
+                note: "Secondo richiamo gambe: combina macchine, lavoro unilaterale e cardio a variazione di intensità.",
+                blocks: [
+                    {
+                        title: "Riscaldamento",
+                        format: "8 minuti",
+                        exercises: [
+                            { name: "Spinning tecnico", dose: "8 min", equipment: "Cyclette", img: images.bike, desc: "1' seduta facile + 30″ in piedi con resistenza media, ripetendo fino a 8 minuti.", care: "Transizioni morbide: alzati solo quando la resistenza sostiene la pedalata." }
+                        ]
+                    },
+                    {
+                        title: "Pesi gambe",
+                        format: "75–90″ di recupero",
+                        exercises: [
+                            { name: "Leg press controllata", dose: "4 × 12", equipment: "Macchina", img: images.legPress, desc: "Spingi con tutto il piede e non chiudere le ginocchia.", care: "Usa un'escursione più corta se senti compressione all'anca." },
+                            { name: "Leg curl seduto", dose: "4 × 10–12", equipment: "Macchina", img: images.seatedLegCurl, desc: "Pausa di 1 secondo in chiusura, ritorno in 3 secondi.", care: "Non sollevare il bacino dal sedile." },
+                            { name: "Leg extension", dose: "3 × 15", equipment: "Macchina", img: images.legExtension, desc: "Carico medio-leggero e cadenza regolare.", care: "Lascia le mani rilassate." },
+                            { name: "Glute bridge", dose: "3 × 10–12", equipment: "Tappetino", img: images.gluteBridge, desc: "Contrai i glutei in alto per 2 secondi.", care: "Corpo libero; riduci l'altezza o elimina se compare dolore all'anca." },
+                            { name: "Step-up laterale", dose: "3 × 10/10", equipment: "Step basso", img: images.lateralStepUp, desc: "Sali lateralmente sullo step e porta il bacino in completa estensione.", care: "Parti da un'altezza bassa e scendi senza lasciarti cadere." },
+                            { name: "Calf seduto", dose: "3 × 15–20", equipment: "Macchina", img: images.seatedCalf, desc: "Escursione completa e ritmo senza rimbalzi.", care: "Spinta simmetrica sui due piedi." }
+                        ]
+                    },
+                    {
+                        title: "Finale metabolico",
+                        format: "10 minuti",
+                        exercises: [
+                            { name: "Spinning 45/75", dose: "5 giri", equipment: "Cyclette", img: images.bike, desc: "45″ in piedi in salita RPE 7 + 75″ seduta facile RPE 4.", care: "Alza la resistenza prima di alzarti; alleggerisci appena torni seduta." }
+                        ]
+                    }
+                ]
+            },
+            {
+                day: "Giorno 5",
+                focus: "Upper body + circuito finale",
+                duration: "55–60 min",
+                color: "from-yellow-500 to-orange-500",
+                note: "Seduta a presa ridotta: macchine guidate e appoggi sugli avambracci quando disponibili.",
+                blocks: [
+                    {
+                        title: "Riscaldamento",
+                        format: "7 minuti",
+                        exercises: [
+                            { name: "Cyclette facile", dose: "7 min", equipment: "Cyclette", img: images.bike, desc: "Ritmo comodo, respiri lunghi e regolari.", care: "Non scaricare il peso del busto sulle mani." }
+                        ]
+                    },
+                    {
+                        title: "Circuito upper",
+                        format: "3 giri · 30″ tra esercizi · 90″ tra giri",
+                        exercises: [
+                            { name: "Lat machine neutra", dose: "12 rep", equipment: "Macchina / straps", img: images.latMachine, desc: "Petto alto, gomiti verso il basso, ritorno completo.", care: "Presa leggera e polso neutro." },
+                            { name: "Chest press macchina", dose: "12 rep", equipment: "Macchina", img: images.chestPress, desc: "Spinta fluida senza bloccare le articolazioni.", care: "Riduci subito il carico se devi stringere forte." },
+                            { name: "Pulley supportato", dose: "12 rep", equipment: "Macchina / straps", img: images.seatedRow, desc: "Tira con i gomiti e chiudi le scapole.", care: "Non avvolgere con forza le dita sulle maniglie." },
+                            { name: "Reverse pec deck", dose: "15 rep", equipment: "Macchina", img: images.rearDelt, desc: "Apri fino a sentire il dorso lavorare, senza slancio.", care: "Preferisci l'appoggio sugli avambracci." },
+                            { name: "Crunch machine", dose: "15 rep", equipment: "Macchina", img: images.crunchMachine, desc: "Espira in chiusura e torna lentamente.", care: "Mani aperte, nessuna trazione con le braccia." }
+                        ]
+                    },
+                    {
+                        title: "Spalle controllate",
+                        format: "3 serie · 60–75″ di recupero",
+                        exercises: [
+                            { name: "Shoulder press macchina", dose: "3 × 10–12", equipment: "Macchina", img: images.shoulderPress, desc: "Schiena aderente e gomiti sotto le maniglie.", care: "Presa neutra e carico che non richieda di serrare le mani." },
+                            { name: "Alzate laterali macchina", dose: "3 × 15", equipment: "Macchina", img: images.lateralRaise, desc: "Guida il movimento dai gomiti, senza alzare le spalle.", care: "Usa i pad per scaricare completamente la presa." }
+                        ]
+                    },
+                    {
+                        title: "Finale spinning",
+                        format: "10 minuti",
+                        exercises: [
+                            { name: "Spinning a onde", dose: "2 giri + defaticamento", equipment: "Cyclette", img: images.bike, desc: "2' seduta veloce con resistenza media + 1' in piedi in salita + 1' seduta facile. Chiudi con 2' molto facili.", care: "La cadenza sale nelle fasi veloci; la resistenza sale nelle fasi in piedi." }
+                        ]
+                    }
+                ]
+            }
+        ];
+
+        const container = document.getElementById("workout-container");
+
+        workoutData.forEach((day, dayIndex) => {
+            const blocksHTML = day.blocks.map((block) => {
+                const exercisesHTML = block.exercises.map((exercise, exerciseIndex) => `
+                    <article class="bg-gray-800 rounded-xl mb-3 border border-gray-700/60 overflow-hidden shadow-sm">
+                        <div class="flex items-stretch">
+                            <button class="relative w-20 sm:w-24 shrink-0 bg-white border-r border-gray-700" onclick="openModal('${exercise.img}')" aria-label="Ingrandisci immagine: ${exercise.name}">
+                                <img src="${exercise.img}" alt="${exercise.name}" class="w-full h-full min-h-28 object-contain p-1" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=fallbackImage">
+                                <span class="absolute top-0 left-0 bg-gray-950/75 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-br-lg">${exerciseIndex + 1}</span>
+                            </button>
+                            <div class="flex-1 min-w-0 p-3">
+                                <div class="flex items-start justify-between gap-2">
+                                    <div class="min-w-0">
+                                        <h4 class="font-bold text-sm text-gray-100 leading-tight">${exercise.name}</h4>
+                                        <p class="text-[9px] font-bold text-gray-500 mt-1 uppercase tracking-wider">${exercise.equipment}</p>
+                                    </div>
+                                    <div class="shrink-0 bg-orange-500/10 border border-orange-500/25 rounded-lg px-2 py-1.5 text-center">
+                                        <span class="block text-[8px] text-orange-300 uppercase font-bold tracking-wider">Dose</span>
+                                        <span class="block text-xs text-orange-400 font-black mt-0.5 whitespace-nowrap">${exercise.dose}</span>
+                                    </div>
+                                </div>
+                                <p class="text-[11px] text-gray-300 mt-2 leading-relaxed">${exercise.desc}</p>
+                                <p class="text-[10px] text-sky-200/80 mt-2 leading-relaxed border-l-2 border-sky-500/50 pl-2"><strong>Adattamento:</strong> ${exercise.care}</p>
+                            </div>
+                        </div>
+                    </article>
+                `).join("");
+
+                return `
+                    <section class="mb-5 last:mb-0">
+                        <div class="flex items-center justify-between gap-3 mb-2 px-1">
+                            <h3 class="text-xs font-extrabold uppercase tracking-[0.14em] text-gray-200">${block.title}</h3>
+                            <span class="text-[9px] text-gray-400 text-right">${block.format}</span>
+                        </div>
+                        ${exercisesHTML}
+                    </section>
+                `;
+            }).join("");
+
+            container.innerHTML += `
+                <details class="bg-gray-900 rounded-2xl border border-gray-800 shadow-sm overflow-hidden" ${dayIndex === 0 ? "open" : ""}>
+                    <summary class="cursor-pointer p-4 flex justify-between items-center select-none bg-gray-800/50 hover:bg-gray-800 transition-colors">
+                        <div class="flex items-center space-x-3 min-w-0">
+                            <div class="w-2 h-12 shrink-0 rounded-full bg-gradient-to-b ${day.color}"></div>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <h2 class="text-lg font-bold text-white">${day.day}</h2>
+                                    <span class="text-[9px] text-orange-300 bg-orange-500/10 border border-orange-500/20 px-2 py-0.5 rounded-full">${day.duration}</span>
+                                </div>
+                                <p class="text-xs text-gray-400 font-medium truncate">${day.focus}</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-900 p-1.5 rounded-full border border-gray-700 chevron shrink-0 ml-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </div>
+                    </summary>
+                    <div class="p-4 pt-3 bg-gray-900">
+                        <p class="text-[11px] text-gray-400 italic leading-relaxed mb-4 border-l-2 border-gray-700 pl-3">${day.note}</p>
+                        ${blocksHTML}
+                    </div>
+                </details>
+            `;
+        });
+
+        document.querySelectorAll("#workout-container > details").forEach((targetDetail) => {
+            targetDetail.addEventListener("toggle", () => {
+                if (!targetDetail.open) return;
+                document.querySelectorAll("#workout-container > details").forEach((detail) => {
+                    if (detail !== targetDetail) detail.removeAttribute("open");
+                });
+            });
+        });
+
+        function openModal(imgSrc) {
+            document.getElementById("modal-image").src = imgSrc;
+            document.getElementById("image-modal").classList.remove("hidden");
+            document.body.classList.add("overflow-hidden");
+        }
+
+        function closeModal() {
+            document.getElementById("image-modal").classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        }
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeModal();
+        });
+    </script>
+</body>
+</html>
