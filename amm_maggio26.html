@@ -4,277 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>Scheda Allenamento | 5 Giorni</title>
-    <!-- Tailwind CSS per il design responsivo e moderno -->
+    <title>Asia e Mario | Scheda 5 Giorni</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="admin-core.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-        /* Stili per l'accordion nativo */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        details[open] summary ~ * {
-            animation: sweep .3s ease-in-out;
-        }
-        @keyframes sweep {
-            0%    {opacity: 0; transform: translateY(-10px)}
-            100%  {opacity: 1; transform: translateY(0)}
-        }
-        .chevron {
-            transition: transform 0.3s ease;
-        }
-        details[open] summary .chevron {
-            transform: rotate(180deg);
-        }
+        :root { color-scheme: dark; }
+        body { font-family: Inter, sans-serif; -webkit-tap-highlight-color: transparent; }
+        .font-display { font-family: 'Barlow Condensed', sans-serif; }
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .28s ease-in-out; }
+        details[open] summary .chevron { transform: rotate(180deg); }
+        .chevron { transition: transform .25s ease; }
+        .player-safe { padding-top: max(1rem, env(safe-area-inset-top)); padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+        .player-image { max-height: min(50vh, 500px); }
+        @keyframes sweep { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse-ring { 0%,100% { box-shadow: 0 0 0 0 rgba(34,211,238,.35); } 50% { box-shadow: 0 0 0 10px rgba(34,211,238,0); } }
+        .play-pulse { animation: pulse-ring 2.2s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 pb-12">
-
-    <!-- Intestazione Epica in stile Romano -->
-    <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
-        <!-- Sfondo Immagine -->
-        <img src="mm2.png" alt="Deus" class="absolute inset-0 w-full h-full object-cover object-[50%_80%] opacity-40 grayscale contrast-125 mix-blend-luminosity">
-        
-        <!-- Gradiente di sfumatura per far leggere bene il testo -->
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
-        
-        <!-- Testo Epico -->
-        <div class="relative z-10 px-4 text-center mt-6">
-            <h2 class="text-[15px] sm:text-lg font-bold uppercase text-orange-200 font-['Cinzel'] leading-[2.2] tracking-[0.25em]" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
-                Gloriam putate quod<br>Deus ipse vos<br>ad bellum exercet
-            </h2>
-            <div class="mt-5 flex justify-center">
-                <div class="w-32 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
-            </div>
+<body class="bg-slate-950 pb-12 text-slate-100 selection:bg-cyan-400/30">
+    <div class="relative h-72 overflow-hidden border-b border-cyan-400/20 bg-slate-950">
+        <img src="mm2.png" alt="" class="absolute inset-0 h-full w-full object-cover object-[50%_80%] opacity-25 grayscale contrast-125 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(6,182,212,0.24),transparent_44%)]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-blue-950/20"></div>
+        <div class="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-4 text-center">
+            <p class="mb-2 text-[10px] font-extrabold uppercase tracking-[0.36em] text-cyan-300/80">Strength · Hypertrophy · Control</p>
+            <h2 class="font-display text-5xl font-black uppercase italic leading-none tracking-tight text-white sm:text-6xl" style="text-shadow:0 10px 35px rgba(6,182,212,.35)">Asia <span class="text-cyan-400">&</span><br>Mario</h2>
+            <p class="mt-4 rounded-full border border-white/10 bg-slate-950/45 px-4 py-1.5 text-xs font-semibold text-slate-300 backdrop-blur">5 giorni · forza e ipertrofia</p>
         </div>
     </div>
 
-    <!-- App Header -->
-    <header class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 z-50">
-        <div class="max-w-md mx-auto flex justify-between items-center">
+    <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/95 p-4 backdrop-blur-md">
+        <div class="mx-auto flex max-w-xl items-center justify-between gap-4">
             <div>
-                <h1 class="text-xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                   Scheda Asia e Mario
-                </h1>
-                <p class="text-xs text-gray-400 font-medium mt-0.5">5 Giorni</p>
+                <h1 class="font-display text-2xl font-black uppercase italic tracking-wide text-white">Scheda <span class="text-cyan-400">Asia e Mario</span></h1>
+                <p class="mt-0.5 text-xs font-medium text-slate-400">5 giorni · split muscolare</p>
             </div>
-            <div class="bg-gray-800 p-2 rounded-lg border border-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-            </div>
+            <div class="rounded-xl border border-cyan-400/20 bg-cyan-400/10 p-2.5" aria-label="Programma cinque giorni"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></svg></div>
         </div>
     </header>
 
-    <!-- Main Container (Mobile Constrained) -->
-    <main class="max-w-md mx-auto p-4">
-        
-        <!-- Info Card (Recuperi) -->
-        <div class="bg-gray-900 border border-orange-500/30 rounded-xl p-4 mb-6 flex items-start space-x-4 shadow-lg shadow-orange-500/5">
-            <div class="bg-orange-500/20 p-2 rounded-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+    <main class="mx-auto max-w-xl p-4">
+        <section class="mb-4 rounded-2xl border border-cyan-400/20 bg-slate-900 p-4 shadow-xl shadow-cyan-950/20">
+            <div class="flex items-start gap-3">
+                <div class="shrink-0 rounded-xl bg-cyan-400/10 p-2.5"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg></div>
+                <div><h3 class="text-sm font-extrabold text-white">Tempi di recupero</h3><p class="mt-1.5 text-xs leading-relaxed text-slate-400">Sui multiarticolari recupera almeno <strong class="text-cyan-300">120 secondi</strong>; in base alla fatica puoi arrivare fino a 3 minuti. Mantieni tecnica e controllo prima di aumentare il carico.</p></div>
             </div>
-            <div>
-                <h3 class="text-sm font-bold text-gray-200">Tempi di Recupero</h3>
-                <p class="text-xs text-gray-400 mt-1">
-                    • Multiarticolari: <span class="font-bold text-orange-400">120 sec</span><br>
-                    • o comunque da gestire secondo fatica si può arrivare fino a 3 minuti.
-                </p>
+        </section>
+
+        <section class="mb-5 overflow-hidden rounded-2xl border border-cyan-300/35 bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-slate-900 p-4 shadow-xl shadow-cyan-950/30">
+            <div class="flex items-center gap-4">
+                <button id="launch-player" type="button" onclick="openExercisePlayer(0)" class="play-pulse grid h-16 w-16 shrink-0 place-items-center rounded-full bg-cyan-400 text-slate-950 transition active:scale-95" aria-label="Avvia la modalità esercizi a schermo intero"><svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+                <div class="min-w-0 flex-1"><p class="text-[10px] font-black uppercase tracking-[0.28em] text-cyan-300">Modalità esecuzione</p><h2 class="font-display mt-0.5 text-2xl font-black uppercase italic leading-tight text-white">Guarda tutti gli esercizi</h2><p class="mt-1 text-xs leading-relaxed text-slate-400">Premi Play per scorrere immagini, serie, ripetizioni e attrezzatura a schermo intero.</p></div>
             </div>
-        </div>
-
-        <!-- Workout Days Container -->
-        <div id="workout-container" class="space-y-4">
-            <!-- Il contenuto verrà generato dal Javascript qui sotto -->
-        </div>
-
+        </section>
+        <div id="workout-container" class="space-y-4"></div>
     </main>
 
-    <!-- Modale per ingrandire le immagini -->
-    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer transition-opacity" onclick="closeModal()">
-        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl">
-        <button class="absolute top-6 right-6 text-white bg-gray-800/80 rounded-full p-2 hover:bg-gray-700 transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-        </button>
+    <div id="image-modal" data-admin-noedit="1" class="fixed inset-0 z-[100] hidden cursor-pointer items-center justify-center bg-black/90 p-4 backdrop-blur-sm" onclick="closeImageModal()">
+        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-h-[82vh] max-w-full rounded-2xl bg-white object-contain shadow-2xl">
+        <button type="button" class="absolute right-5 top-5 rounded-full bg-slate-900/90 p-3 text-white" aria-label="Chiudi immagine"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+
+    <div id="exercise-player" data-admin-noedit="1" class="player-safe fixed inset-0 z-[200] hidden flex-col overflow-y-auto bg-slate-950">
+        <div class="mx-auto flex min-h-full w-full max-w-3xl flex-col px-4">
+            <div class="flex items-center gap-3 py-2">
+                <button type="button" onclick="closeExercisePlayer()" class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-700 bg-slate-900 text-white active:scale-95" aria-label="Chiudi player"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+                <div class="min-w-0 flex-1"><div class="flex items-center justify-between gap-3 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400"><span id="player-day">Giorno 1</span><span id="player-counter">1 / 1</span></div><div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-800"><div id="player-progress" class="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"></div></div></div>
+            </div>
+            <div class="flex flex-1 flex-col justify-center pb-3">
+                <div class="relative overflow-hidden rounded-3xl border border-slate-700 bg-white shadow-2xl shadow-cyan-950/30"><img id="player-image" src="" alt="" class="player-image h-full w-full object-contain" referrerpolicy="no-referrer"><div id="player-equipment" class="absolute left-3 top-3 rounded-full border border-white/20 bg-slate-950/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-cyan-200 backdrop-blur">Attrezzatura</div></div>
+                <div class="px-1 pt-4">
+                    <p id="player-focus" class="text-[10px] font-black uppercase tracking-[0.25em] text-cyan-400">Focus</p>
+                    <h2 id="player-name" class="font-display mt-1 text-4xl font-black uppercase italic leading-none text-white">Esercizio</h2>
+                    <div class="mt-4 grid grid-cols-2 gap-3"><div class="rounded-2xl border border-cyan-400/20 bg-cyan-400/10 p-3"><p class="text-[10px] font-black uppercase tracking-wider text-cyan-300">Serie</p><p id="player-sets" class="mt-1 text-xl font-black text-white">4</p></div><div class="rounded-2xl border border-blue-400/20 bg-blue-400/10 p-3"><p class="text-[10px] font-black uppercase tracking-wider text-blue-300">Ripetizioni</p><p id="player-reps" class="mt-1 text-xl font-black text-white">8–10</p></div></div>
+                </div>
+            </div>
+            <div class="sticky bottom-0 grid grid-cols-2 gap-3 border-t border-slate-800 bg-slate-950/95 py-3 backdrop-blur"><button id="player-prev" type="button" onclick="changeExercise(-1)" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-30">← Precedente</button><button id="player-next" type="button" onclick="changeExercise(1)" class="rounded-xl bg-cyan-400 px-4 py-3 text-sm font-extrabold text-slate-950 active:scale-[.98]">Successivo →</button></div>
+        </div>
     </div>
 
     <script>
-        // Dati della scheda di allenamento
+        const PLAN_ID = "ASIAMARIO";
+        const adminText = (key, fallback) => PlanAdmin.mark(PLAN_ID, key, fallback);
+        const fallbackImage = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiB2aWV3Qm94PSIwIDAgODAwIDYwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNlMmU4ZjAiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSIyNTAiIHI9IjkwIiBmaWxsPSIjMDg4ZmEzIiBvcGFjaXR5PSIuMTUiLz48cGF0aCBkPSJNMzcwIDIwMHYxMDBsODAtNTB6IiBmaWxsPSIjMDg4ZmEzIi8+PHRleHQgeD0iNDAwIiB5PSIzOTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMzM0MTU1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Fc2VjdXppb25lIGVzZXJjaXppbzwvdGV4dD48L3N2Zz4=";
         const workoutData = [
-            {
-                day: "Giorno 1",
-                focus: "Petto + Addome",
-                color: "from-blue-500 to-cyan-500",
-                exercises: [
-                    { name: "Spinte su panca piana con manubri", sets: "4", reps: "8-10", machine: "Manubri", img: "https://www.evolutionfit.it/wp-content/uploads/pettorali-spinte-manubri-panca-piana-ag.png" },
-                    { name: "Panca super inclined", sets: "4", reps: "10-12", machine: "Bilanciere/Manubri", img: "https://www.panattasport.com/wp-content/uploads/2023/03/1fw033-450x450.webp" },
-                    { name: "Chest press macchina", sets: "4", reps: "8-10", machine: "Macchinario Panatta", img: "https://s3assets.skimble.com/assets/603850/image_full.jpg" },
-                    { name: "Pectoral machine", sets: "4", reps: "12-15", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif" },
-                    { name: "Cavi alti (o multi flight)", sets: "4", reps: "10-12", machine: "Cavi", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Crossover.gif" },
-                    { name: "Crunch macchina", sets: "4", reps: "15-20", machine: "Macchinario Panatta", img: "https://static.strengthlevel.com/images/exercises/machine-seated-crunch/machine-seated-crunch-800.jpg" },
-                    { name: "Plank", sets: "4", reps: "30-60 sec", machine: "Corpo libero", img: "https://www.spine-center.it/images/contenuti/news/il-plank-come-esercizio-terapeutico-in-campo-riabilitativo.jpg" }
-                ]
-            },
-            {
-                day: "Giorno 2",
-                focus: "Schiena + Collo",
-                color: "from-green-500 to-emerald-500",
-                exercises: [
-                    { name: "Lat machine presa larga", sets: "4", reps: "8-10", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif" },
-                    { name: "Pulley triangolo", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" },
-                    { name: "Pulley cavo basso (presa inversa)", sets: "4", reps: "10-12", machine: "Cavi / Barra", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi7EEQpJ5CK81Wm2TRLmP1_SxkhsXtpm6Vgw&s" },
-                    { name: "Pulldown braccia tese", sets: "4", reps: "12-15", machine: "Cavi", img: "https://api.smartworkout.app/asset/image/4977ee02-11c1-4028-8a97-310c8dec6cc3" },
-                    { name: "Hyperextension (Lombari)", sets: "4", reps: "12-15", machine: "Panca / Panatta", img: "https://aipersonaltrainer.com/wp-content/uploads/panca-hyperextension.jpg" },
-                    { name: "Collo - Flessioni avanti", sets: "3", reps: "12-15", machine: "Corpo libero / Panca", img: "https://static.strengthlevel.com/images/exercises/neck-curl/neck-curl-800.jpg" },
-                    { name: "Collo - Estensioni dietro", sets: "3", reps: "12-15", machine: "Corpo libero / Panca", img: "https://static.strengthlevel.com/images/exercises/neck-extension/neck-extension-800.jpg" }
-                ]
-            },
-            {
-                day: "Giorno 3",
-                focus: "Gambe",
-                color: "from-red-500 to-rose-500",
-                exercises: [
-                    { name: "Hack Squat", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/quadricipiti-hack-squat-ag.png" },
-                    { name: "Leg press", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/leg-press-orizontale-ag.png" },
-                    { name: "Leg extension", sets: "4", reps: "12-15", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/quadricipiti-leg-extension-ag.png" },
-                    { name: "Leg curl sdraiato", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/femorali-leg-curl-sdraiato-bg.png" },
-                    { name: "Calf seduti", sets: "4", reps: "15-20", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/polpacci-calf-machine-seduto-ag.png" }
-                ]
-            },
-            {
-                day: "Giorno 4",
-                focus: "Spalle + Addome",
-                color: "from-purple-500 to-fuchsia-500",
-                exercises: [
-                    { name: "Alzate laterali", sets: "4", reps: "12-15", machine: "Manubri", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" },
-                    { name: "Shoulder press macchina", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://static.strengthlevel.com/images/exercises/machine-shoulder-press/machine-shoulder-press-800.jpg" },
-                    { name: "Alzate posteriori a 45° su panca", sets: "4", reps: "12-15", machine: "Manubri / Panca", img: "https://www.evolutionfit.it/wp-content/uploads/spalle-volare-inverso-manubri-panca-alta-bg.png" },
-                    { name: "Six way", sets: "4", reps: "8-10", machine: "Manubri leggeri", img: "https://s3assets.skimble.com/assets/3111926/image_full.jpg" },
-                    { name: "Addome - Leg raise", sets: "4", reps: "15", machine: "Corpo libero / Sbarra", img: "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/29631101-Captains-Chair-Straight-Leg-Raise_Waist_small.jpg" },
-                    { name: "Addome - Crunch inverso", sets: "4", reps: "15-20", machine: "Tappetino", img: "https://www.pesoforma.com/wp-content/uploads/esecuzione-crunch-inverso-pesoforma.png" }
-                ]
-            },
-            {
-                day: "Giorno 5",
-                focus: "Braccia",
-                color: "from-yellow-500 to-orange-500",
-                exercises: [
-                    { name: "Curl al cavo barra EZ", sets: "4", reps: "8-10", machine: "Cavi", img: "https://static.strengthlevel.com/images/exercises/cable-bicep-curl/cable-bicep-curl-800.jpg" },
-                    { name: "Curl manubri alternati", sets: "4", reps: "10-12", machine: "Manubri", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif" },
-                    { name: "Curl panca inclinata", sets: "4", reps: "12", machine: "Manubri / Panca", img: "https://www.my-personaltrainer.it/2025/04/01/curl-manubri-panca-inclinata_900x760.jpeg" },
-                    { name: "Pushdown cavo", sets: "4", reps: "10-12", machine: "Cavi / Corda", img: "https://articoli.nonsolofitness.it/resources/big/775dd5778455d8a268e590c1005152ea.jpg.webp" },
-                    { name: "French press cavo basso nuca", sets: "4", reps: "10-12", machine: "Cavi", img: "https://eusebio.pro/wp-content/uploads/2018/01/StandingTwoArmOverheadRopeTricepsExtensions-223x300.jpg" },
-                    { name: "Kickback al cavo basso", sets: "4", reps: "12-15", machine: "Cavi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPrRr66UAHS10rIwYNIeCbxA4cNzMTUyrWfQ&s" }
-                ]
-            }
+            { day: "Giorno 1", focus: "Petto + Addome", color: "from-cyan-400 to-blue-500", exercises: [
+                { name: "Spinte su panca piana con manubri", sets: "4", reps: "8-10", machine: "Manubri", img: "https://www.evolutionfit.it/wp-content/uploads/pettorali-spinte-manubri-panca-piana-ag.png" },
+                { name: "Panca super inclined", sets: "4", reps: "10-12", machine: "Bilanciere/Manubri", img: "https://www.panattasport.com/wp-content/uploads/2023/03/1fw033-450x450.webp" },
+                { name: "Chest press macchina", sets: "4", reps: "8-10", machine: "Macchinario Panatta", img: "https://s3assets.skimble.com/assets/603850/image_full.jpg" },
+                { name: "Pectoral machine", sets: "4", reps: "12-15", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pec-Deck-Fly.gif" },
+                { name: "Cavi alti (o multi flight)", sets: "4", reps: "10-12", machine: "Cavi", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Cable-Crossover.gif" },
+                { name: "Crunch macchina", sets: "4", reps: "15-20", machine: "Macchinario Panatta", img: "https://static.strengthlevel.com/images/exercises/machine-seated-crunch/machine-seated-crunch-800.jpg" },
+                { name: "Plank", sets: "4", reps: "30-60 sec", machine: "Corpo libero", img: "https://www.spine-center.it/images/contenuti/news/il-plank-come-esercizio-terapeutico-in-campo-riabilitativo.jpg" }
+            ]},
+            { day: "Giorno 2", focus: "Schiena + Collo", color: "from-blue-400 to-indigo-500", exercises: [
+                { name: "Lat machine presa larga", sets: "4", reps: "8-10", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Lat-Pulldown.gif" },
+                { name: "Pulley triangolo", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Seated-Cable-Row.gif" },
+                { name: "Pulley cavo basso (presa inversa)", sets: "4", reps: "10-12", machine: "Cavi / Barra", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi7EEQpJ5CK81Wm2TRLmP1_SxkhsXtpm6Vgw&s" },
+                { name: "Pulldown braccia tese", sets: "4", reps: "12-15", machine: "Cavi", img: "https://api.smartworkout.app/asset/image/4977ee02-11c1-4028-8a97-310c8dec6cc3" },
+                { name: "Hyperextension (Lombari)", sets: "4", reps: "12-15", machine: "Panca / Panatta", img: "https://aipersonaltrainer.com/wp-content/uploads/panca-hyperextension.jpg" },
+                { name: "Collo - Flessioni avanti", sets: "3", reps: "12-15", machine: "Corpo libero / Panca", img: "https://static.strengthlevel.com/images/exercises/neck-curl/neck-curl-800.jpg" },
+                { name: "Collo - Estensioni dietro", sets: "3", reps: "12-15", machine: "Corpo libero / Panca", img: "https://static.strengthlevel.com/images/exercises/neck-extension/neck-extension-800.jpg" }
+            ]},
+            { day: "Giorno 3", focus: "Gambe", color: "from-sky-400 to-cyan-500", exercises: [
+                { name: "Hack Squat", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/quadricipiti-hack-squat-ag.png" },
+                { name: "Leg press", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/leg-press-orizontale-ag.png" },
+                { name: "Leg extension", sets: "4", reps: "12-15", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/quadricipiti-leg-extension-ag.png" },
+                { name: "Leg curl sdraiato", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/femorali-leg-curl-sdraiato-bg.png" },
+                { name: "Calf seduti", sets: "4", reps: "15-20", machine: "Macchinario Panatta", img: "https://www.evolutionfit.it/wp-content/uploads/polpacci-calf-machine-seduto-ag.png" }
+            ]},
+            { day: "Giorno 4", focus: "Spalle + Addome", color: "from-indigo-400 to-blue-600", exercises: [
+                { name: "Alzate laterali", sets: "4", reps: "12-15", machine: "Manubri", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lateral-Raise.gif" },
+                { name: "Shoulder press macchina", sets: "4", reps: "10-12", machine: "Macchinario Panatta", img: "https://static.strengthlevel.com/images/exercises/machine-shoulder-press/machine-shoulder-press-800.jpg" },
+                { name: "Alzate posteriori a 45° su panca", sets: "4", reps: "12-15", machine: "Manubri / Panca", img: "https://www.evolutionfit.it/wp-content/uploads/spalle-volare-inverso-manubri-panca-alta-bg.png" },
+                { name: "Six way", sets: "4", reps: "8-10", machine: "Manubri leggeri", img: "https://s3assets.skimble.com/assets/3111926/image_full.jpg" },
+                { name: "Addome - Leg raise", sets: "4", reps: "15", machine: "Corpo libero / Sbarra", img: "https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/29631101-Captains-Chair-Straight-Leg-Raise_Waist_small.jpg" },
+                { name: "Addome - Crunch inverso", sets: "4", reps: "15-20", machine: "Tappetino", img: "https://www.pesoforma.com/wp-content/uploads/esecuzione-crunch-inverso-pesoforma.png" }
+            ]},
+            { day: "Giorno 5", focus: "Braccia", color: "from-cyan-300 to-sky-500", exercises: [
+                { name: "Curl al cavo barra EZ", sets: "4", reps: "8-10", machine: "Cavi", img: "https://static.strengthlevel.com/images/exercises/cable-bicep-curl/cable-bicep-curl-800.jpg" },
+                { name: "Curl manubri alternati", sets: "4", reps: "10-12", machine: "Manubri", img: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Curl.gif" },
+                { name: "Curl panca inclinata", sets: "4", reps: "12", machine: "Manubri / Panca", img: "https://www.my-personaltrainer.it/2025/04/01/curl-manubri-panca-inclinata_900x760.jpeg" },
+                { name: "Pushdown cavo", sets: "4", reps: "10-12", machine: "Cavi / Corda", img: "https://articoli.nonsolofitness.it/resources/big/775dd5778455d8a268e590c1005152ea.jpg.webp" },
+                { name: "French press cavo basso nuca", sets: "4", reps: "10-12", machine: "Cavi", img: "https://eusebio.pro/wp-content/uploads/2018/01/StandingTwoArmOverheadRopeTricepsExtensions-223x300.jpg" },
+                { name: "Kickback al cavo basso", sets: "4", reps: "12-15", machine: "Cavi", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPrRr66UAHS10rIwYNIeCbxA4cNzMTUyrWfQ&s" }
+            ]}
         ];
 
-        const container = document.getElementById('workout-container');
-
-        // Generazione Dinamica dell'HTML
-        workoutData.forEach((day, index) => {
-            // Apri il primo giorno di default
-            const isOpen = index === 0 ? 'open' : '';
-            
-            let exercisesHTML = '';
-            day.exercises.forEach((ex, exIndex) => {
-                // Aggiungiamo un fallback per le immagini nel caso i link un giorno si rompano
-                exercisesHTML += `
-                    <div class="flex items-center p-3 bg-gray-800 rounded-xl mb-3 border border-gray-700/50 hover:bg-gray-750 transition-colors">
-                        
-                        <div class="relative w-16 h-16 flex-shrink-0 mr-4 rounded-lg overflow-hidden bg-white border border-gray-700">
-                            <img src="${ex.img}" alt="${ex.name}" 
-                                 class="w-full h-full object-contain p-1 cursor-pointer"
-                                 onclick="openModal('${ex.img}')"
-                                 referrerpolicy="no-referrer"
-                                 onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNzQxNTEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiIGR5PSIuM2VtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+LPC90ZXh0Pjwvc3ZnPg=='" />
-                            <div class="absolute top-0 left-0 bg-gray-900/60 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-br-lg pointer-events-none">
-                                ${exIndex + 1}
-                            </div>
-                        </div>
-
-                        <div class="flex-1 pr-2">
-                            <h4 class="font-bold text-sm text-gray-100 leading-tight">${ex.name}</h4>
-                            <p class="text-[11px] font-medium text-gray-400 mt-1 uppercase tracking-wider flex items-center">
-                                <span class="w-1.5 h-1.5 rounded-full bg-gray-500 mr-1.5"></span>
-                                ${ex.machine}
-                            </p>
-                        </div>
-
-                        <div class="flex-shrink-0 flex items-stretch bg-gray-900 rounded-lg border border-gray-700 overflow-hidden shadow-sm">
-                            <div class="px-2.5 py-1.5 bg-gray-800/80 border-r border-gray-700 flex flex-col items-center justify-center">
-                                <span class="text-[9px] text-gray-400 uppercase font-bold tracking-wider">Set</span>
-                                <span class="font-black text-base text-white leading-none mt-0.5">${ex.sets}</span>
-                            </div>
-                            <div class="px-2.5 py-1.5 flex flex-col items-center justify-center min-w-[4rem] bg-orange-500/10">
-                                <span class="text-[9px] text-orange-400 uppercase font-bold tracking-wider">Rep</span>
-                                <span class="font-bold text-sm text-orange-500 leading-none mt-0.5">${ex.reps}</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            const dayHTML = `
-                <details class="bg-gray-900 rounded-2xl border border-gray-800 shadow-sm overflow-hidden" ${isOpen}>
-                    <summary class="cursor-pointer p-4 flex justify-between items-center select-none bg-gray-800/50 hover:bg-gray-800 transition-colors">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-2 h-10 rounded-full bg-gradient-to-b ${day.color}"></div>
-                            <div>
-                                <h2 class="text-lg font-bold text-white">${day.day}</h2>
-                                <p class="text-xs text-gray-400 font-medium">${day.focus}</p>
-                            </div>
-                        </div>
-                        <div class="bg-gray-900 p-1.5 rounded-full border border-gray-700 chevron">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </div>
-                    </summary>
-                    <div class="p-4 pt-2 bg-gray-900">
-                        ${exercisesHTML}
-                    </div>
-                </details>
-            `;
-            container.innerHTML += dayHTML;
-        });
-
-        // Logica per fare in modo che si apra solo un giorno alla volta (opzionale, stile fisarmonica esclusiva)
-        const details = document.querySelectorAll("details");
-        details.forEach((targetDetail) => {
-            targetDetail.addEventListener("click", () => {
-                details.forEach((detail) => {
-                    if (detail !== targetDetail) {
-                        detail.removeAttribute("open");
-                    }
-                });
+        const flatExercises = [];
+        workoutData.forEach((day, dayIndex) => {
+            day.adminKey = `day.${dayIndex}`;
+            day.exercises.forEach((exercise, exerciseIndex) => {
+                exercise.adminKey = `${day.adminKey}.exercise.${exerciseIndex}`;
+                exercise.playerIndex = flatExercises.length;
+                flatExercises.push({ ...exercise, day: day.day, focus: day.focus, dayKey: day.adminKey });
             });
         });
 
-        // Funzioni per la modale delle immagini
-        function openModal(imgSrc) {
-            const modal = document.getElementById('image-modal');
-            const modalImg = document.getElementById('modal-image');
-            modalImg.src = imgSrc;
-            modal.classList.remove('hidden');
-        }
+        const container = document.getElementById("workout-container");
+        workoutData.forEach((day, dayIndex) => {
+            const exercisesHTML = day.exercises.map((exercise) => `
+                <article class="mb-3 overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-800/70 shadow-sm">
+                    <div class="flex items-stretch">
+                        <button type="button" class="relative w-24 shrink-0 border-r border-slate-700 bg-white sm:w-28" onclick="openImageModal('${exercise.img}')" aria-label="Ingrandisci animazione: ${exercise.name}"><img src="${exercise.img}" alt="${exercise.name}" class="h-full min-h-32 w-full object-contain p-1" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=fallbackImage"><span class="absolute bottom-1.5 right-1.5 grid h-7 w-7 place-items-center rounded-full bg-slate-950/80 text-cyan-300"><svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+                        <div class="min-w-0 flex-1 p-3.5">
+                            <div class="flex items-start justify-between gap-2"><div><h4 class="text-sm font-extrabold leading-tight text-white">${adminText(`${exercise.adminKey}.name`, exercise.name)}</h4><p class="mt-1 text-[10px] font-bold uppercase tracking-wide text-slate-500">${adminText(`${exercise.adminKey}.machine`, exercise.machine)}</p></div><button type="button" onclick="openExercisePlayer(${exercise.playerIndex})" class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-cyan-400/25 bg-cyan-400/10 text-cyan-300 active:scale-95" aria-label="Apri ${exercise.name} nel player"><svg xmlns="http://www.w3.org/2000/svg" class="ml-0.5 h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+                            <div class="mt-3 grid grid-cols-2 gap-2"><div class="rounded-xl border border-cyan-400/15 bg-cyan-400/5 p-2"><p class="text-[9px] font-black uppercase text-cyan-300">Serie</p><p class="mt-0.5 text-sm font-black text-white">${adminText(`${exercise.adminKey}.sets`, exercise.sets)}</p></div><div class="rounded-xl border border-blue-400/15 bg-blue-400/5 p-2"><p class="text-[9px] font-black uppercase text-blue-300">Ripetizioni</p><p class="mt-0.5 text-sm font-black text-white">${adminText(`${exercise.adminKey}.reps`, exercise.reps)}</p></div></div>
+                        </div>
+                    </div>
+                </article>`).join("");
+            container.insertAdjacentHTML("beforeend", `<details class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl shadow-black/20" ${dayIndex === 0 ? "open" : ""}><summary class="cursor-pointer select-none p-4"><div class="flex items-center gap-3"><div class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${day.color} font-display text-2xl font-black italic text-slate-950">${adminText(`${day.adminKey}.number`, dayIndex + 1)}</div><div class="min-w-0 flex-1"><p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">${adminText(`${day.adminKey}.day`, day.day)}</p><h2 class="font-display mt-0.5 text-2xl font-black uppercase italic leading-none text-white">${adminText(`${day.adminKey}.focus`, day.focus)}</h2></div><svg xmlns="http://www.w3.org/2000/svg" class="chevron h-5 w-5 shrink-0 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></summary><div class="border-t border-slate-800 p-4 pt-3">${exercisesHTML}</div></details>`);
+        });
 
-        function closeModal() {
-            const modal = document.getElementById('image-modal');
-            modal.classList.add('hidden');
+        document.querySelectorAll("#workout-container > details").forEach((targetDetail) => targetDetail.addEventListener("toggle", () => { if (!targetDetail.open) return; document.querySelectorAll("#workout-container > details").forEach((detail) => { if (detail !== targetDetail) detail.removeAttribute("open"); }); }));
+        let playerIndex = 0;
+        let touchStartX = null;
+        const player = document.getElementById("exercise-player");
+        function openExercisePlayer(index = 0) { playerIndex = Math.max(0, Math.min(index, flatExercises.length - 1)); renderPlayerExercise(); player.classList.remove("hidden"); player.classList.add("flex"); document.body.classList.add("overflow-hidden"); if (player.requestFullscreen && !document.fullscreenElement) player.requestFullscreen().catch(() => {}); }
+        function renderPlayerExercise() {
+            const exercise = flatExercises[playerIndex];
+            const img = document.getElementById("player-image");
+            img.onerror = () => { img.onerror = null; img.src = fallbackImage; };
+            img.src = exercise.img;
+            img.alt = `Esecuzione ${PlanAdmin.get(PLAN_ID, `${exercise.adminKey}.name`, exercise.name)}`;
+            document.getElementById("player-day").textContent = PlanAdmin.get(PLAN_ID, `${exercise.dayKey}.day`, exercise.day);
+            document.getElementById("player-counter").textContent = `${playerIndex + 1} / ${flatExercises.length}`;
+            document.getElementById("player-progress").style.width = `${((playerIndex + 1) / flatExercises.length) * 100}%`;
+            PlanAdmin.setElement(document.getElementById("player-equipment"), PLAN_ID, `${exercise.adminKey}.machine`, exercise.machine);
+            PlanAdmin.setElement(document.getElementById("player-focus"), PLAN_ID, `${exercise.dayKey}.focus`, exercise.focus);
+            PlanAdmin.setElement(document.getElementById("player-name"), PLAN_ID, `${exercise.adminKey}.name`, exercise.name);
+            PlanAdmin.setElement(document.getElementById("player-sets"), PLAN_ID, `${exercise.adminKey}.sets`, exercise.sets);
+            PlanAdmin.setElement(document.getElementById("player-reps"), PLAN_ID, `${exercise.adminKey}.reps`, exercise.reps);
+            document.getElementById("player-prev").disabled = playerIndex === 0;
+            document.getElementById("player-next").textContent = playerIndex === flatExercises.length - 1 ? "Fine ✓" : "Successivo →";
+            player.scrollTo({ top: 0, behavior: "instant" });
         }
+        function changeExercise(direction) { if (direction > 0 && playerIndex === flatExercises.length - 1) return closeExercisePlayer(); playerIndex = Math.max(0, Math.min(playerIndex + direction, flatExercises.length - 1)); renderPlayerExercise(); }
+        function closeExercisePlayer() { player.classList.add("hidden"); player.classList.remove("flex"); document.body.classList.remove("overflow-hidden"); if (document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(() => {}); }
+        function openImageModal(imgSrc) { const modal = document.getElementById("image-modal"); document.getElementById("modal-image").src = imgSrc; modal.classList.remove("hidden"); modal.classList.add("flex"); document.body.classList.add("overflow-hidden"); }
+        function closeImageModal() { const modal = document.getElementById("image-modal"); modal.classList.add("hidden"); modal.classList.remove("flex"); document.body.classList.remove("overflow-hidden"); }
+        player.addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+        player.addEventListener("touchend", (event) => { if (touchStartX === null) return; const delta = event.changedTouches[0].clientX - touchStartX; if (Math.abs(delta) > 70) changeExercise(delta < 0 ? 1 : -1); touchStartX = null; }, { passive: true });
+        document.addEventListener("keydown", (event) => { if (!player.classList.contains("hidden")) { if (event.key === "ArrowRight") changeExercise(1); if (event.key === "ArrowLeft") changeExercise(-1); if (event.key === "Escape" && !document.fullscreenElement) closeExercisePlayer(); } else if (event.key === "Escape") closeImageModal(); });
+        PlanAdmin.activateAuto(PLAN_ID);
     </script>
 </body>
 </html>

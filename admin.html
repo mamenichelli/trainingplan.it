@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Administratio | Trainingplan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="admin-core.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { color-scheme: dark; }
+        body { font-family: Inter, sans-serif; }
+        .font-display { font-family: Cinzel, serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100">
+    <header class="border-b border-cyan-400/20 bg-slate-950/95 px-4 py-4 backdrop-blur">
+        <div class="mx-auto flex max-w-7xl flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div>
+                <p class="text-[9px] font-black uppercase tracking-[0.32em] text-cyan-300">Administratio textuum</p>
+                <h1 class="font-display mt-1 text-2xl font-black uppercase text-white">Editor delle schede</h1>
+                <p class="mt-1 text-xs text-slate-400">Modifica ogni testo, comprese serie, ripetizioni, attrezzi e descrizioni. Le immagini restano bloccate.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <button id="export-button" class="rounded-xl border border-cyan-400/25 bg-cyan-400/10 px-4 py-2.5 text-xs font-extrabold text-cyan-200">Esporta JSON</button>
+                <label class="cursor-pointer rounded-xl border border-slate-700 bg-slate-900 px-4 py-2.5 text-xs font-extrabold text-white">Importa JSON<input id="import-input" type="file" accept="application/json" class="hidden"></label>
+                <button id="reset-button" class="rounded-xl border border-red-400/25 bg-red-400/10 px-4 py-2.5 text-xs font-extrabold text-red-200">Ripristina scheda</button>
+                <button id="logout-button" class="rounded-xl bg-cyan-400 px-4 py-2.5 text-xs font-extrabold text-slate-950">Esci</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="mx-auto grid max-w-7xl gap-4 p-4 lg:grid-cols-[280px_minmax(0,1fr)]">
+        <aside class="rounded-2xl border border-slate-800 bg-slate-900 p-4 lg:sticky lg:top-4 lg:h-fit">
+            <label for="plan-select" class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Scheda da modificare</label>
+            <select id="plan-select" class="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-bold text-white"></select>
+            <div class="mt-4 rounded-xl border border-amber-400/20 bg-amber-400/10 p-3 text-[11px] leading-relaxed text-amber-100">
+                I testi evidenziati nel riquadro sono modificabili direttamente. Il salvataggio è automatico e resta in questo browser.
+            </div>
+            <p id="admin-status" class="mt-3 text-xs text-slate-500">Caricamento archivio…</p>
+        </aside>
+
+        <section class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-2xl">
+            <iframe id="plan-frame" title="Anteprima modificabile" class="h-[calc(100vh-190px)] min-h-[680px] w-full bg-slate-950"></iframe>
+        </section>
+    </main>
+
+    <script>
+        if (!PlanAdmin.sessionActive()) location.replace("index.html");
+
+        const select = document.getElementById("plan-select");
+        const frame = document.getElementById("plan-frame");
+        const status = document.getElementById("admin-status");
+
+        async function loadPlans() {
+            const response = await fetch(`database.json?t=${Date.now()}`, { cache: "no-store" });
+            if (!response.ok) throw new Error("Archivio schede non disponibile.");
+            const database = await response.json();
+            const records = await Promise.all(Object.entries(database).map(async ([code, file]) => {
+                if (!file || file === "#") return { code, file, available: false };
+                try {
+                    const check = await fetch(`${file}?check=${Date.now()}`, { method: "HEAD", cache: "no-store" });
+                    return { code, file, available: check.ok };
+                } catch (_) {
+                    return { code, file, available: false };
+                }
+            }));
+            select.replaceChildren();
+            records.forEach(({ code, file, available }) => {
+                const option = document.createElement("option");
+                option.value = file || "";
+                option.dataset.code = code;
+                option.textContent = available ? `${code} · ${file}` : `${code} · file non disponibile`;
+                option.disabled = !available;
+                select.appendChild(option);
+            });
+            const firstAvailable = [...select.options].find((option) => !option.disabled);
+            if (!firstAvailable) throw new Error("Nessuna scheda modificabile disponibile.");
+            const preferred = sessionStorage.getItem("trainingplan_admin_last_plan");
+            const preferredOption = [...select.options].find((option) => option.value === preferred && !option.disabled);
+            select.value = preferredOption ? preferred : firstAvailable.value;
+            openSelected();
+        }
+
+        function currentCode() {
+            return select.selectedOptions[0]?.dataset.code || "";
+        }
+
+        function openSelected() {
+            const file = select.value;
+            if (!file || file === "#") return;
+            sessionStorage.setItem("trainingplan_admin_last_plan", file);
+            status.textContent = `Apertura ${currentCode()}…`;
+            frame.src = `${file}?admin=1&t=${Date.now()}`;
+        }
+
+        select.addEventListener("change", openSelected);
+        frame.addEventListener("load", () => { status.textContent = `${currentCode()} pronta: tocca un testo evidenziato per modificarlo.`; });
+        document.getElementById("export-button").addEventListener("click", () => PlanAdmin.exportAll());
+        document.getElementById("import-input").addEventListener("change", async (event) => {
+            const file = event.target.files[0];
+            if (!file) return;
+            try {
+                PlanAdmin.importAll(JSON.parse(await file.text()));
+                status.textContent = "Importazione completata.";
+                openSelected();
+            } catch (error) {
+                status.textContent = error.message;
+            }
+            event.target.value = "";
+        });
+        document.getElementById("reset-button").addEventListener("click", () => {
+            if (!currentCode() || !confirm(`Ripristinare tutti i testi di ${currentCode()} in questo browser?`)) return;
+            PlanAdmin.removePlan(currentCode());
+            openSelected();
+        });
+        document.getElementById("logout-button").addEventListener("click", () => {
+            PlanAdmin.logout();
+            location.replace("index.html");
+        });
+
+        loadPlans().catch((error) => { status.textContent = `Errore: ${error.message}`; });
+    </script>
+</body>
+</html>
