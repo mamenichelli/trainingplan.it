@@ -6,64 +6,78 @@
     <meta name="robots" content="noindex, nofollow">
     <title>Scheda SORCA | 5 Giorni</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root { color-scheme: dark; }
         body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
-        .font-cinzel { font-family: 'Cinzel', serif; }
+        .font-display { font-family: 'Cinzel', serif; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
-        details[open] summary ~ * { animation: sweep .3s ease-in-out; }
+        details[open] summary ~ * { animation: sweep .28s ease-in-out; }
         details[open] summary .chevron { transform: rotate(180deg); }
-        .chevron { transition: transform .3s ease; }
+        .chevron { transition: transform .25s ease; }
+        .player-safe { padding-top: max(1rem, env(safe-area-inset-top)); padding-bottom: max(1rem, env(safe-area-inset-bottom)); }
+        .player-image { max-height: min(49vh, 480px); }
         @keyframes sweep {
-            from { opacity: 0; transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(-8px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        @keyframes pulse-ring {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, .35); }
+            50% { box-shadow: 0 0 0 10px rgba(34, 211, 238, 0); }
+        }
+        .play-pulse { animation: pulse-ring 2.2s ease-in-out infinite; }
     </style>
 </head>
-<body class="bg-gray-950 text-gray-100 pb-12">
+<body class="bg-slate-950 pb-12 text-slate-100 selection:bg-cyan-400/30">
 
-    <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
-        <img src="mm2.png" alt="Deus" class="absolute inset-0 w-full h-full object-cover object-[50%_80%] opacity-40 grayscale contrast-125 mix-blend-luminosity">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
-        <div class="relative z-10 px-4 text-center mt-6">
-            <p class="text-[9px] text-orange-300/70 uppercase tracking-[0.35em] mb-4 font-cinzel">· CONSTANTIA VINCIT ·</p>
-            <h2 class="text-[15px] sm:text-lg font-bold uppercase text-orange-200 font-cinzel leading-[2.2] tracking-[0.25em]" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
-                Fortis non est<br>qui numquam cadit,<br>sed qui semper surgit
-            </h2>
-            <div class="mt-5 flex justify-center">
-                <div class="w-32 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
-            </div>
+    <div class="relative h-72 overflow-hidden border-b border-cyan-400/20 bg-slate-950">
+        <img src="mm2.png" alt="" class="absolute inset-0 h-full w-full object-cover object-[50%_80%] opacity-30 grayscale contrast-125 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_25%,rgba(6,182,212,0.24),transparent_44%)]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-blue-950/20"></div>
+        <div class="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-4 text-center">
+            <p class="mb-3 text-[10px] font-extrabold uppercase tracking-[0.36em] text-cyan-300/80">Constantia · Fortitudo · Motus</p>
+            <h2 class="font-display text-4xl font-black uppercase leading-tight tracking-tight text-white sm:text-5xl" style="text-shadow: 0 10px 35px rgba(6,182,212,.35)">Fortis semper<br><span class="text-cyan-400">surgit</span></h2>
+            <p class="mt-4 rounded-full border border-white/10 bg-slate-950/45 px-4 py-1.5 text-xs font-semibold text-slate-300 backdrop-blur">5 giorni · circuito + pesi · cardio spinning</p>
         </div>
     </div>
 
-    <header class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 z-50">
-        <div class="max-w-lg mx-auto flex justify-between items-center gap-4">
+    <header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950/95 p-4 backdrop-blur-md">
+        <div class="mx-auto flex max-w-xl items-center justify-between gap-4">
             <div>
-                <h1 class="text-xl font-extrabold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Scheda SORCA</h1>
-                <p class="text-xs text-gray-400 font-medium mt-0.5">5 giorni · 55–60 min · Circuito + pesi</p>
+                <h1 class="font-display text-2xl font-black uppercase tracking-wide text-white">Scheda <span class="text-cyan-400">SORCA</span></h1>
+                <p class="mt-0.5 text-xs font-medium text-slate-400">5 giorni · 55–60 min · Circuito + pesi</p>
             </div>
-            <div class="bg-gray-800 p-2 rounded-lg border border-gray-700" aria-label="Durata circa un'ora">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+            <div class="rounded-xl border border-cyan-400/20 bg-cyan-400/10 p-2.5" aria-label="Durata circa un'ora">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c4.97 0 9-4.03 9-9S16.97 4 12 4 3 8.03 3 13c0 2.12.73 4.07 1.95 5.61L4 22l3.39-.95A8.96 8.96 0 0 0 12 22Z"/><path d="M12 8v5l3 2"/><path d="M9 2h6"/></svg>
             </div>
         </div>
     </header>
 
-    <main class="max-w-lg mx-auto p-4">
-        <section class="bg-gray-900 border border-orange-500/30 rounded-2xl p-4 mb-4 shadow-lg shadow-orange-500/5">
+    <main class="mx-auto max-w-xl p-4">
+        <section class="mb-4 rounded-2xl border border-cyan-400/20 bg-slate-900 p-4 shadow-xl shadow-cyan-950/20">
             <div class="flex items-start gap-3">
-                <div class="bg-orange-500/20 p-2 rounded-lg shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                <div class="shrink-0 rounded-xl bg-cyan-400/10 p-2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
                 </div>
                 <div>
-                    <h3 class="text-sm font-bold text-gray-100">Regole della scheda</h3>
-                    <p class="text-xs text-gray-400 mt-1.5 leading-relaxed">
-                        Intensità <strong class="text-orange-300">RPE 6–7/10</strong>: chiudi ogni serie con 2–3 ripetizioni ancora possibili. Usa movimenti controllati; recupera 30″ tra gli esercizi del circuito e 75–90″ tra giri o serie. Nei blocchi spinning, “salita” significa aumentare la resistenza: le fasi in piedi sono brevi e si possono svolgere seduti mantenendo la stessa intensità.
+                    <h3 class="text-sm font-extrabold text-white">Regole della scheda</h3>
+                    <p class="mt-1.5 text-xs leading-relaxed text-slate-400">
+                        Intensità <strong class="text-cyan-300">RPE 6–7/10</strong>: chiudi ogni serie con 2–3 ripetizioni ancora possibili. Usa movimenti controllati; recupera 30″ tra gli esercizi del circuito e 75–90″ tra giri o serie. Nei blocchi spinning, “salita” significa aumentare la resistenza. Se un movimento provoca dolore all’anca, riduci escursione o passa subito alla variante indicata.
                     </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 overflow-hidden rounded-2xl border border-cyan-300/35 bg-gradient-to-br from-cyan-500/15 via-blue-500/10 to-slate-900 p-4 shadow-xl shadow-cyan-950/30">
+            <div class="flex items-center gap-4">
+                <button id="launch-player" type="button" onclick="openExercisePlayer(0)" class="play-pulse grid h-16 w-16 shrink-0 place-items-center rounded-full bg-cyan-400 text-slate-950 transition active:scale-95" aria-label="Avvia la modalità esercizi a schermo intero">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ml-1 h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+                <div class="min-w-0 flex-1">
+                    <p class="text-[10px] font-black uppercase tracking-[0.28em] text-cyan-300">Modalità esecuzione</p>
+                    <h2 class="font-display mt-0.5 text-xl font-black uppercase leading-tight text-white">Guarda tutti gli esercizi</h2>
+                    <p class="mt-1 text-xs leading-relaxed text-slate-400">Premi Play: animazione, dose, descrizione e adattamento scorrono a schermo intero.</p>
                 </div>
             </div>
         </section>
@@ -71,13 +85,51 @@
         <div id="workout-container" class="space-y-4"></div>
     </main>
 
-    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
-        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-w-full max-h-[80vh] object-contain rounded-xl bg-white shadow-2xl">
-        <button class="absolute top-6 right-6 text-white bg-gray-800/80 rounded-full p-2 hover:bg-gray-700" aria-label="Chiudi immagine">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden cursor-pointer items-center justify-center bg-black/90 p-4 backdrop-blur-sm" onclick="closeImageModal()">
+        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-h-[82vh] max-w-full rounded-2xl bg-white object-contain shadow-2xl">
+        <button type="button" class="absolute right-5 top-5 rounded-full bg-slate-900/90 p-3 text-white" aria-label="Chiudi immagine">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
         </button>
+    </div>
+
+    <div id="exercise-player" class="player-safe fixed inset-0 z-[200] hidden flex-col overflow-y-auto bg-slate-950">
+        <div class="mx-auto flex min-h-full w-full max-w-3xl flex-col px-4">
+            <div class="flex items-center gap-3 py-2">
+                <button type="button" onclick="closeExercisePlayer()" class="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-700 bg-slate-900 text-white active:scale-95" aria-label="Chiudi player">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                </button>
+                <div class="min-w-0 flex-1">
+                    <div class="flex items-center justify-between gap-3 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+                        <span id="player-day">Giorno 1</span>
+                        <span id="player-counter">1 / 1</span>
+                    </div>
+                    <div class="mt-2 h-1.5 overflow-hidden rounded-full bg-slate-800"><div id="player-progress" class="h-full rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300"></div></div>
+                </div>
+            </div>
+
+            <div class="flex flex-1 flex-col justify-center pb-3">
+                <div class="relative overflow-hidden rounded-3xl border border-slate-700 bg-white shadow-2xl shadow-cyan-950/30">
+                    <img id="player-image" src="" alt="" class="player-image h-full w-full object-contain" referrerpolicy="no-referrer">
+                    <div id="player-equipment" class="absolute left-3 top-3 rounded-full border border-white/20 bg-slate-950/85 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-cyan-200 backdrop-blur">Attrezzatura</div>
+                </div>
+
+                <div class="px-1 pt-4">
+                    <p id="player-block" class="text-[10px] font-black uppercase tracking-[0.25em] text-cyan-400">Blocco</p>
+                    <h2 id="player-name" class="font-display mt-1 text-3xl font-black uppercase leading-tight text-white">Esercizio</h2>
+                    <p id="player-dose" class="mt-2 text-lg font-extrabold text-cyan-300">3 × 8</p>
+                    <p id="player-description" class="mt-3 text-sm leading-relaxed text-slate-300"></p>
+                    <div class="mt-3 rounded-2xl border border-sky-400/20 bg-sky-400/10 p-3">
+                        <p class="text-[10px] font-black uppercase tracking-wider text-sky-300">Adattamento</p>
+                        <p id="player-care" class="mt-1 text-xs leading-relaxed text-slate-300"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky bottom-0 grid grid-cols-2 gap-3 border-t border-slate-800 bg-slate-950/95 py-3 backdrop-blur">
+                <button id="player-prev" type="button" onclick="changeExercise(-1)" class="rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-sm font-extrabold text-white disabled:cursor-not-allowed disabled:opacity-30">← Precedente</button>
+                <button id="player-next" type="button" onclick="changeExercise(1)" class="rounded-xl bg-cyan-400 px-4 py-3 text-sm font-extrabold text-slate-950 active:scale-[.98]">Successivo →</button>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -101,7 +153,7 @@
             bulgarian: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Bodyweight-Bulgarian-Split-Squat.gif",
             jumpSquat: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Jump-Squat.gif",
             lateralStepUp: "https://fitnessprogramer.com/wp-content/uploads/2022/04/Lateral-Step-up.gif",
-            skater: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Skater.gif"
+            march: "https://fitnessprogramer.com/wp-content/uploads/2021/08/High-Knee-Run.gif"
         };
 
         const fallbackImage = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNzQxNTEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiIGR5PSIuM2VtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+LPC90ZXh0Pjwvc3ZnPg==";
@@ -111,7 +163,7 @@
                 day: "Giorno 1",
                 focus: "Gambe + circuito metabolico",
                 duration: "55–60 min",
-                color: "from-red-500 to-rose-500",
+                color: "from-cyan-400 to-blue-500",
                 note: "Priorità a controllo e continuità. Nessun esercizio deve produrre pizzicore profondo all'anca.",
                 blocks: [
                     {
@@ -154,7 +206,7 @@
                 day: "Giorno 2",
                 focus: "Dorso + postura + spinning",
                 duration: "55–60 min",
-                color: "from-green-500 to-emerald-500",
+                color: "from-blue-400 to-indigo-500",
                 note: "Dorso sì, ma con presa rilassata. Se possibile usa maniglie neutre, straps o polsini sotto supervisione.",
                 blocks: [
                     {
@@ -188,7 +240,7 @@
                 day: "Giorno 3",
                 focus: "Circuito total body",
                 duration: "55 min",
-                color: "from-blue-500 to-cyan-500",
+                color: "from-sky-400 to-cyan-500",
                 note: "Carichi medio-leggeri e ritmo continuo: la qualità delle ripetizioni conta più della velocità.",
                 blocks: [
                     {
@@ -207,7 +259,7 @@
                             { name: "Pectoral machine", dose: "12–15 rep", equipment: "Macchina", img: images.pecDeck, desc: "Avvicina i gomiti come in un abbraccio e torna lentamente.", care: "Usa i cuscinetti sugli avambracci, non la presa delle mani." },
                             { name: "Squat jump", dose: "8–10 rep", equipment: "Corpo libero", img: images.jumpSquat, desc: "Salto verticale breve, atterraggio silenzioso e nuova discesa controllata.", care: "Se perdi controllo, passa allo squat rapido senza salto." },
                             { name: "Alzate laterali macchina", dose: "12–15 rep", equipment: "Macchina", img: images.lateralRaise, desc: "Solleva dai gomiti fino alla linea delle spalle.", care: "Appoggia i gomiti sui pad: le mani restano morbide." },
-                            { name: "Skater laterali", dose: "30 sec", equipment: "Corpo libero", img: images.skater, desc: "Spostati lateralmente da una gamba all'altra con ritmo e controllo.", care: "Versione più facile: passo laterale ampio senza salto." },
+                            { name: "Marcia rapida sul posto", dose: "30 sec", equipment: "Corpo libero · appoggio facoltativo", img: images.march, desc: "Marcia in asse a ritmo sostenuto, senza saltare e senza spostamenti laterali.", care: "Ginocchia basse e passo corto; usa un appoggio stabile. Se l’anca dà fastidio, riduci ancora l’altezza o pedala 30 secondi." },
                             { name: "Dead bug", dose: "8/8 rep", equipment: "Tappetino", img: images.deadBug, desc: "Movimento lento, espira mentre allontani gli arti.", care: "Lascia le braccia ferme se muoverle affatica le mani." }
                         ]
                     },
@@ -224,7 +276,7 @@
                 day: "Giorno 4",
                 focus: "Gambe B + condizionamento",
                 duration: "55–60 min",
-                color: "from-purple-500 to-fuchsia-500",
+                color: "from-indigo-400 to-blue-600",
                 note: "Secondo richiamo gambe: combina macchine, lavoro unilaterale e cardio a variazione di intensità.",
                 blocks: [
                     {
@@ -259,7 +311,7 @@
                 day: "Giorno 5",
                 focus: "Upper body + circuito finale",
                 duration: "55–60 min",
-                color: "from-yellow-500 to-orange-500",
+                color: "from-cyan-300 to-sky-500",
                 note: "Seduta a presa ridotta: macchine guidate e appoggi sugli avambracci quando disponibili.",
                 blocks: [
                     {
@@ -299,71 +351,75 @@
             }
         ];
 
+        const flatExercises = [];
+        workoutData.forEach((day) => day.blocks.forEach((block) => block.exercises.forEach((exercise) => {
+            exercise.playerIndex = flatExercises.length;
+            flatExercises.push({ ...exercise, day: day.day, focus: day.focus, block: block.title });
+        })));
+
         const container = document.getElementById("workout-container");
 
         workoutData.forEach((day, dayIndex) => {
             const blocksHTML = day.blocks.map((block) => {
-                const exercisesHTML = block.exercises.map((exercise, exerciseIndex) => `
-                    <article class="bg-gray-800 rounded-xl mb-3 border border-gray-700/60 overflow-hidden shadow-sm">
+                const exercisesHTML = block.exercises.map((exercise) => `
+                    <article class="mb-3 overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-800/70 shadow-sm">
                         <div class="flex items-stretch">
-                            <button class="relative w-20 sm:w-24 shrink-0 bg-white border-r border-gray-700" onclick="openModal('${exercise.img}')" aria-label="Ingrandisci immagine: ${exercise.name}">
-                                <img src="${exercise.img}" alt="${exercise.name}" class="w-full h-full min-h-28 object-contain p-1" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=fallbackImage">
-                                <span class="absolute top-0 left-0 bg-gray-950/75 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-br-lg">${exerciseIndex + 1}</span>
+                            <button type="button" class="relative w-24 shrink-0 border-r border-slate-700 bg-white sm:w-28" onclick="openImageModal('${exercise.img}')" aria-label="Ingrandisci animazione: ${exercise.name}">
+                                <img src="${exercise.img}" alt="${exercise.name}" class="h-full min-h-32 w-full object-contain p-1" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=fallbackImage">
+                                <span class="absolute bottom-1.5 right-1.5 grid h-7 w-7 place-items-center rounded-full bg-slate-950/80 text-cyan-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                                </span>
                             </button>
-                            <div class="flex-1 min-w-0 p-3">
+                            <div class="min-w-0 flex-1 p-3.5">
                                 <div class="flex items-start justify-between gap-2">
-                                    <div class="min-w-0">
-                                        <h4 class="font-bold text-sm text-gray-100 leading-tight">${exercise.name}</h4>
-                                        <p class="text-[9px] font-bold text-gray-500 mt-1 uppercase tracking-wider">${exercise.equipment}</p>
+                                    <div>
+                                        <h4 class="text-sm font-extrabold leading-tight text-white">${exercise.name}</h4>
+                                        <p class="mt-1 text-sm font-black text-cyan-300">${exercise.dose}</p>
                                     </div>
-                                    <div class="shrink-0 bg-orange-500/10 border border-orange-500/25 rounded-lg px-2 py-1.5 text-center">
-                                        <span class="block text-[8px] text-orange-300 uppercase font-bold tracking-wider">Dose</span>
-                                        <span class="block text-xs text-orange-400 font-black mt-0.5 whitespace-nowrap">${exercise.dose}</span>
-                                    </div>
+                                    <button type="button" onclick="openExercisePlayer(${exercise.playerIndex})" class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-cyan-400/25 bg-cyan-400/10 text-cyan-300 active:scale-95" aria-label="Apri ${exercise.name} nel player">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-0.5 h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                    </button>
                                 </div>
-                                <p class="text-[11px] text-gray-300 mt-2 leading-relaxed">${exercise.desc}</p>
-                                <p class="text-[10px] text-sky-200/80 mt-2 leading-relaxed border-l-2 border-sky-500/50 pl-2"><strong>Adattamento:</strong> ${exercise.care}</p>
+                                <p class="mt-2 text-xs leading-relaxed text-slate-300">${exercise.desc}</p>
+                                <p class="mt-2 text-[10px] font-bold uppercase tracking-wide text-slate-500">${exercise.equipment}</p>
                             </div>
+                        </div>
+                        <div class="border-t border-slate-700/60 bg-slate-900/55 px-3.5 py-3">
+                            <p class="text-[10px] font-extrabold uppercase tracking-wider text-sky-300">Adattamento</p>
+                            <p class="mt-1 text-xs leading-relaxed text-slate-400">${exercise.care}</p>
                         </div>
                     </article>
                 `).join("");
 
                 return `
-                    <section class="mb-5 last:mb-0">
-                        <div class="flex items-center justify-between gap-3 mb-2 px-1">
-                            <h3 class="text-xs font-extrabold uppercase tracking-[0.14em] text-gray-200">${block.title}</h3>
-                            <span class="text-[9px] text-gray-400 text-right">${block.format}</span>
+                    <section class="mb-4">
+                        <div class="mb-2 flex items-end justify-between gap-3 px-1">
+                            <h3 class="text-xs font-black uppercase tracking-[0.18em] text-slate-200">${block.title}</h3>
+                            <span class="text-right text-[10px] font-semibold text-slate-500">${block.format}</span>
                         </div>
                         ${exercisesHTML}
                     </section>
                 `;
             }).join("");
 
-            container.innerHTML += `
-                <details class="bg-gray-900 rounded-2xl border border-gray-800 shadow-sm overflow-hidden" ${dayIndex === 0 ? "open" : ""}>
-                    <summary class="cursor-pointer p-4 flex justify-between items-center select-none bg-gray-800/50 hover:bg-gray-800 transition-colors">
-                        <div class="flex items-center space-x-3 min-w-0">
-                            <div class="w-2 h-12 shrink-0 rounded-full bg-gradient-to-b ${day.color}"></div>
-                            <div class="min-w-0">
-                                <div class="flex items-center gap-2">
-                                    <h2 class="text-lg font-bold text-white">${day.day}</h2>
-                                    <span class="text-[9px] text-orange-300 bg-orange-500/10 border border-orange-500/20 px-2 py-0.5 rounded-full">${day.duration}</span>
-                                </div>
-                                <p class="text-xs text-gray-400 font-medium truncate">${day.focus}</p>
+            container.insertAdjacentHTML("beforeend", `
+                <details class="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-xl shadow-black/20" ${dayIndex === 0 ? "open" : ""}>
+                    <summary class="cursor-pointer select-none p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="font-display grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br ${day.color} text-2xl font-black text-slate-950">${dayIndex + 1}</div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">${day.day} · ${day.duration}</p>
+                                <h2 class="font-display mt-0.5 text-xl font-black uppercase leading-tight text-white">${day.focus}</h2>
                             </div>
-                        </div>
-                        <div class="bg-gray-900 p-1.5 rounded-full border border-gray-700 chevron shrink-0 ml-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="chevron h-5 w-5 shrink-0 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
                         </div>
                     </summary>
-                    <div class="p-4 pt-3 bg-gray-900">
-                        <p class="text-[11px] text-gray-400 italic leading-relaxed mb-4 border-l-2 border-gray-700 pl-3">${day.note}</p>
+                    <div class="border-t border-slate-800 p-4 pt-3">
+                        <p class="mb-4 rounded-xl border border-white/5 bg-slate-950/60 p-3 text-xs leading-relaxed text-slate-400">${day.note}</p>
                         ${blocksHTML}
                     </div>
                 </details>
-            `;
+            `);
         });
 
         document.querySelectorAll("#workout-container > details").forEach((targetDetail) => {
@@ -375,19 +431,90 @@
             });
         });
 
-        function openModal(imgSrc) {
+        let playerIndex = 0;
+        let touchStartX = null;
+        const player = document.getElementById("exercise-player");
+
+        function openExercisePlayer(index = 0) {
+            playerIndex = Math.max(0, Math.min(index, flatExercises.length - 1));
+            renderPlayerExercise();
+            player.classList.remove("hidden");
+            player.classList.add("flex");
+            document.body.classList.add("overflow-hidden");
+            if (player.requestFullscreen && !document.fullscreenElement) {
+                player.requestFullscreen().catch(() => {});
+            }
+        }
+
+        function renderPlayerExercise() {
+            const exercise = flatExercises[playerIndex];
+            const img = document.getElementById("player-image");
+            img.onerror = () => { img.onerror = null; img.src = fallbackImage; };
+            img.src = exercise.img;
+            img.alt = `Esecuzione ${exercise.name}`;
+            document.getElementById("player-day").textContent = `${exercise.day} · ${exercise.focus}`;
+            document.getElementById("player-counter").textContent = `${playerIndex + 1} / ${flatExercises.length}`;
+            document.getElementById("player-progress").style.width = `${((playerIndex + 1) / flatExercises.length) * 100}%`;
+            document.getElementById("player-equipment").textContent = exercise.equipment;
+            document.getElementById("player-block").textContent = exercise.block;
+            document.getElementById("player-name").textContent = exercise.name;
+            document.getElementById("player-dose").textContent = exercise.dose;
+            document.getElementById("player-description").textContent = exercise.desc;
+            document.getElementById("player-care").textContent = exercise.care;
+            document.getElementById("player-prev").disabled = playerIndex === 0;
+            document.getElementById("player-next").textContent = playerIndex === flatExercises.length - 1 ? "Fine ✓" : "Successivo →";
+            player.scrollTo({ top: 0, behavior: "instant" });
+        }
+
+        function changeExercise(direction) {
+            if (direction > 0 && playerIndex === flatExercises.length - 1) {
+                closeExercisePlayer();
+                return;
+            }
+            playerIndex = Math.max(0, Math.min(playerIndex + direction, flatExercises.length - 1));
+            renderPlayerExercise();
+        }
+
+        function closeExercisePlayer() {
+            player.classList.add("hidden");
+            player.classList.remove("flex");
+            document.body.classList.remove("overflow-hidden");
+            if (document.fullscreenElement && document.exitFullscreen) {
+                document.exitFullscreen().catch(() => {});
+            }
+        }
+
+        function openImageModal(imgSrc) {
             document.getElementById("modal-image").src = imgSrc;
-            document.getElementById("image-modal").classList.remove("hidden");
+            const modal = document.getElementById("image-modal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
             document.body.classList.add("overflow-hidden");
         }
 
-        function closeModal() {
-            document.getElementById("image-modal").classList.add("hidden");
+        function closeImageModal() {
+            const modal = document.getElementById("image-modal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
             document.body.classList.remove("overflow-hidden");
         }
 
+        player.addEventListener("touchstart", (event) => { touchStartX = event.changedTouches[0].clientX; }, { passive: true });
+        player.addEventListener("touchend", (event) => {
+            if (touchStartX === null) return;
+            const delta = event.changedTouches[0].clientX - touchStartX;
+            if (Math.abs(delta) > 70) changeExercise(delta < 0 ? 1 : -1);
+            touchStartX = null;
+        }, { passive: true });
+
         document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") closeModal();
+            if (!player.classList.contains("hidden")) {
+                if (event.key === "ArrowRight") changeExercise(1);
+                if (event.key === "ArrowLeft") changeExercise(-1);
+                if (event.key === "Escape" && !document.fullscreenElement) closeExercisePlayer();
+            } else if (event.key === "Escape") {
+                closeImageModal();
+            }
         });
     </script>
 </body>
