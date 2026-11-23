@@ -36,6 +36,9 @@
             transform: rotate(180deg);
         }
         
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+        .bg-animate { animation: slowZoom 20s ease-in-out infinite alternate; }
+
         /* Custom scrollbar per ricette */
         .hide-scroll::-webkit-scrollbar {
             display: none;
@@ -51,7 +54,7 @@
     <!-- Intestazione Epica in stile Romano (Come da richiesta) -->
     <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
         <!-- Sfondo Immagine -->
-        <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-gray-950 via-emerald-950/25 to-orange-950/30"></div>
+        <img src="mm2.png" alt="" class="absolute inset-0 h-full w-full object-cover object-[50%_80%] grayscale opacity-40 bg-animate" loading="eager" decoding="async">
         
         <!-- Gradiente di sfumatura per far leggere bene il testo -->
         <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
@@ -90,7 +93,6 @@
 
         <section class="bg-gray-900 border border-teal-500/30 rounded-xl p-4 mb-4 shadow-lg shadow-teal-500/5">
             <h3 class="text-sm font-bold uppercase tracking-widest text-white">Indicazioni per ROX</h3>
-            <p class="mt-2 text-xs leading-relaxed text-gray-300"><strong class="text-teal-300">Predisposizione genetica ≠ diagnosi di celiachia.</strong> Avere HLA-DQ2/DQ8 non dimostra la malattia. Prima di iniziare una dieta rigorosamente priva di glutine, se la diagnosi non è stata completata, confrontati con il medico: gli accertamenti possono risultare falsati dopo aver eliminato il glutine.</p>
             <p class="mt-2 text-xs leading-relaxed text-gray-400">Il menu usa soprattutto ingredienti naturalmente privi di glutine per semplicità di preparazione, ma non equivale a una prescrizione per celiachia. In caso di diagnosi confermata, prodotti confezionati, condimenti e superfici devono essere controllati per il glutine e la contaminazione crociata.</p>
         </section>
         <section class="bg-gray-900 border border-emerald-500/30 rounded-xl p-4 mb-4 shadow-lg">
