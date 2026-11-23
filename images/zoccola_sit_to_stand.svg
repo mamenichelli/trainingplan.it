@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="460" viewBox="0 0 960 460" role="img" aria-labelledby="title desc">
+  <title id="title">Alzate da sedia alta - sit to stand</title>
+  <desc id="desc">Due posizioni di una persona: seduta su una sedia stabile con i piedi a terra e successivamente in piedi davanti alla sedia.</desc>
+  <rect width="960" height="460" rx="30" fill="#fff"/>
+  <rect x="20" y="20" width="445" height="418" rx="22" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="495" y="20" width="445" height="418" rx="22" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2"/>
+  <path d="M46 387H438M521 387H913" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round"/>
+  <g stroke="#64748b" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="12">
+    <path d="M138 282H272"/>
+    <path d="M152 282V382M262 282V382"/>
+    <path d="M152 283V210" />
+    <path d="M572 282H692"/>
+    <path d="M587 282V382M679 282V382"/>
+    <path d="M587 282V210"/>
+  </g>
+  <g stroke="#0f172a" stroke-width="23" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M221 200L197 281L287 296L295 353"/>
+    <path d="M197 283L258 315L265 364"/>
+    <path d="M222 215L246 259L278 270"/>
+    <path d="M214 212L224 251L249 270"/>
+    <path d="M295 353L331 367M265 364L301 372"/>
+    <path d="M743 204L740 275L747 355"/>
+    <path d="M740 276L706 355"/>
+    <path d="M744 219L759 267L783 272"/>
+    <path d="M734 220L716 261L694 269"/>
+    <path d="M746 355L789 371M706 355L744 371"/>
+  </g>
+  <g fill="#38bdf8" stroke="#0f172a" stroke-width="8">
+    <circle cx="226" cy="162" r="29"/>
+    <circle cx="745" cy="161" r="29"/>
+  </g>
+  <g fill="#e0f2fe" stroke="#0284c7" stroke-width="6">
+    <circle cx="197" cy="281" r="12"/>
+    <circle cx="740" cy="275" r="12"/>
+  </g>
+  <path d="M379 208V171M379 171L361 191M379 171L397 191" stroke="#0891b2" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <rect x="54" y="49" width="120" height="36" rx="18" fill="#0e7490"/>
+  <rect x="529" y="49" width="120" height="36" rx="18" fill="#0e7490"/>
+  <g fill="#fff" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="20">
+    <text x="114" y="73" text-anchor="middle">1. SEDUTA</text>
+    <text x="589" y="73" text-anchor="middle">2. IN PIEDI</text>
+  </g>
+  <g fill="#334155" font-family="Arial,Helvetica,sans-serif" font-size="18" text-anchor="middle">
+    <text x="243" y="420">Piedi stabili, busto controllato</text>
+    <text x="717" y="420">Salita lenta, senza slancio</text>
+  </g>
+</svg>
