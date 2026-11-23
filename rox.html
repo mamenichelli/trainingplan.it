@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ROX | Piano alimentare 4 settimane · calorie e porzioni</title>
+    <!-- Tailwind CSS per il design responsivo e moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="admin-core.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Stili per l'accordion nativo */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep .3s ease-in-out;
+        }
+        @keyframes sweep {
+            0%    {opacity: 0; transform: translateY(-10px)}
+            100%  {opacity: 1; transform: translateY(0)}
+        }
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        details[open] summary .chevron {
+            transform: rotate(180deg);
+        }
+        
+        /* Custom scrollbar per ricette */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scroll {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 pb-12">
+
+    <!-- Intestazione Epica in stile Romano (Come da richiesta) -->
+    <div class="relative w-full h-72 bg-gray-950 overflow-hidden flex items-center justify-center border-b border-orange-500/30 shadow-[0_10px_30px_rgba(249,115,22,0.1)]">
+        <!-- Sfondo Immagine -->
+        <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-br from-gray-950 via-emerald-950/25 to-orange-950/30"></div>
+        
+        <!-- Gradiente di sfumatura per far leggere bene il testo -->
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/60 to-transparent"></div>
+        
+        <!-- Testo Epico -->
+        <div class="relative z-10 px-4 text-center mt-6">
+            <h2 class="text-[15px] sm:text-lg font-bold uppercase text-orange-200 font-['Cinzel'] leading-[2.2] tracking-[0.25em]" style="text-shadow: 0 4px 20px rgba(249,115,22,0.6);">
+                R O X<br><span class="text-orange-400">Nutrition Plan</span>
+            </h2>
+            <div class="mt-5 flex justify-center">
+                <div class="w-32 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Header -->
+    <header class="sticky top-0 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800 p-4 z-50">
+        <div class="max-w-md mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
+                    ROX · Alimentazione
+                </h1>
+                <p class="text-xs text-gray-400 font-medium mt-0.5">4 settimane · porzioni e calorie</p>
+            </div>
+            <div class="bg-gray-800 p-2 rounded-lg border border-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-md mx-auto p-4">
+        
+
+        <section class="bg-gray-900 border border-teal-500/30 rounded-xl p-4 mb-4 shadow-lg shadow-teal-500/5">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-white">Indicazioni per ROX</h3>
+            <p class="mt-2 text-xs leading-relaxed text-gray-300"><strong class="text-teal-300">Predisposizione genetica ≠ diagnosi di celiachia.</strong> Avere HLA-DQ2/DQ8 non dimostra la malattia. Prima di iniziare una dieta rigorosamente priva di glutine, se la diagnosi non è stata completata, confrontati con il medico: gli accertamenti possono risultare falsati dopo aver eliminato il glutine.</p>
+            <p class="mt-2 text-xs leading-relaxed text-gray-400">Il menu usa soprattutto ingredienti naturalmente privi di glutine per semplicità di preparazione, ma non equivale a una prescrizione per celiachia. In caso di diagnosi confermata, prodotti confezionati, condimenti e superfici devono essere controllati per il glutine e la contaminazione crociata.</p>
+        </section>
+        <section class="bg-gray-900 border border-emerald-500/30 rounded-xl p-4 mb-4 shadow-lg">
+            <div class="flex items-center justify-between gap-3"><h3 class="text-sm font-bold uppercase tracking-widest text-white">Calorie · esempio indicativo</h3><span class="rounded-full bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-1 text-xs font-extrabold text-emerald-300">~1939 kcal/giorno</span></div>
+            <p class="mt-2 text-xs leading-relaxed text-gray-300">Le calorie sono stimate per ogni pasto e sommate per giornata. Nelle quattro settimane i menu variano tra <strong class="text-emerald-300">1817 e 2064 kcal/giorno</strong>, spuntino compreso. Non è un fabbisogno individuale: mancano età, altezza, peso, attività fisica e obiettivo calorico di ROX.</p>
+            <p class="mt-2 text-xs leading-relaxed text-gray-400">Pesi: carne e pesce a crudo, ceci già cotti e scolati, patate già lessate, olio pesato in grammi. I valori sono approssimativi e variano con marche e cotture. Niente quantità “a volontà”: per mantenere il totale indicato occorre rispettare le porzioni.</p>
+        </section>
+        <section class="bg-gray-900 border border-orange-500/25 rounded-xl p-4 mb-6 shadow-lg">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-white">Carboidrati · patate e ceci</h3>
+            <p class="mt-2 text-xs leading-relaxed text-gray-300"><strong class="text-orange-300">Patate:</strong> due porzioni a settimana da 80–100 g già cotte. Lessale, falle raffreddare e riponile in frigorifero entro 2 ore dalla cottura; consumale il giorno dopo (comunque entro 48 ore), anche fredde in insalata. La refrigerazione può aumentare una quota di amido resistente, ma non azzera zuccheri, amido o calorie.</p>
+            <p class="mt-2 text-xs leading-relaxed text-gray-300"><strong class="text-orange-300">Ceci:</strong> porzioni definite di circa 90–135 g cotti e scolati nei pasti indicati. Aumenta gradualmente se non è abituata ai legumi.</p>
+            <p class="mt-2 text-xs leading-relaxed text-gray-400">Valori indicativi usati: patate lesse 87 kcal/100 g; ceci bolliti 164 kcal/100 g. Il conteggio non sottrae arbitrariamente calorie per l'amido resistente.</p>
+        </section>
+        <!-- Settimane Container -->
+        <div id="diet-container" class="space-y-4">
+            <!-- Il contenuto verrà generato dal Javascript qui sotto -->
+        </div>
+
+        <!-- Sezione Ricette -->
+        <div class="mt-10 mb-4">
+            <div class="flex items-center space-x-3 mb-4 px-1">
+                <div class="h-px bg-gray-800 flex-1"></div>
+                <h3 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] font-['Cinzel'] text-center">
+                    Ricettario ROX<br>
+                    <span class="text-[9px] text-teal-500 tracking-[0.3em]">30 ricette · calorie per porzione</span>
+                </h3>
+                <div class="h-px bg-gray-800 flex-1"></div>
+            </div>
+            
+            <div class="flex flex-col space-y-4" id="recipes-container">
+                <!-- Generato da JS -->
+            </div>
+        </div>
+
+        <p class="mx-auto mt-5 max-w-md text-[10px] leading-relaxed text-gray-500">Fonti di riferimento: <a class="underline" href="https://www.salute.gov.it/new/it/faq/faq-la-celiachia-impariamo-conviverci/" target="_blank" rel="noopener noreferrer">Ministero della Salute — celiachia</a> · <a class="underline" href="https://www.celiachia.it/celiachia/diagnosi/" target="_blank" rel="noopener noreferrer">AIC — diagnosi</a> · <a class="underline" href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener noreferrer">USDA FoodData Central</a>. Valori nutrizionali medi e stime, non prescrizione clinica.</p>
+    </main>
+
+    <script>
+        // ROX: piano alimentare dimostrativo, 4 settimane
+        const dietData = [
+                {
+                        "week": "Settimana 1",
+                        "focus": "Equilibrio e porzioni",
+                        "desc": "Porzioni già definite; ceci in alcuni pasti e due piccole porzioni di patate cotte e poi refrigerate.",
+                        "color": "from-teal-500 to-emerald-500",
+                        "days": [
+                                {
+                                        "day": "Lunedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Coppa greca e frutti di bosco",
+                                                        "details": "250 g yogurt greco intero bianco · 160 g frutti di bosco · 20 g semi di chia · 12 g mandorle. Preparazione nella ricetta 22.",
+                                                        "kcal": 547,
+                                                        "icon": "🥣",
+                                                        "recipeId": 22
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo, ceci e zucchine",
+                                                        "details": "180 g petto di pollo crudo · 110 g ceci già cotti e scolati · 220 g zucchine · 12 g olio extravergine di oliva. Preparazione nella ricetta 1.",
+                                                        "kcal": 524,
+                                                        "icon": "🥗",
+                                                        "recipeId": 1
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Tacchino, ceci e finocchi",
+                                                        "details": "200 g fesa di tacchino cruda · 100 g ceci già cotti e scolati · 220 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 3.",
+                                                        "kcal": 569,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 3
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 170 g mela · 14 g mandorle.",
+                                                        "kcal": 300,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1940,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Martedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Frullato kefir e proteine",
+                                                        "details": "300 g kefir bianco naturale · 30 g proteine isolate in polvere (etichetta da verificare) · 150 g frutti di bosco · 18 g mandorle. Preparazione nella ricetta 23.",
+                                                        "kcal": 491,
+                                                        "icon": "🥣",
+                                                        "recipeId": 23
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Merluzzo, ceci e broccoli",
+                                                        "details": "230 g merluzzo fresco · 110 g ceci già cotti e scolati · 220 g broccoli · 14 g olio extravergine di oliva. Preparazione nella ricetta 4.",
+                                                        "kcal": 570,
+                                                        "icon": "🥗",
+                                                        "recipeId": 4
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Branzino con patate fredde",
+                                                        "details": "240 g branzino fresco · 100 g patate lesse, cotte il giorno prima e refrigerate · 250 g zucchine · 14 g olio extravergine di oliva. Preparazione nella ricetta 7.",
+                                                        "kcal": 491,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 7
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 170 g frutti di bosco.",
+                                                        "kcal": 265,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1817,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Mercoledì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Ricotta al cacao e noci",
+                                                        "details": "200 g ricotta vaccina intera · 20 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 18 g noci. Preparazione nella ricetta 24.",
+                                                        "kcal": 511,
+                                                        "icon": "🥣",
+                                                        "recipeId": 24
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Gamberi, ceci e rucola",
+                                                        "details": "230 g gamberi sgusciati · 120 g ceci già cotti e scolati · 100 g rucola · 14 g olio extravergine di oliva. Preparazione nella ricetta 8.",
+                                                        "kcal": 555,
+                                                        "icon": "🥗",
+                                                        "recipeId": 8
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Pollo croccante alle mandorle",
+                                                        "details": "220 g petto di pollo crudo · 30 g mandorle · 250 g zucchine · 13 g olio extravergine di oliva. Preparazione nella ricetta 9.",
+                                                        "kcal": 576,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 9
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "170 g kiwi · 20 g mandorle.",
+                                                        "kcal": 220,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1862,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Giovedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Yogurt, kiwi e chia",
+                                                        "details": "250 g yogurt greco intero bianco · 160 g kiwi · 20 g semi di chia. Preparazione nella ricetta 25.",
+                                                        "kcal": 495,
+                                                        "icon": "🥣",
+                                                        "recipeId": 25
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Tacchino, broccoli e avocado",
+                                                        "details": "220 g fesa di tacchino cruda · 240 g broccoli · 100 g avocado · 12 g olio extravergine di oliva. Preparazione nella ricetta 10.",
+                                                        "kcal": 592,
+                                                        "icon": "🥗",
+                                                        "recipeId": 10
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Insalata tiepida di polpo e ceci",
+                                                        "details": "260 g polpo cotto · 115 g ceci già cotti e scolati · 150 g sedano · 15 g olio extravergine di oliva. Preparazione nella ricetta 11.",
+                                                        "kcal": 561,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 11
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "120 g ricotta vaccina intera · 150 g pera.",
+                                                        "kcal": 261,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1909,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Venerdì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Budino di chia e frutti di bosco",
+                                                        "details": "300 g latte di mandorla senza zuccheri · 35 g semi di chia · 35 g proteine isolate in polvere (etichetta da verificare) · 170 g frutti di bosco · 15 g mandorle. Preparazione nella ricetta 26.",
+                                                        "kcal": 527,
+                                                        "icon": "🥣",
+                                                        "recipeId": 26
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Salmone e patate fredde",
+                                                        "details": "160 g salmone fresco · 90 g patate lesse, cotte il giorno prima e refrigerate · 180 g spinaci · 10 g olio extravergine di oliva. Preparazione nella ricetta 2.",
+                                                        "kcal": 543,
+                                                        "icon": "🥗",
+                                                        "recipeId": 2
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Pollo alla senape con ceci",
+                                                        "details": "210 g petto di pollo crudo · 105 g ceci già cotti e scolati · 20 g senape senza ingredienti contenenti glutine · 200 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 14.",
+                                                        "kcal": 594,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 14
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 19 g noci.",
+                                                        "kcal": 254,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1918,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Sabato",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Frullato cacao, banana e mandorle",
+                                                        "details": "300 g latte di mandorla senza zuccheri · 35 g proteine isolate in polvere (etichetta da verificare) · 120 g banana · 10 g cacao amaro · 20 g burro di mandorle 100%. Preparazione nella ricetta 27.",
+                                                        "kcal": 438,
+                                                        "icon": "🥣",
+                                                        "recipeId": 27
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Salmone, ceci e avocado",
+                                                        "details": "150 g salmone fresco · 90 g ceci già cotti e scolati · 80 g avocado · 160 g lattuga e insalata mista · 6 g olio extravergine di oliva. Preparazione nella ricetta 15.",
+                                                        "kcal": 666,
+                                                        "icon": "🥗",
+                                                        "recipeId": 15
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Zucchine ripiene di tacchino",
+                                                        "details": "240 g fesa di tacchino cruda · 300 g zucchine · 25 g parmigiano · 90 g ceci già cotti e scolati · 10 g olio extravergine di oliva. Preparazione nella ricetta 16.",
+                                                        "kcal": 651,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 16
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 150 g frutti di bosco.",
+                                                        "kcal": 255,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 2010,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Domenica",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Crema avocado e cacao",
+                                                        "details": "160 g avocado · 30 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 220 g latte di mandorla senza zuccheri · 100 g frutti di bosco. Preparazione nella ricetta 28.",
+                                                        "kcal": 481,
+                                                        "icon": "🥣",
+                                                        "recipeId": 28
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Ceci cremosi, spinaci e ricotta",
+                                                        "details": "120 g ceci già cotti e scolati · 250 g spinaci · 180 g ricotta vaccina intera · 15 g olio extravergine di oliva. Preparazione nella ricetta 17.",
+                                                        "kcal": 652,
+                                                        "icon": "🥗",
+                                                        "recipeId": 17
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Tofu e verdure alle mandorle",
+                                                        "details": "230 g tofu al naturale · 250 g funghi · 180 g broccoli · 25 g mandorle · 10 g olio extravergine di oliva. Preparazione nella ricetta 18.",
+                                                        "kcal": 627,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 18
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "190 g mela · 23 g mandorle.",
+                                                        "kcal": 232,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1992,
+                                        "potatoMeals": 0
+                                }
+                        ],
+                        "avgKcal": 1921
+                },
+                {
+                        "week": "Settimana 2",
+                        "focus": "Rotazione proteica",
+                        "desc": "Alterna le fonti proteiche, mantieni verdure abbondanti e condimenti pesati.",
+                        "color": "from-blue-500 to-indigo-500",
+                        "days": [
+                                {
+                                        "day": "Lunedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Ricotta al cacao e noci",
+                                                        "details": "200 g ricotta vaccina intera · 20 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 18 g noci. Preparazione nella ricetta 24.",
+                                                        "kcal": 511,
+                                                        "icon": "🥣",
+                                                        "recipeId": 24
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo croccante alle mandorle",
+                                                        "details": "220 g petto di pollo crudo · 30 g mandorle · 250 g zucchine · 13 g olio extravergine di oliva. Preparazione nella ricetta 9.",
+                                                        "kcal": 576,
+                                                        "icon": "🥗",
+                                                        "recipeId": 9
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Tacchino, broccoli e avocado",
+                                                        "details": "220 g fesa di tacchino cruda · 240 g broccoli · 100 g avocado · 12 g olio extravergine di oliva. Preparazione nella ricetta 10.",
+                                                        "kcal": 592,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 10
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 170 g frutti di bosco.",
+                                                        "kcal": 265,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1944,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Martedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Yogurt, kiwi e chia",
+                                                        "details": "250 g yogurt greco intero bianco · 160 g kiwi · 20 g semi di chia. Preparazione nella ricetta 25.",
+                                                        "kcal": 495,
+                                                        "icon": "🥣",
+                                                        "recipeId": 25
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Insalata tiepida di polpo e ceci",
+                                                        "details": "260 g polpo cotto · 115 g ceci già cotti e scolati · 150 g sedano · 15 g olio extravergine di oliva. Preparazione nella ricetta 11.",
+                                                        "kcal": 561,
+                                                        "icon": "🥗",
+                                                        "recipeId": 11
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Salmone e patate fredde",
+                                                        "details": "160 g salmone fresco · 90 g patate lesse, cotte il giorno prima e refrigerate · 180 g spinaci · 10 g olio extravergine di oliva. Preparazione nella ricetta 2.",
+                                                        "kcal": 543,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 2
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "170 g kiwi · 20 g mandorle.",
+                                                        "kcal": 220,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1819,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Mercoledì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Budino di chia e frutti di bosco",
+                                                        "details": "300 g latte di mandorla senza zuccheri · 35 g semi di chia · 35 g proteine isolate in polvere (etichetta da verificare) · 170 g frutti di bosco · 15 g mandorle. Preparazione nella ricetta 26.",
+                                                        "kcal": 527,
+                                                        "icon": "🥣",
+                                                        "recipeId": 26
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo alla senape con ceci",
+                                                        "details": "210 g petto di pollo crudo · 105 g ceci già cotti e scolati · 20 g senape senza ingredienti contenenti glutine · 200 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 14.",
+                                                        "kcal": 594,
+                                                        "icon": "🥗",
+                                                        "recipeId": 14
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Salmone, ceci e avocado",
+                                                        "details": "150 g salmone fresco · 90 g ceci già cotti e scolati · 80 g avocado · 160 g lattuga e insalata mista · 6 g olio extravergine di oliva. Preparazione nella ricetta 15.",
+                                                        "kcal": 666,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 15
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "120 g ricotta vaccina intera · 150 g pera.",
+                                                        "kcal": 261,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 2048,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Giovedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Frullato cacao, banana e mandorle",
+                                                        "details": "300 g latte di mandorla senza zuccheri · 35 g proteine isolate in polvere (etichetta da verificare) · 120 g banana · 10 g cacao amaro · 20 g burro di mandorle 100%. Preparazione nella ricetta 27.",
+                                                        "kcal": 438,
+                                                        "icon": "🥣",
+                                                        "recipeId": 27
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Zucchine ripiene di tacchino",
+                                                        "details": "240 g fesa di tacchino cruda · 300 g zucchine · 25 g parmigiano · 90 g ceci già cotti e scolati · 10 g olio extravergine di oliva. Preparazione nella ricetta 16.",
+                                                        "kcal": 651,
+                                                        "icon": "🥗",
+                                                        "recipeId": 16
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Ceci cremosi, spinaci e ricotta",
+                                                        "details": "120 g ceci già cotti e scolati · 250 g spinaci · 180 g ricotta vaccina intera · 15 g olio extravergine di oliva. Preparazione nella ricetta 17.",
+                                                        "kcal": 652,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 17
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 19 g noci.",
+                                                        "kcal": 254,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1995,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Venerdì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Crema avocado e cacao",
+                                                        "details": "160 g avocado · 30 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 220 g latte di mandorla senza zuccheri · 100 g frutti di bosco. Preparazione nella ricetta 28.",
+                                                        "kcal": 481,
+                                                        "icon": "🥣",
+                                                        "recipeId": 28
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Burger di manzo e patate fredde",
+                                                        "details": "210 g manzo magro crudo · 90 g patate lesse, cotte il giorno prima e refrigerate · 200 g pomodori · 13 g olio extravergine di oliva. Preparazione nella ricetta 12.",
+                                                        "kcal": 557,
+                                                        "icon": "🥗",
+                                                        "recipeId": 12
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Pollo, ricotta e broccoli",
+                                                        "details": "190 g petto di pollo crudo · 160 g ricotta vaccina intera · 230 g broccoli · 12 g olio extravergine di oliva. Preparazione nella ricetta 20.",
+                                                        "kcal": 629,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 20
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 150 g frutti di bosco.",
+                                                        "kcal": 255,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1922,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Sabato",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Ricotta, noci e mela",
+                                                        "details": "210 g ricotta vaccina intera · 20 g noci · 170 g mela. Preparazione nella ricetta 29.",
+                                                        "kcal": 526,
+                                                        "icon": "🥣",
+                                                        "recipeId": 29
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Ceci, feta e pomodori",
+                                                        "details": "135 g ceci già cotti e scolati · 100 g feta · 250 g pomodori · 150 g cetrioli · 10 g olio extravergine di oliva. Preparazione nella ricetta 21.",
+                                                        "kcal": 643,
+                                                        "icon": "🥗",
+                                                        "recipeId": 21
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Pollo, ceci e zucchine",
+                                                        "details": "180 g petto di pollo crudo · 110 g ceci già cotti e scolati · 220 g zucchine · 12 g olio extravergine di oliva. Preparazione nella ricetta 1.",
+                                                        "kcal": 524,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 1
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "190 g mela · 23 g mandorle.",
+                                                        "kcal": 232,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1925,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Domenica",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Yogurt fondente e frutti rossi",
+                                                        "details": "250 g yogurt greco intero bianco · 20 g cioccolato fondente ≥85% · 130 g frutti di bosco. Preparazione nella ricetta 30.",
+                                                        "kcal": 485,
+                                                        "icon": "🥣",
+                                                        "recipeId": 30
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Tacchino, ceci e finocchi",
+                                                        "details": "200 g fesa di tacchino cruda · 100 g ceci già cotti e scolati · 220 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 3.",
+                                                        "kcal": 569,
+                                                        "icon": "🥗",
+                                                        "recipeId": 3
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Merluzzo, ceci e broccoli",
+                                                        "details": "230 g merluzzo fresco · 110 g ceci già cotti e scolati · 220 g broccoli · 14 g olio extravergine di oliva. Preparazione nella ricetta 4.",
+                                                        "kcal": 570,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 4
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 170 g mela · 14 g mandorle.",
+                                                        "kcal": 300,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1924,
+                                        "potatoMeals": 0
+                                }
+                        ],
+                        "avgKcal": 1940
+                },
+                {
+                        "week": "Settimana 3",
+                        "focus": "Varietà e fibre",
+                        "desc": "Aumenta la varietà di ortaggi e la regolarità dei pasti; controlla la tolleranza ai legumi.",
+                        "color": "from-purple-500 to-fuchsia-500",
+                        "days": [
+                                {
+                                        "day": "Lunedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Budino di chia e frutti di bosco",
+                                                        "details": "300 g latte di mandorla senza zuccheri · 35 g semi di chia · 35 g proteine isolate in polvere (etichetta da verificare) · 170 g frutti di bosco · 15 g mandorle. Preparazione nella ricetta 26.",
+                                                        "kcal": 527,
+                                                        "icon": "🥣",
+                                                        "recipeId": 26
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Salmone, ceci e avocado",
+                                                        "details": "150 g salmone fresco · 90 g ceci già cotti e scolati · 80 g avocado · 160 g lattuga e insalata mista · 6 g olio extravergine di oliva. Preparazione nella ricetta 15.",
+                                                        "kcal": 666,
+                                                        "icon": "🥗",
+                                                        "recipeId": 15
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Zucchine ripiene di tacchino",
+                                                        "details": "240 g fesa di tacchino cruda · 300 g zucchine · 25 g parmigiano · 90 g ceci già cotti e scolati · 10 g olio extravergine di oliva. Preparazione nella ricetta 16.",
+                                                        "kcal": 651,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 16
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "170 g kiwi · 20 g mandorle.",
+                                                        "kcal": 220,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 2064,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Martedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Frullato cacao, banana e mandorle",
+                                                        "details": "300 g latte di mandorla senza zuccheri · 35 g proteine isolate in polvere (etichetta da verificare) · 120 g banana · 10 g cacao amaro · 20 g burro di mandorle 100%. Preparazione nella ricetta 27.",
+                                                        "kcal": 438,
+                                                        "icon": "🥣",
+                                                        "recipeId": 27
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Ceci cremosi, spinaci e ricotta",
+                                                        "details": "120 g ceci già cotti e scolati · 250 g spinaci · 180 g ricotta vaccina intera · 15 g olio extravergine di oliva. Preparazione nella ricetta 17.",
+                                                        "kcal": 652,
+                                                        "icon": "🥗",
+                                                        "recipeId": 17
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Merluzzo con patate e pistacchi",
+                                                        "details": "250 g merluzzo fresco · 90 g patate lesse, cotte il giorno prima e refrigerate · 30 g pistacchi non salati · 220 g broccoli · 12 g olio extravergine di oliva. Preparazione nella ricetta 19.",
+                                                        "kcal": 635,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 19
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "120 g ricotta vaccina intera · 150 g pera.",
+                                                        "kcal": 261,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1986,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Mercoledì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Crema avocado e cacao",
+                                                        "details": "160 g avocado · 30 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 220 g latte di mandorla senza zuccheri · 100 g frutti di bosco. Preparazione nella ricetta 28.",
+                                                        "kcal": 481,
+                                                        "icon": "🥣",
+                                                        "recipeId": 28
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo, ricotta e broccoli",
+                                                        "details": "190 g petto di pollo crudo · 160 g ricotta vaccina intera · 230 g broccoli · 12 g olio extravergine di oliva. Preparazione nella ricetta 20.",
+                                                        "kcal": 629,
+                                                        "icon": "🥗",
+                                                        "recipeId": 20
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Ceci, feta e pomodori",
+                                                        "details": "135 g ceci già cotti e scolati · 100 g feta · 250 g pomodori · 150 g cetrioli · 10 g olio extravergine di oliva. Preparazione nella ricetta 21.",
+                                                        "kcal": 643,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 21
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 19 g noci.",
+                                                        "kcal": 254,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 2007,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Giovedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Ricotta, noci e mela",
+                                                        "details": "210 g ricotta vaccina intera · 20 g noci · 170 g mela. Preparazione nella ricetta 29.",
+                                                        "kcal": 526,
+                                                        "icon": "🥣",
+                                                        "recipeId": 29
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo, ceci e zucchine",
+                                                        "details": "180 g petto di pollo crudo · 110 g ceci già cotti e scolati · 220 g zucchine · 12 g olio extravergine di oliva. Preparazione nella ricetta 1.",
+                                                        "kcal": 524,
+                                                        "icon": "🥗",
+                                                        "recipeId": 1
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Tacchino, ceci e finocchi",
+                                                        "details": "200 g fesa di tacchino cruda · 100 g ceci già cotti e scolati · 220 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 3.",
+                                                        "kcal": 569,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 3
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 150 g frutti di bosco.",
+                                                        "kcal": 255,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1874,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Venerdì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Yogurt fondente e frutti rossi",
+                                                        "details": "250 g yogurt greco intero bianco · 20 g cioccolato fondente ≥85% · 130 g frutti di bosco. Preparazione nella ricetta 30.",
+                                                        "kcal": 485,
+                                                        "icon": "🥣",
+                                                        "recipeId": 30
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Sgombro con patate e insalata",
+                                                        "details": "160 g sgombro fresco · 80 g patate lesse, cotte il giorno prima e refrigerate · 200 g lattuga e insalata mista · 10 g olio extravergine di oliva. Preparazione nella ricetta 5.",
+                                                        "kcal": 518,
+                                                        "icon": "🥗",
+                                                        "recipeId": 5
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Tagliata magra e ceci",
+                                                        "details": "190 g manzo magro crudo · 100 g ceci già cotti e scolati · 200 g peperoni · 12 g olio extravergine di oliva. Preparazione nella ricetta 6.",
+                                                        "kcal": 629,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 6
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "190 g mela · 23 g mandorle.",
+                                                        "kcal": 232,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1864,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Sabato",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Coppa greca e frutti di bosco",
+                                                        "details": "250 g yogurt greco intero bianco · 160 g frutti di bosco · 20 g semi di chia · 12 g mandorle. Preparazione nella ricetta 22.",
+                                                        "kcal": 547,
+                                                        "icon": "🥣",
+                                                        "recipeId": 22
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Gamberi, ceci e rucola",
+                                                        "details": "230 g gamberi sgusciati · 120 g ceci già cotti e scolati · 100 g rucola · 14 g olio extravergine di oliva. Preparazione nella ricetta 8.",
+                                                        "kcal": 555,
+                                                        "icon": "🥗",
+                                                        "recipeId": 8
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Pollo croccante alle mandorle",
+                                                        "details": "220 g petto di pollo crudo · 30 g mandorle · 250 g zucchine · 13 g olio extravergine di oliva. Preparazione nella ricetta 9.",
+                                                        "kcal": 576,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 9
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 170 g mela · 14 g mandorle.",
+                                                        "kcal": 300,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1978,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Domenica",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Frullato kefir e proteine",
+                                                        "details": "300 g kefir bianco naturale · 30 g proteine isolate in polvere (etichetta da verificare) · 150 g frutti di bosco · 18 g mandorle. Preparazione nella ricetta 23.",
+                                                        "kcal": 491,
+                                                        "icon": "🥣",
+                                                        "recipeId": 23
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Tacchino, broccoli e avocado",
+                                                        "details": "220 g fesa di tacchino cruda · 240 g broccoli · 100 g avocado · 12 g olio extravergine di oliva. Preparazione nella ricetta 10.",
+                                                        "kcal": 592,
+                                                        "icon": "🥗",
+                                                        "recipeId": 10
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Insalata tiepida di polpo e ceci",
+                                                        "details": "260 g polpo cotto · 115 g ceci già cotti e scolati · 150 g sedano · 15 g olio extravergine di oliva. Preparazione nella ricetta 11.",
+                                                        "kcal": 561,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 11
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 170 g frutti di bosco.",
+                                                        "kcal": 265,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1909,
+                                        "potatoMeals": 0
+                                }
+                        ],
+                        "avgKcal": 1955
+                },
+                {
+                        "week": "Settimana 4",
+                        "focus": "Consolidamento",
+                        "desc": "Ripeti le modalità che risultano più pratiche, senza togliere intere categorie alimentari per il solo dato genetico.",
+                        "color": "from-rose-500 to-orange-500",
+                        "days": [
+                                {
+                                        "day": "Lunedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Crema avocado e cacao",
+                                                        "details": "160 g avocado · 30 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 220 g latte di mandorla senza zuccheri · 100 g frutti di bosco. Preparazione nella ricetta 28.",
+                                                        "kcal": 481,
+                                                        "icon": "🥣",
+                                                        "recipeId": 28
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Ceci, feta e pomodori",
+                                                        "details": "135 g ceci già cotti e scolati · 100 g feta · 250 g pomodori · 150 g cetrioli · 10 g olio extravergine di oliva. Preparazione nella ricetta 21.",
+                                                        "kcal": 643,
+                                                        "icon": "🥗",
+                                                        "recipeId": 21
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Pollo, ceci e zucchine",
+                                                        "details": "180 g petto di pollo crudo · 110 g ceci già cotti e scolati · 220 g zucchine · 12 g olio extravergine di oliva. Preparazione nella ricetta 1.",
+                                                        "kcal": 524,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 1
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "120 g ricotta vaccina intera · 150 g pera.",
+                                                        "kcal": 261,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1909,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Martedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Ricotta, noci e mela",
+                                                        "details": "210 g ricotta vaccina intera · 20 g noci · 170 g mela. Preparazione nella ricetta 29.",
+                                                        "kcal": 526,
+                                                        "icon": "🥣",
+                                                        "recipeId": 29
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Tacchino, ceci e finocchi",
+                                                        "details": "200 g fesa di tacchino cruda · 100 g ceci già cotti e scolati · 220 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 3.",
+                                                        "kcal": 569,
+                                                        "icon": "🥗",
+                                                        "recipeId": 3
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Sgombro con patate e insalata",
+                                                        "details": "160 g sgombro fresco · 80 g patate lesse, cotte il giorno prima e refrigerate · 200 g lattuga e insalata mista · 10 g olio extravergine di oliva. Preparazione nella ricetta 5.",
+                                                        "kcal": 518,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 5
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 19 g noci.",
+                                                        "kcal": 254,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1867,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Mercoledì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Yogurt fondente e frutti rossi",
+                                                        "details": "250 g yogurt greco intero bianco · 20 g cioccolato fondente ≥85% · 130 g frutti di bosco. Preparazione nella ricetta 30.",
+                                                        "kcal": 485,
+                                                        "icon": "🥣",
+                                                        "recipeId": 30
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Tagliata magra e ceci",
+                                                        "details": "190 g manzo magro crudo · 100 g ceci già cotti e scolati · 200 g peperoni · 12 g olio extravergine di oliva. Preparazione nella ricetta 6.",
+                                                        "kcal": 629,
+                                                        "icon": "🥗",
+                                                        "recipeId": 6
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Gamberi, ceci e rucola",
+                                                        "details": "230 g gamberi sgusciati · 120 g ceci già cotti e scolati · 100 g rucola · 14 g olio extravergine di oliva. Preparazione nella ricetta 8.",
+                                                        "kcal": 555,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 8
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 150 g frutti di bosco.",
+                                                        "kcal": 255,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1924,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Giovedì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Coppa greca e frutti di bosco",
+                                                        "details": "250 g yogurt greco intero bianco · 160 g frutti di bosco · 20 g semi di chia · 12 g mandorle. Preparazione nella ricetta 22.",
+                                                        "kcal": 547,
+                                                        "icon": "🥣",
+                                                        "recipeId": 22
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo croccante alle mandorle",
+                                                        "details": "220 g petto di pollo crudo · 30 g mandorle · 250 g zucchine · 13 g olio extravergine di oliva. Preparazione nella ricetta 9.",
+                                                        "kcal": 576,
+                                                        "icon": "🥗",
+                                                        "recipeId": 9
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Tacchino, broccoli e avocado",
+                                                        "details": "220 g fesa di tacchino cruda · 240 g broccoli · 100 g avocado · 12 g olio extravergine di oliva. Preparazione nella ricetta 10.",
+                                                        "kcal": 592,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 10
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "190 g mela · 23 g mandorle.",
+                                                        "kcal": 232,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1947,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Venerdì",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Frullato kefir e proteine",
+                                                        "details": "300 g kefir bianco naturale · 30 g proteine isolate in polvere (etichetta da verificare) · 150 g frutti di bosco · 18 g mandorle. Preparazione nella ricetta 23.",
+                                                        "kcal": 491,
+                                                        "icon": "🥣",
+                                                        "recipeId": 23
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Branzino con patate fredde",
+                                                        "details": "240 g branzino fresco · 100 g patate lesse, cotte il giorno prima e refrigerate · 250 g zucchine · 14 g olio extravergine di oliva. Preparazione nella ricetta 7.",
+                                                        "kcal": 491,
+                                                        "icon": "🥗",
+                                                        "recipeId": 7
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Ricotta, ceci e zucchine al forno",
+                                                        "details": "220 g ricotta vaccina intera · 100 g ceci già cotti e scolati · 250 g zucchine · 9 g olio extravergine di oliva. Preparazione nella ricetta 13.",
+                                                        "kcal": 609,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 13
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "200 g kefir bianco naturale · 170 g mela · 14 g mandorle.",
+                                                        "kcal": 300,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 1891,
+                                        "potatoMeals": 1
+                                },
+                                {
+                                        "day": "Sabato",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Ricotta al cacao e noci",
+                                                        "details": "200 g ricotta vaccina intera · 20 g proteine isolate in polvere (etichetta da verificare) · 10 g cacao amaro · 18 g noci. Preparazione nella ricetta 24.",
+                                                        "kcal": 511,
+                                                        "icon": "🥣",
+                                                        "recipeId": 24
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Pollo alla senape con ceci",
+                                                        "details": "210 g petto di pollo crudo · 105 g ceci già cotti e scolati · 20 g senape senza ingredienti contenenti glutine · 200 g finocchi · 13 g olio extravergine di oliva. Preparazione nella ricetta 14.",
+                                                        "kcal": 594,
+                                                        "icon": "🥗",
+                                                        "recipeId": 14
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Salmone, ceci e avocado",
+                                                        "details": "150 g salmone fresco · 90 g ceci già cotti e scolati · 80 g avocado · 160 g lattuga e insalata mista · 6 g olio extravergine di oliva. Preparazione nella ricetta 15.",
+                                                        "kcal": 666,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 15
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "150 g yogurt greco intero bianco · 170 g frutti di bosco.",
+                                                        "kcal": 265,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 2036,
+                                        "potatoMeals": 0
+                                },
+                                {
+                                        "day": "Domenica",
+                                        "meals": [
+                                                {
+                                                        "type": "Colazione",
+                                                        "name": "Yogurt, kiwi e chia",
+                                                        "details": "250 g yogurt greco intero bianco · 160 g kiwi · 20 g semi di chia. Preparazione nella ricetta 25.",
+                                                        "kcal": 495,
+                                                        "icon": "🥣",
+                                                        "recipeId": 25
+                                                },
+                                                {
+                                                        "type": "Pranzo",
+                                                        "name": "Zucchine ripiene di tacchino",
+                                                        "details": "240 g fesa di tacchino cruda · 300 g zucchine · 25 g parmigiano · 90 g ceci già cotti e scolati · 10 g olio extravergine di oliva. Preparazione nella ricetta 16.",
+                                                        "kcal": 651,
+                                                        "icon": "🥗",
+                                                        "recipeId": 16
+                                                },
+                                                {
+                                                        "type": "Cena",
+                                                        "name": "Ceci cremosi, spinaci e ricotta",
+                                                        "details": "120 g ceci già cotti e scolati · 250 g spinaci · 180 g ricotta vaccina intera · 15 g olio extravergine di oliva. Preparazione nella ricetta 17.",
+                                                        "kcal": 652,
+                                                        "icon": "🍽️",
+                                                        "recipeId": 17
+                                                },
+                                                {
+                                                        "type": "Spuntino",
+                                                        "name": "Spuntino porzionato",
+                                                        "details": "170 g kiwi · 20 g mandorle.",
+                                                        "kcal": 220,
+                                                        "icon": "🍎"
+                                                }
+                                        ],
+                                        "totalKcal": 2018,
+                                        "potatoMeals": 0
+                                }
+                        ],
+                        "avgKcal": 1942
+                }
+        ];
+        const recipesData = [
+                {
+                        "title": "1. [SALATO] Pollo, ceci e zucchine",
+                        "time": "25 min",
+                        "ingredients": [
+                                "180 g petto di pollo crudo",
+                                "110 g ceci già cotti e scolati",
+                                "220 g zucchine",
+                                "12 g olio extravergine di oliva"
+                        ],
+                        "kcal": 524,
+                        "prep": "Cuoci il pollo a striscioline e le zucchine; unisci i ceci ben scolati e condisci a fine cottura con EVO.",
+                        "tip": "I ceci sono pesati già cotti e scolati."
+                },
+                {
+                        "title": "2. [SALATO] Salmone e patate fredde",
+                        "time": "25 min + riposo",
+                        "ingredients": [
+                                "160 g salmone fresco",
+                                "90 g patate lesse, cotte il giorno prima e refrigerate",
+                                "180 g spinaci",
+                                "10 g olio extravergine di oliva"
+                        ],
+                        "kcal": 543,
+                        "prep": "Cuoci le patate il giorno prima, raffreddale rapidamente in frigorifero e servine 90 g con salmone e spinaci.",
+                        "tip": "Le patate sono già cotte quando le pesi: il freddo non elimina i carboidrati."
+                },
+                {
+                        "title": "3. [SALATO] Tacchino, ceci e finocchi",
+                        "time": "20 min",
+                        "ingredients": [
+                                "200 g fesa di tacchino cruda",
+                                "100 g ceci già cotti e scolati",
+                                "220 g finocchi",
+                                "13 g olio extravergine di oliva"
+                        ],
+                        "kcal": 569,
+                        "prep": "Griglia il tacchino, affetta i finocchi e aggiungi ceci lessi con olio a crudo.",
+                        "tip": "Per condire usa limone ed erbe aromatiche."
+                },
+                {
+                        "title": "4. [SALATO] Merluzzo, ceci e broccoli",
+                        "time": "25 min",
+                        "ingredients": [
+                                "230 g merluzzo fresco",
+                                "110 g ceci già cotti e scolati",
+                                "220 g broccoli",
+                                "14 g olio extravergine di oliva"
+                        ],
+                        "kcal": 570,
+                        "prep": "Cuoci al vapore il merluzzo e i broccoli; completa con ceci e olio EVO.",
+                        "tip": "Ceci: quantità da cotti, non da secchi."
+                },
+                {
+                        "title": "5. [SALATO] Sgombro con patate e insalata",
+                        "time": "25 min + riposo",
+                        "ingredients": [
+                                "160 g sgombro fresco",
+                                "80 g patate lesse, cotte il giorno prima e refrigerate",
+                                "200 g lattuga e insalata mista",
+                                "10 g olio extravergine di oliva"
+                        ],
+                        "kcal": 518,
+                        "prep": "Cuoci lo sgombro e accompagna con patate lesse del giorno prima, insalata ed EVO.",
+                        "tip": "Porzione di patate contenuta: 80 g, senza aggiungere pane nello stesso pasto."
+                },
+                {
+                        "title": "6. [SALATO] Tagliata magra e ceci",
+                        "time": "20 min",
+                        "ingredients": [
+                                "190 g manzo magro crudo",
+                                "100 g ceci già cotti e scolati",
+                                "200 g peperoni",
+                                "12 g olio extravergine di oliva"
+                        ],
+                        "kcal": 629,
+                        "prep": "Scotta la carne fino a cottura sicura, arrostisci i peperoni e servi con ceci scolati.",
+                        "tip": "Non aggiungere altri condimenti calorici oltre a quelli pesati."
+                },
+                {
+                        "title": "7. [SALATO] Branzino con patate fredde",
+                        "time": "25 min + riposo",
+                        "ingredients": [
+                                "240 g branzino fresco",
+                                "100 g patate lesse, cotte il giorno prima e refrigerate",
+                                "250 g zucchine",
+                                "14 g olio extravergine di oliva"
+                        ],
+                        "kcal": 491,
+                        "prep": "Cuoci il branzino al forno; servi con zucchine e patate già cotte e refrigerate per una notte.",
+                        "tip": "Porzione di patate: 100 g cotte."
+                },
+                {
+                        "title": "8. [SALATO] Gamberi, ceci e rucola",
+                        "time": "15 min",
+                        "ingredients": [
+                                "230 g gamberi sgusciati",
+                                "120 g ceci già cotti e scolati",
+                                "100 g rucola",
+                                "14 g olio extravergine di oliva"
+                        ],
+                        "kcal": 555,
+                        "prep": "Cuoci i gamberi, unisci rucola fresca e ceci e condisci con EVO.",
+                        "tip": "Per un pasto completo, rispetta le porzioni."
+                },
+                {
+                        "title": "9. [SALATO] Pollo croccante alle mandorle",
+                        "time": "25 min",
+                        "ingredients": [
+                                "220 g petto di pollo crudo",
+                                "30 g mandorle",
+                                "250 g zucchine",
+                                "13 g olio extravergine di oliva"
+                        ],
+                        "kcal": 576,
+                        "prep": "Ricopri il pollo con mandorle tritate; cuoci al forno e servi con zucchine.",
+                        "tip": "Crosta senza pangrattato: attenzione all'eventuale contaminazione se la celiachia è confermata."
+                },
+                {
+                        "title": "10. [SALATO] Tacchino, broccoli e avocado",
+                        "time": "20 min",
+                        "ingredients": [
+                                "220 g fesa di tacchino cruda",
+                                "240 g broccoli",
+                                "100 g avocado",
+                                "12 g olio extravergine di oliva"
+                        ],
+                        "kcal": 592,
+                        "prep": "Cuoci la carne e i broccoli; aggiungi avocado a fette e condisci con olio a crudo.",
+                        "tip": "Avocado ed EVO sono entrambi fonti di grassi, perciò vanno pesati."
+                },
+                {
+                        "title": "11. [SALATO] Insalata tiepida di polpo e ceci",
+                        "time": "25 min",
+                        "ingredients": [
+                                "260 g polpo cotto",
+                                "115 g ceci già cotti e scolati",
+                                "150 g sedano",
+                                "15 g olio extravergine di oliva"
+                        ],
+                        "kcal": 561,
+                        "prep": "Unisci il polpo già cotto e tagliato, il sedano e i ceci; condisci con olio e limone.",
+                        "tip": "Evita salse pronte non controllate."
+                },
+                {
+                        "title": "12. [SALATO] Burger di manzo e patate fredde",
+                        "time": "25 min + riposo",
+                        "ingredients": [
+                                "210 g manzo magro crudo",
+                                "90 g patate lesse, cotte il giorno prima e refrigerate",
+                                "200 g pomodori",
+                                "13 g olio extravergine di oliva"
+                        ],
+                        "kcal": 557,
+                        "prep": "Forma un burger senza impanatura, cuocilo bene e servi con pomodori e patate refrigerate.",
+                        "tip": "Le patate accompagnano la proteina, non sono un alimento a carboidrati zero."
+                },
+                {
+                        "title": "13. [SALATO] Ricotta, ceci e zucchine al forno",
+                        "time": "25 min",
+                        "ingredients": [
+                                "220 g ricotta vaccina intera",
+                                "100 g ceci già cotti e scolati",
+                                "250 g zucchine",
+                                "9 g olio extravergine di oliva"
+                        ],
+                        "kcal": 609,
+                        "prep": "Cuoci le zucchine al forno e completa con ricotta e ceci precedentemente scolati.",
+                        "tip": "Ricotta e ceci contribuiscono entrambi alle calorie totali."
+                },
+                {
+                        "title": "14. [SALATO] Pollo alla senape con ceci",
+                        "time": "25 min",
+                        "ingredients": [
+                                "210 g petto di pollo crudo",
+                                "105 g ceci già cotti e scolati",
+                                "20 g senape senza ingredienti contenenti glutine",
+                                "200 g finocchi",
+                                "13 g olio extravergine di oliva"
+                        ],
+                        "kcal": 594,
+                        "prep": "Rosola il pollo con poca acqua e senape; servi con ceci e finocchi.",
+                        "tip": "Controlla gli ingredienti della senape se è necessaria una dieta senza glutine."
+                },
+                {
+                        "title": "15. [SALATO] Salmone, ceci e avocado",
+                        "time": "20 min",
+                        "ingredients": [
+                                "150 g salmone fresco",
+                                "90 g ceci già cotti e scolati",
+                                "80 g avocado",
+                                "160 g lattuga e insalata mista",
+                                "6 g olio extravergine di oliva"
+                        ],
+                        "kcal": 666,
+                        "prep": "Cuoci il salmone e disponilo su insalata, ceci e avocado.",
+                        "tip": "È un pasto energetico anche se non contiene cereali."
+                },
+                {
+                        "title": "16. [SALATO] Zucchine ripiene di tacchino",
+                        "time": "30 min",
+                        "ingredients": [
+                                "240 g fesa di tacchino cruda",
+                                "300 g zucchine",
+                                "25 g parmigiano",
+                                "90 g ceci già cotti e scolati",
+                                "10 g olio extravergine di oliva"
+                        ],
+                        "kcal": 651,
+                        "prep": "Farcisci le zucchine con macinato fresco di tacchino e parmigiano, inforna e servi con ceci lessati.",
+                        "tip": "Niente pangrattato per la panatura."
+                },
+                {
+                        "title": "17. [SALATO] Ceci cremosi, spinaci e ricotta",
+                        "time": "20 min",
+                        "ingredients": [
+                                "120 g ceci già cotti e scolati",
+                                "250 g spinaci",
+                                "180 g ricotta vaccina intera",
+                                "15 g olio extravergine di oliva"
+                        ],
+                        "kcal": 652,
+                        "prep": "Scalda i ceci con gli spinaci e aggiungi ricotta ed EVO a fuoco spento.",
+                        "tip": "Introduci i legumi gradualmente se causano gonfiore."
+                },
+                {
+                        "title": "18. [SALATO] Tofu e verdure alle mandorle",
+                        "time": "20 min",
+                        "ingredients": [
+                                "230 g tofu al naturale",
+                                "250 g funghi",
+                                "180 g broccoli",
+                                "25 g mandorle",
+                                "10 g olio extravergine di oliva"
+                        ],
+                        "kcal": 627,
+                        "prep": "Rosola tofu e verdure in padella antiaderente, termina con mandorle tritate.",
+                        "tip": "Usa tofu semplice, senza salse contenenti frumento."
+                },
+                {
+                        "title": "19. [SALATO] Merluzzo con patate e pistacchi",
+                        "time": "25 min + riposo",
+                        "ingredients": [
+                                "250 g merluzzo fresco",
+                                "90 g patate lesse, cotte il giorno prima e refrigerate",
+                                "30 g pistacchi non salati",
+                                "220 g broccoli",
+                                "12 g olio extravergine di oliva"
+                        ],
+                        "kcal": 635,
+                        "prep": "Cuoci il merluzzo con una crosta di pistacchi e servi con broccoli e patate fredde.",
+                        "tip": "Pistacchi ed EVO sono inclusi nel conteggio."
+                },
+                {
+                        "title": "20. [SALATO] Pollo, ricotta e broccoli",
+                        "time": "25 min",
+                        "ingredients": [
+                                "190 g petto di pollo crudo",
+                                "160 g ricotta vaccina intera",
+                                "230 g broccoli",
+                                "12 g olio extravergine di oliva"
+                        ],
+                        "kcal": 629,
+                        "prep": "Arrostisci il pollo, accompagna con ricotta fresca ed un contorno abbondante di broccoli.",
+                        "tip": "Pasto ricco di proteine, con carboidrati soprattutto dalle verdure."
+                },
+                {
+                        "title": "21. [SALATO] Ceci, feta e pomodori",
+                        "time": "15 min",
+                        "ingredients": [
+                                "135 g ceci già cotti e scolati",
+                                "100 g feta",
+                                "250 g pomodori",
+                                "150 g cetrioli",
+                                "10 g olio extravergine di oliva"
+                        ],
+                        "kcal": 643,
+                        "prep": "Mescola ceci, feta sbriciolata, pomodori e cetrioli; completa con olio.",
+                        "tip": "Scola bene ceci e feta; evita di salare ulteriormente."
+                },
+                {
+                        "title": "22. [DOLCE] Coppa greca e frutti di bosco",
+                        "time": "5 min",
+                        "ingredients": [
+                                "250 g yogurt greco intero bianco",
+                                "160 g frutti di bosco",
+                                "20 g semi di chia",
+                                "12 g mandorle"
+                        ],
+                        "kcal": 547,
+                        "prep": "Metti yogurt in una coppetta e completa con frutti di bosco, chia e mandorle.",
+                        "tip": "Yogurt bianco senza zuccheri aggiunti."
+                },
+                {
+                        "title": "23. [DOLCE] Frullato kefir e proteine",
+                        "time": "5 min",
+                        "ingredients": [
+                                "300 g kefir bianco naturale",
+                                "30 g proteine isolate in polvere (etichetta da verificare)",
+                                "150 g frutti di bosco",
+                                "18 g mandorle"
+                        ],
+                        "kcal": 491,
+                        "prep": "Frulla kefir, proteine e frutti di bosco; aggiungi mandorle a lato.",
+                        "tip": "Verifica che le polveri siano compatibili con la condizione medica e, se serve, certificate senza glutine."
+                },
+                {
+                        "title": "24. [DOLCE] Ricotta al cacao e noci",
+                        "time": "5 min",
+                        "ingredients": [
+                                "200 g ricotta vaccina intera",
+                                "20 g proteine isolate in polvere (etichetta da verificare)",
+                                "10 g cacao amaro",
+                                "18 g noci"
+                        ],
+                        "kcal": 511,
+                        "prep": "Lavora la ricotta con cacao e proteine, completa con noci spezzettate.",
+                        "tip": "Le noci sono già conteggiate: non aggiungerne a piacere."
+                },
+                {
+                        "title": "25. [DOLCE] Yogurt, kiwi e chia",
+                        "time": "5 min",
+                        "ingredients": [
+                                "250 g yogurt greco intero bianco",
+                                "160 g kiwi",
+                                "20 g semi di chia"
+                        ],
+                        "kcal": 495,
+                        "prep": "Unisci kiwi tagliato a cubetti, yogurt e semi di chia.",
+                        "tip": "Se desideri più volume, aggiungi acqua o tisana non zuccherata."
+                },
+                {
+                        "title": "26. [DOLCE] Budino di chia e frutti di bosco",
+                        "time": "10 min + riposo",
+                        "ingredients": [
+                                "300 g latte di mandorla senza zuccheri",
+                                "35 g semi di chia",
+                                "35 g proteine isolate in polvere (etichetta da verificare)",
+                                "170 g frutti di bosco",
+                                "15 g mandorle"
+                        ],
+                        "kcal": 527,
+                        "prep": "Mescola latte di mandorla e chia e lascia rassodare in frigo; aggiungi gli altri ingredienti.",
+                        "tip": "Le calorie si riferiscono a tutta la porzione."
+                },
+                {
+                        "title": "27. [DOLCE] Frullato cacao, banana e mandorle",
+                        "time": "5 min",
+                        "ingredients": [
+                                "300 g latte di mandorla senza zuccheri",
+                                "35 g proteine isolate in polvere (etichetta da verificare)",
+                                "120 g banana",
+                                "10 g cacao amaro",
+                                "20 g burro di mandorle 100%"
+                        ],
+                        "kcal": 438,
+                        "prep": "Frulla tutto con ghiaccio fino a consistenza cremosa.",
+                        "tip": "La banana è un alimento con carboidrati, incluso nel calcolo."
+                },
+                {
+                        "title": "28. [DOLCE] Crema avocado e cacao",
+                        "time": "5 min",
+                        "ingredients": [
+                                "160 g avocado",
+                                "30 g proteine isolate in polvere (etichetta da verificare)",
+                                "10 g cacao amaro",
+                                "220 g latte di mandorla senza zuccheri",
+                                "100 g frutti di bosco"
+                        ],
+                        "kcal": 481,
+                        "prep": "Frulla avocado, cacao, latte di mandorla e proteine; servi con frutti di bosco.",
+                        "tip": "Nessun bisogno di aggiungere olio MCT: l'avocado apporta già grassi."
+                },
+                {
+                        "title": "29. [DOLCE] Ricotta, noci e mela",
+                        "time": "5 min",
+                        "ingredients": [
+                                "210 g ricotta vaccina intera",
+                                "20 g noci",
+                                "170 g mela"
+                        ],
+                        "kcal": 526,
+                        "prep": "Taglia la mela a cubetti, unisci ricotta e noci.",
+                        "tip": "Il frutto è una fonte di carboidrati della colazione."
+                },
+                {
+                        "title": "30. [DOLCE] Yogurt fondente e frutti rossi",
+                        "time": "5 min",
+                        "ingredients": [
+                                "250 g yogurt greco intero bianco",
+                                "20 g cioccolato fondente ≥85%",
+                                "130 g frutti di bosco"
+                        ],
+                        "kcal": 485,
+                        "prep": "Grattugia il fondente sullo yogurt e completa con i frutti di bosco.",
+                        "tip": "Usa fondente semplice, controllando gli allergeni se la celiachia è confermata."
+                }
+        ];
+
+        // Menu settimanale: 7 giorni con 4 pasti e totale kcal.
+        const container = document.getElementById("diet-container");
+        const fmtKcal = (v) => new Intl.NumberFormat("it-IT").format(v) + " kcal";
+
+        dietData.forEach((weekData,index) => {
+            const dayHTML = weekData.days.map((day,dayIndex) => {
+                const mealHTML = day.meals.map(meal => `
+                    <div class="flex items-start gap-3 rounded-xl border border-gray-700/60 bg-gray-800/75 p-3">
+                        <div class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-gray-950 text-lg">${meal.icon}</div>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-[9px] font-black uppercase tracking-widest text-teal-400">${meal.type}</span>
+                                <span class="shrink-0 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-[10px] font-black text-emerald-300">${fmtKcal(meal.kcal)}</span>
+                            </div>
+                            <h4 class="mt-1 text-[13px] font-bold text-white">${meal.name}</h4>
+                            <p class="mt-1.5 text-[11px] leading-relaxed text-gray-400">${meal.details}</p>
+                        </div>
+                    </div>`).join("");
+                return `
+                    <details class="mt-3 rounded-xl border border-gray-700/60 bg-gray-950/40" ${dayIndex===0&&index===0?"open":""}>
+                        <summary class="cursor-pointer select-none px-3.5 py-3 flex items-center justify-between gap-2">
+                            <span class="text-xs font-bold text-gray-100">${day.day}</span>
+                            <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-black text-emerald-300">${fmtKcal(day.totalKcal)}</span>
+                        </summary>
+                        <div class="grid gap-2 border-t border-gray-800 p-3">${mealHTML}</div>
+                    </details>`;
+            }).join("");
+            container.insertAdjacentHTML("beforeend",`
+                <details class="overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/90" ${index===0?"open":""}>
+                    <summary class="cursor-pointer select-none bg-gray-800/40 p-4">
+                        <div class="flex items-center gap-3">
+                            <div class="h-12 w-1.5 shrink-0 rounded-full bg-gradient-to-b ${weekData.color}"></div>
+                            <div class="min-w-0 flex-1">
+                                <h2 class="text-base font-extrabold uppercase tracking-wider text-white">${weekData.week}</h2>
+                                <p class="text-[10px] font-bold uppercase tracking-wide text-teal-400">${weekData.focus}</p>
+                            </div>
+                            <div class="text-right"><p class="text-[9px] uppercase text-gray-500">Media/giorno</p><p class="text-sm font-black text-emerald-300">${fmtKcal(weekData.avgKcal)}</p></div>
+                        </div>
+                    </summary>
+                    <div class="border-t border-gray-800 p-3">
+                        <p class="text-xs leading-relaxed text-gray-400">${weekData.desc}</p>
+                        ${dayHTML}
+                    </div>
+                </details>`);
+        });
+
+        // RENDER DELLE RICETTE COMPLETO
+        const recipesContainer = document.getElementById('recipes-container');
+        recipesData.forEach((recipe) => {
+            let ingList = recipe.ingredients.map(i => `<li class="flex items-start text-[11px] text-gray-300 mb-1 leading-tight"><span class="text-teal-500 mr-2 mt-0.5">•</span><span>${i}</span></li>`).join('');
+            
+            recipesContainer.innerHTML += `
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-5 flex flex-col hover:border-teal-900/50 transition-colors shadow-sm relative overflow-hidden">
+                    <div class="flex justify-between items-start mb-3 border-b border-gray-800 pb-3">
+                        <h4 class="font-bold text-[14px] text-teal-400 leading-snug pr-2">${recipe.title}</h4>
+                        <span class="text-[9px] bg-teal-500/10 border border-teal-500/30 text-teal-300 px-2 py-1 rounded uppercase font-bold tracking-wider whitespace-nowrap">${recipe.time} · ${fmtKcal(recipe.kcal)}</span>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-[9px] uppercase font-bold text-gray-500 tracking-[0.1em] mb-2">Ingredienti</h5>
+                        <ul class="font-medium">
+                            ${ingList}
+                        </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <h5 class="text-[9px] uppercase font-bold text-gray-500 tracking-[0.1em] mb-1.5">Preparazione</h5>
+                        <p class="text-[11.5px] text-gray-400 leading-relaxed font-medium">
+                            ${recipe.prep}
+                        </p>
+                    </div>
+                    
+                    <div class="mt-auto pt-3">
+                        <div class="flex items-start gap-2.5 bg-teal-900/10 p-3 rounded-lg border border-teal-800/30">
+                            <span class="text-teal-500 text-sm leading-none">💡</span>
+                            <div>
+                                <h6 class="text-[9px] font-bold uppercase text-teal-400 tracking-wider mb-1">Consiglio pratico</h6>
+                                <p class="text-[10px] text-teal-100/60 leading-relaxed font-medium">${recipe.tip}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Fisarmonica esclusiva (si apre una settimana alla volta)
+        const details = document.querySelectorAll("#diet-container > details");
+        details.forEach((targetDetail) => {
+            targetDetail.addEventListener("click", () => {
+                details.forEach((detail) => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute("open");
+                    }
+                });
+            });
+        });
+        PlanAdmin.activateAuto("ROX");
+    </script>
+</body>
+</html>
